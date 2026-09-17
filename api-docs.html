@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer API Documentation & Webhooks - AI Botflow</title>
+    <meta name="description"
+        content="Integrate AI Botflow WhatsApp CRM into your app, backend, or custom stack. Official REST API endpoints, webhooks, cURL, Python & Node.js code snippets.">
+    <meta name="keywords"
+        content="WhatsApp CRM API, Meta Cloud API documentation, WhatsApp REST API, WhatsApp webhook events, send WhatsApp API India">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aibotflow.in/api-docs.html">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aibotflow.in/api-docs.html">
+    <meta property="og:title" content="Developer API Documentation & Webhooks - AI Botflow">
+    <meta property="og:description"
+        content="Complete REST API and Webhook reference for sending WhatsApp messages, contacts upsert, and programmatic broadcasts.">
+    <meta property="og:image" content="https://aibotflow.in/assets/social-card.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .api-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .api-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .api-sidebar {
+            position: sticky;
+            top: 100px;
+            background: rgba(14, 19, 32, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .api-sidebar-title {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            margin-bottom: 12px;
+        }
+
+        .api-nav-link {
+            display: block;
+            padding: 8px 12px;
+            color: #94a3b8;
+            font-size: 0.88rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+        }
+
+        .api-nav-link:hover, .api-nav-link.active {
+            color: #60a5fa;
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .code-block {
+            background: #080b11;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            color: #e2e8f0;
+            overflow-x: auto;
+            line-height: 1.6;
+            margin: 14px 0 24px;
+        }
+
+        .endpoint-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        .badge-post { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+        .badge-get { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+
+        .api-section-card {
+            background: rgba(14, 19, 32, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-ambient" aria-hidden="true">
+        <div class="ambient-glow-1"></div>
+        <div class="ambient-glow-2"></div>
+        <div class="ambient-grid"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="om-header-wrap" id="siteHeader">
+        <!-- Top Announcement Ribbon (New Launch) -->
+                <div class="top-announcement-bar">
+            <div class="announcement-inner">
+                <span class="announcement-badge">
+                    <span class="badge-dot"></span> NEW LAUNCH
+                </span>
+                <span class="announcement-text">
+                    <span class="text-desktop">Build AI Agents on WhatsApp that qualify &amp; convert 24/7</span>
+                    <span class="text-mobile">Build 24/7 AI WhatsApp Agents</span>
+                </span>
+                <a href="ai-agents.html" class="announcement-link">
+                    <span class="link-text-desktop">Explore More</span>
+                    <span class="link-text-mobile">Explore</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="om-header-inner">
+            <a href="index.html" class="om-brand" aria-label="Ai Botflow Home">
+                <img src="assets/logo.png" alt="Ai Botflow CRM" width="28" height="28">
+                <span class="om-brand-title">Ai Botflow <span class="om-brand-badge">CRM</span></span>
+            </a>
+
+            <nav class="om-nav" aria-label="Main Navigation">
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Platforms</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-wide">
+                        <div class="om-panel-header">Connected Channels</div>
+                        <a href="whatsapp-crm.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(34,197,94,0.15); color:#22c55e;"><i class="fa-brands fa-whatsapp"></i></div><div><p class="om-panel-title">WhatsApp CRM</p><p class="om-panel-desc">Official Meta Cloud API, chatbots, inbox &amp; broadcasts.</p></div></a>
+                        <a href="shared-inbox.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(99,102,241,0.15); color:#818cf8;"><i class="fa-solid fa-inbox"></i></div><div><p class="om-panel-title">Shared Team Inbox</p><p class="om-panel-desc">Multi-agent live chat, collision alerts &amp; notes.</p></div></a>
+                        <a href="instagram-automation.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(236,72,153,0.15); color:#ec4899;"><i class="fa-brands fa-instagram"></i></div><div><p class="om-panel-title">Instagram Automation</p><p class="om-panel-desc">Story mentions, Reels triggers &amp; comment-to-DM.</p></div></a>
+                        <a href="facebook-messenger.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(59,130,246,0.15); color:#3b82f6;"><i class="fa-brands fa-facebook-messenger"></i></div><div><p class="om-panel-title">Facebook Messenger</p><p class="om-panel-desc">Click-to-WhatsApp ads integration &amp; routing.</p></div></a>
+                    </div>
+                </div>
+
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>AI Agents</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-agents">
+                        <div class="om-panel-header">Industries</div>
+                        <a href="ai-agents.html#ecommerce" class="om-sub-link"><i class="fa-solid fa-cart-shopping"></i><span>E-commerce</span></a>
+                        <a href="ai-agents.html#realestate" class="om-sub-link"><i class="fa-solid fa-building"></i><span>Real Estate</span></a>
+                        <a href="ai-agents.html#healthcare" class="om-sub-link"><i class="fa-solid fa-heart-pulse"></i><span>Healthcare</span></a>
+                        <a href="ai-agents.html#education" class="om-sub-link"><i class="fa-solid fa-graduation-cap"></i><span>Education</span></a>
+                    </div>
+                </div>
+
+                <!-- 3. Resources (Active) -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false" style="color: #ffffff; font-weight: 700;">
+                        <span>Resources</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-resource">
+                        <a href="knowledgebase.html" class="om-sub-link"><i class="fa-solid fa-book-open"></i><span>Knowledgebase</span></a>
+                        <a href=\"blog/index.html" class="om-sub-link"><i class="fa-solid fa-newspaper"></i><span>Blog</span></a>
+                        <a href="api-docs.html" class="om-sub-link" style="color: #60a5fa; font-weight: 700;"><i class="fa-solid fa-code"></i><span>API Documentation</span></a>
+                        <a href="tutorials.html" class="om-sub-link"><i class="fa-solid fa-circle-play"></i><span>Video Tutorials</span></a>
+                        <a href="about.html" class="om-sub-link"><i class="fa-solid fa-building"></i><span>About Us</span></a>
+                    </div>
+                </div>
+
+                <a href="pricing.html" class="om-nav-link">Pricing</a>
+
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Partner</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-partner">
+                        <a href="partner.html#reseller" class="om-sub-link"><i class="fa-solid fa-handshake"></i><span>Reseller Program</span></a>
+                        <a href="partner.html#affiliate" class="om-sub-link"><i class="fa-solid fa-users"></i><span>Affiliate Program</span></a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="om-nav-link">Contact</a>
+            </nav>
+
+            <div class="om-header-actions">
+                <a href="https://dash.aibotflow.in/login" target="_blank" rel="noopener noreferrer" class="om-btn-login om-header-login">
+                    <i class="fa-solid fa-arrow-right-to-bracket" style="font-size:12px; color:#94a3b8;"></i>
+                    <span>Log in</span>
+                </a>
+                <a href="https://dash.aibotflow.in/signup?plan=growth" target="_blank" rel="noopener noreferrer" class="om-btn-primary om-btn-desktop-only">
+                    <span>Get Started Free</span>
+                    <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+                </a>
+                <button type="button" class="om-burger" id="omBurgerBtn" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars" id="omBurgerIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="omMobileDrawer" aria-hidden="true">
+            <div class="mob-links-list">
+                <a href="index.html" class="om-mob-link"><span><i class="fa-solid fa-house" style="margin-right:10px;"></i>Home</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="api-docs.html" class="om-mob-link" style="color:#ffffff; font-weight:700;"><span><i class="fa-solid fa-code" style="margin-right:10px; color:#60a5fa;"></i>API Documentation</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="whatsapp-crm.html" class="om-mob-link"><span><i class="fa-brands fa-whatsapp" style="margin-right:10px; color:#22c55e;"></i>WhatsApp CRM</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="pricing.html" class="om-mob-link"><span><i class="fa-solid fa-tags" style="margin-right:10px;"></i>Pricing &amp; Plans</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="contact.html" class="om-mob-link"><span><i class="fa-solid fa-headset" style="margin-right:10px;"></i>Contact Support</span><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="section" style="padding-top: 48px; padding-bottom: 40px; position: relative; overflow: hidden;">
+            <div class="glow-sphere" style="top: 0; left: 50%; transform: translateX(-50%); background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%); width: 700px; height: 380px;" aria-hidden="true"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <!-- Breadcrumbs -->
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.82rem; color: #94a3b8; margin-bottom: 16px;">
+                        <a href="index.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;"><i class="fa-solid fa-house" style="margin-right: 4px;"></i>Home</a>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 0.68rem; color: #475569;"></i>
+                        <span style="color: #94a3b8;">Resources</span>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 0.68rem; color: #475569;"></i>
+                        <span style="color: #60a5fa; font-weight: 600;">API Documentation</span>
+                    </div>
+
+                    <span class="pill-badge pill-blue" style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Developer REST API &amp; Webhooks</span>
+                    </span>
+                    <h1 class="section-title" style="font-size: clamp(2.2rem, 4.5vw, 3.4rem); margin-bottom: 16px;">
+                        Build &amp; Automate with the <span class="text-gradient-brand">AI Botflow API</span>
+                    </h1>
+                    <p class="section-subtitle">
+                        Integrate official Meta WhatsApp messaging, programmatic broadcasts, and contact syncing directly into your apps and backend.
+                    </p>
+                </div>
+
+                <!-- API Two-Column Layout -->
+                <div class="api-layout">
+                    <!-- Sidebar Navigation -->
+                    <aside class="api-sidebar">
+                        <div class="api-sidebar-title">Getting Started</div>
+                        <a href="#overview" class="api-nav-link active">Overview &amp; Base URL</a>
+                        <a href="#auth" class="api-nav-link">Authentication</a>
+                        
+                        <div class="api-sidebar-title" style="margin-top: 18px;">Endpoints</div>
+                        <a href="#send-message" class="api-nav-link">Send WhatsApp Message</a>
+                        <a href="#trigger-broadcast" class="api-nav-link">Trigger Broadcast</a>
+                        <a href="#upsert-contact" class="api-nav-link">Upsert Contact</a>
+                        
+                        <div class="api-sidebar-title" style="margin-top: 18px;">Webhooks</div>
+                        <a href="#webhooks" class="api-nav-link">Event Subscriptions</a>
+                    </aside>
+
+                    <!-- Content -->
+                    <div>
+                        <!-- Overview -->
+                        <div id="overview" class="api-section-card">
+                            <h2 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 10px;">Overview &amp; Base URL</h2>
+                            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+                                The AI Botflow REST API conforms to HTTP standards with standard response status codes and JSON payloads. All requests must be made over HTTPS.
+                            </p>
+                            <div class="code-block">
+https://dash.aibotflow.in/api/v1
+                            </div>
+                        </div>
+
+                        <!-- Authentication -->
+                        <div id="auth" class="api-section-card">
+                            <h2 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 10px;">Authentication</h2>
+                            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+                                Authenticate requests by passing your private API key in the <code>Authorization</code> request header. You can generate API keys inside your dashboard under <strong>Settings > API Keys</strong>.
+                            </p>
+                            <div class="code-block">
+Authorization: Bearer abf_live_9f8d7c6b5a4e3d2c1b0a
+                            </div>
+                        </div>
+
+                        <!-- Send Message -->
+                        <div id="send-message" class="api-section-card">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                                <span class="endpoint-badge badge-post">POST</span>
+                                <span style="font-family: var(--font-mono); color: #ffffff; font-weight: 600;">/messages/send</span>
+                            </div>
+                            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+                                Send an automated text, media document, or approved WhatsApp template message to a phone number.
+                            </p>
+
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 16px; font-weight: 600;">cURL Example:</div>
+                            <div class="code-block">
+curl -X POST https://dash.aibotflow.in/api/v1/messages/send \
+  -H "Authorization: Bearer $API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "to": "+919876543210",
+    "type": "template",
+    "template": {
+      "name": "order_confirmed",
+      "language": "en",
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            { "type": "text", "text": "Rahul" },
+            { "type": "text", "text": "#ORD-8942" }
+          ]
+        }
+      ]
+    }
+  }'
+                            </div>
+                        </div>
+
+                        <!-- Webhooks -->
+                        <div id="webhooks" class="api-section-card">
+                            <h2 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 10px;">Webhooks &amp; Event Subscriptions</h2>
+                            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+                                Receive instant JSON notifications when incoming messages arrive, messages are read, or an AI agent requests a human handoff.
+                            </p>
+                            <div class="code-block">
+{
+  "event": "message.received",
+  "timestamp": 1789650000,
+  "data": {
+    "from": "+919876543210",
+    "contact_name": "Priya Sharma",
+    "text": "Hi, I need assistance with the pricing plan.",
+    "intent_score": 0.88,
+    "assigned_agent": null
+  }
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand"><img src="assets/logo.png" alt="Ai Botflow" width="26" height="26"><span class="brand-name">Ai Botflow CRM</span></div>
+                    <p class="footer-desc">Developer-first WhatsApp Cloud API infrastructure and webhook services.</p>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Platforms</h4>
+                    <ul class="footer-links">
+                        <li><a href="whatsapp-crm.html">WhatsApp CRM</a></li>
+                        <li><a href="shared-inbox.html">Shared Team Inbox</a></li>
+                        <li><a href="instagram-automation.html">Instagram Automation</a></li>
+                        <li><a href="facebook-messenger.html">Facebook Messenger</a></li>
+                        <li><a href="ai-agents.html">AI Agents Hub</a></li>
+                        <li><a href="pricing.html">Pricing Plans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="knowledgebase.html">Knowledgebase &amp; Docs</a></li>
+                        <li><a href=\"blog/index.html">Growth Blog</a></li>
+                        <li><a href="api-docs.html">Developer API Docs</a></li>
+                        <li><a href="tutorials.html">Video Tutorials</a></li>
+                        <li><a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" style="color: #ef4444; margin-right: 6px;"></i>YouTube: @AiBotFlow</a></li>
+                        <li><a href="partner.html">Partner Program</a></li>
+                        <li><a href="about.html">About AI Botflow</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Security</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5;">
+                        Encrypted with TLS 1.3. HMAC SHA-256 signature verification supported for all outgoing webhooks.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom"><div>&copy; 2026 AI Botflow. All rights reserved.</div></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

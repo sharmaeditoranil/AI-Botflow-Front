@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base &amp; Documentation | Complete 24-Module Manual | Ai Botflow</title>
+    <meta name="description" content="Complete documentation and user manual for Ai Botflow WhatsApp CRM. Step-by-step guides for Meta Cloud API setup, template mapping, broadcasts, flow builder, AI agents, webhooks, and billing.">
+    <meta name="keywords" content="Ai Botflow documentation, WhatsApp CRM knowledge base, Meta Cloud API setup, WhatsApp template variable mapping, visual flow builder guide, AI agent setup, webhook integration">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aibotflow.in/knowledgebase.html">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aibotflow.in/knowledgebase.html">
+    <meta property="og:title" content="Knowledge Base &amp; Documentation | Ai Botflow CRM">
+    <meta property="og:description" content="Official 24-module documentation for Ai Botflow WhatsApp CRM. Zero detail skipped.">
+    <meta property="og:image" content="https://aibotflow.in/assets/dashboard_preview.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .kb-search-hero {
+            padding: 50px 0 36px;
+            text-align: center;
+            position: relative;
+        }
+        .kb-search-container {
+            max-width: 720px;
+            margin: 28px auto 0;
+            position: relative;
+        }
+        .kb-search-input {
+            width: 100%;
+            background: rgba(18, 26, 43, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            padding: 18px 24px 18px 56px;
+            font-size: 1.05rem;
+            color: #ffffff;
+            outline: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+        }
+        .kb-search-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25), 0 16px 40px rgba(0, 0, 0, 0.5);
+            background: rgba(24, 34, 56, 0.95);
+        }
+        .kb-search-icon {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 1.2rem;
+            pointer-events: none;
+        }
+        .kb-quick-pills {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 22px;
+        }
+        .kb-pill-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            padding: 6px 16px;
+            font-size: 0.82rem;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .kb-pill-btn:hover, .kb-pill-btn.active {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            color: #60a5fa;
+        }
+        .kb-layout {
+            display: grid;
+            grid-template-columns: 310px 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 80px;
+        }
+        @media (max-width: 992px) {
+            .kb-layout {
+                grid-template-columns: 1fr;
+            }
+            .kb-sidebar {
+                display: none;
+            }
+        }
+        .kb-sidebar {
+            position: sticky;
+            top: 90px;
+            background: rgba(14, 19, 32, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        .kb-sidebar-group {
+            margin-bottom: 20px;
+        }
+        .kb-sidebar-title {
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #64748b;
+            margin-bottom: 8px;
+            padding-left: 8px;
+        }
+        .kb-sidebar-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 10px;
+            border-radius: 6px;
+            font-size: 0.84rem;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.2s;
+            line-height: 1.4;
+        }
+        .kb-sidebar-link:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .kb-sidebar-link.active {
+            color: #60a5fa;
+            background: rgba(59, 130, 246, 0.12);
+            font-weight: 600;
+        }
+        .kb-module-num {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-right: 8px;
+        }
+        .kb-route-badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .kb-article-card {
+            background: rgba(18, 26, 43, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 36px;
+            margin-bottom: 36px;
+            scroll-margin-top: 100px;
+            transition: border-color 0.2s;
+        }
+        .kb-article-card:hover {
+            border-color: rgba(99, 102, 241, 0.35);
+        }
+        .kb-article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .kb-article-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .kb-badge-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .kb-badge-green { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+        .kb-badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .kb-badge-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        
+        .kb-article-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+        .kb-article-body {
+            color: #cbd5e1;
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+        .kb-article-body h3 {
+            font-size: 1.15rem;
+            color: #f1f5f9;
+            margin: 24px 0 10px;
+            font-weight: 700;
+        }
+        .kb-article-body h4 {
+            font-size: 1rem;
+            color: #93c5fd;
+            margin: 18px 0 8px;
+            font-weight: 600;
+        }
+        .kb-article-body ul, .kb-article-body ol {
+            padding-left: 20px;
+            margin: 10px 0 16px;
+        }
+        .kb-article-body li {
+            margin-bottom: 8px;
+        }
+        .kb-code-box {
+            background: #090d15;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #60a5fa;
+            margin: 12px 0;
+            overflow-x: auto;
+            word-break: break-all;
+        }
+        .kb-callout {
+            background: rgba(37, 99, 235, 0.08);
+            border-left: 3px solid #3b82f6;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 18px 0;
+            font-size: 0.92rem;
+            color: #bfdbfe;
+        }
+        .kb-callout-warning {
+            background: rgba(245, 158, 11, 0.08);
+            border-left-color: #f59e0b;
+            color: #fde68a;
+        }
+        .yt-banner-card {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(37, 99, 235, 0.12) 100%);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-ambient" aria-hidden="true">
+        <div class="ambient-glow-1"></div>
+        <div class="ambient-glow-2"></div>
+        <div class="ambient-grid"></div>
+    </div>
+
+    <!-- =========================================================================
+       ENTERPRISE NAVIGATION HEADER
+       ========================================================================= -->
+    <header class="om-header-wrap" id="siteHeader">
+        <!-- Top Announcement Ribbon (New Launch) -->
+                <div class="top-announcement-bar">
+            <div class="announcement-inner">
+                <span class="announcement-badge">
+                    <span class="badge-dot"></span> NEW LAUNCH
+                </span>
+                <span class="announcement-text">
+                    <span class="text-desktop">Build AI Agents on WhatsApp that qualify &amp; convert 24/7</span>
+                    <span class="text-mobile">Build 24/7 AI WhatsApp Agents</span>
+                </span>
+                <a href="ai-agents.html" class="announcement-link">
+                    <span class="link-text-desktop">Explore More</span>
+                    <span class="link-text-mobile">Explore</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="om-header-inner">
+            <!-- Brand Logo -->
+            <a href="index.html" class="om-brand" aria-label="Ai Botflow Home">
+                <img src="assets/logo.png" alt="Ai Botflow CRM" width="28" height="28">
+                <span class="om-brand-title">Ai Botflow <span class="om-brand-badge">CRM</span></span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="om-nav" aria-label="Main Navigation">
+                <!-- 1. Platforms Dropdown -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Platforms</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-wide">
+                        <div class="om-panel-header">Connected Channels</div>
+                        <a href="whatsapp-crm.html" class="om-panel-item">
+                            <div class="om-panel-icon" style="background:rgba(34,197,94,0.15); color:#22c55e;">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="om-panel-title">WhatsApp CRM</p>
+                                <p class="om-panel-desc">Official Meta Cloud API, chatbots, team inbox &amp; bulk broadcasts.</p>
+                            </div>
+                        </a>
+                        <a href="shared-inbox.html" class="om-panel-item">
+                            <div class="om-panel-icon" style="background:rgba(99,102,241,0.15); color:#818cf8;">
+                                <i class="fa-solid fa-inbox"></i>
+                            </div>
+                            <div>
+                                <p class="om-panel-title">Shared Team Inbox</p>
+                                <p class="om-panel-desc">Multi-agent live chat, assignment rules, canned replies &amp; collision alert.</p>
+                            </div>
+                        </a>
+                        <a href="instagram-automation.html" class="om-panel-item">
+                            <div class="om-panel-icon" style="background:rgba(236,72,153,0.15); color:#ec4899;">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <p class="om-panel-title">Instagram Automation</p>
+                                <p class="om-panel-desc">Story mentions, Reels DM triggers &amp; comment-to-DM conversions.</p>
+                            </div>
+                        </a>
+                        <a href="facebook-messenger.html" class="om-panel-item">
+                            <div class="om-panel-icon" style="background:rgba(59,130,246,0.15); color:#3b82f6;">
+                                <i class="fa-brands fa-facebook-messenger"></i>
+                            </div>
+                            <div>
+                                <p class="om-panel-title">Facebook Messenger</p>
+                                <p class="om-panel-desc">Click-to-WhatsApp ads integration &amp; multi-agent routing.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. AI Agents Dropdown -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>AI Agents</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-agents">
+                        <div class="om-panel-header">Industries</div>
+                        <a href="ai-agents.html#ecommerce" class="om-sub-link">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>E-commerce</span>
+                        </a>
+                        <a href="ai-agents.html#realestate" class="om-sub-link">
+                            <i class="fa-solid fa-building"></i>
+                            <span>Real Estate</span>
+                        </a>
+                        <a href="ai-agents.html#healthcare" class="om-sub-link">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <span>Healthcare</span>
+                        </a>
+                        <a href="ai-agents.html#education" class="om-sub-link">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Education</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Resources Dropdown (Active) -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false" style="color: #ffffff; font-weight: 700;">
+                        <span>Resources</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-resource">
+                        <a href="knowledgebase.html" class="om-sub-link" style="color: #60a5fa; font-weight: 700;">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Knowledgebase</span>
+                        </a>
+                        <a href=\"blog/index.html" class="om-sub-link">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <span>Blog</span>
+                        </a>
+                        <a href="api-docs.html" class="om-sub-link">
+                            <i class="fa-solid fa-code"></i>
+                            <span>API Documentation</span>
+                        </a>
+                        <a href="tutorials.html" class="om-sub-link">
+                            <i class="fa-solid fa-circle-play"></i>
+                            <span>Video Tutorials</span>
+                        </a>
+                        <a href="about.html" class="om-sub-link">
+                            <i class="fa-solid fa-building"></i>
+                            <span>About Us</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Pricing Link -->
+                <a href="pricing.html" class="om-nav-link">Pricing</a>
+
+                <!-- 5. Partner Dropdown -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Partner</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-partner">
+                        <a href="partner.html#reseller" class="om-sub-link">
+                            <i class="fa-solid fa-handshake"></i>
+                            <span>Reseller Program</span>
+                        </a>
+                        <a href="partner.html#affiliate" class="om-sub-link">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Affiliate Program</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Contact Link -->
+                <a href="contact.html" class="om-nav-link">Contact</a>
+            </nav>
+
+            <!-- Standard Header Actions -->
+            <div class="om-header-actions">
+                <a href="https://dash.aibotflow.in/login" target="_blank" rel="noopener noreferrer" class="om-btn-login om-header-login">
+                    <i class="fa-solid fa-arrow-right-to-bracket" style="font-size:12px; color:#94a3b8;"></i>
+                    <span>Log in</span>
+                </a>
+                <a href="https://dash.aibotflow.in/signup?plan=growth" target="_blank" rel="noopener noreferrer" class="om-btn-primary om-btn-desktop-only">
+                    <span>Get Started Free</span>
+                    <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+                </a>
+                <button type="button" class="om-burger" id="omBurgerBtn" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars" id="omBurgerIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="omMobileDrawer" aria-hidden="true">
+            <div class="mob-links-list">
+                <a href="index.html" class="om-mob-link"><span><i class="fa-solid fa-house" style="margin-right:10px;"></i>Home</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="knowledgebase.html" class="om-mob-link" style="color:#ffffff; font-weight:700;"><span><i class="fa-solid fa-book-open" style="margin-right:10px; color:#60a5fa;"></i>Knowledgebase Docs</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="whatsapp-crm.html" class="om-mob-link"><span><i class="fa-brands fa-whatsapp" style="margin-right:10px; color:#22c55e;"></i>WhatsApp CRM</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="shared-inbox.html" class="om-mob-link"><span><i class="fa-solid fa-inbox" style="margin-right:10px; color:#818cf8;"></i>Shared Team Inbox</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="pricing.html" class="om-mob-link"><span><i class="fa-solid fa-tags" style="margin-right:10px;"></i>Pricing &amp; Plans</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="tutorials.html" class="om-mob-link"><span><i class="fa-solid fa-circle-play" style="margin-right:10px; color:#ef4444;"></i>Video Tutorials</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="contact.html" class="om-mob-link"><span><i class="fa-solid fa-headset" style="margin-right:10px;"></i>Contact Support</span><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Search Hero -->
+        <section class="kb-search-hero" style="position: relative; overflow: hidden; padding: 48px 0 36px;">
+            <div class="glow-sphere" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%); width: 700px; height: 380px; pointer-events: none; z-index: 0;" aria-hidden="true"></div>
+            
+            <div class="container" style="position: relative; z-index: 2;">
+                <!-- Breadcrumbs -->
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.82rem; color: #94a3b8; margin-bottom: 16px;">
+                    <a href="index.html" style="color: #94a3b8; text-decoration: none; transition: color 0.2s;"><i class="fa-solid fa-house" style="margin-right: 4px;"></i>Home</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.68rem; color: #475569;"></i>
+                    <span style="color: #94a3b8;">Resources</span>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.68rem; color: #475569;"></i>
+                    <span style="color: #60a5fa; font-weight: 600;">Documentation</span>
+                </div>
+
+                <span class="pill-badge pill-blue" style="margin-bottom: 14px;">
+                    <i class="fa-solid fa-book-bookmark"></i> Complete 24-Module Knowledge Base
+                </span>
+                <h1 class="section-title" style="font-size: clamp(2.2rem, 4.5vw, 3.4rem); margin-bottom: 16px;">
+                    Documentation &amp; <span class="text-gradient-brand">User Manual</span>
+                </h1>
+                <p class="section-subtitle" style="max-width: 720px; margin: 0 auto; color: #cbd5e1;">
+                    Explore comprehensive, step-by-step documentation for every route, configuration setting, and feature in the Ai Botflow WhatsApp CRM platform.
+                </p>
+
+                <!-- Search Input -->
+                <div class="kb-search-container">
+                    <i class="fa-solid fa-magnifying-glass kb-search-icon"></i>
+                    <input type="text" id="kbLiveSearch" class="kb-search-input" placeholder="Search any topic (e.g. WABA ID, Webhook verify token, variables {{1}}, 24h window, broadcasts)..." autocomplete="off">
+                </div>
+
+                <!-- Quick Filter Pills -->
+                <div class="kb-quick-pills">
+                    <button type="button" class="kb-pill-btn active" data-filter="all">All 24 Modules</button>
+                    <button type="button" class="kb-pill-btn" data-filter="meta">Meta Cloud API</button>
+                    <button type="button" class="kb-pill-btn" data-filter="templates">Templates &amp; Variables</button>
+                    <button type="button" class="kb-pill-btn" data-filter="inbox">Shared Team Inbox</button>
+                    <button type="button" class="kb-pill-btn" data-filter="broadcasts">Broadcasts &amp; Media</button>
+                    <button type="button" class="kb-pill-btn" data-filter="flows">Flow Builder</button>
+                    <button type="button" class="kb-pill-btn" data-filter="agents">AI Agents</button>
+                    <button type="button" class="kb-pill-btn" data-filter="integrations">Webhooks &amp; API</button>
+                    <button type="button" class="kb-pill-btn" data-filter="faq">FAQ &amp; Troubleshooting</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Body with Sticky Sidebar -->
+        <div class="container">
+            <!-- Official YouTube Tutorial Channel Banner -->
+            <div class="yt-banner-card">
+                <div style="display: flex; align-items: center; gap: 18px;">
+                    <div style="width: 54px; height: 54px; border-radius: 12px; background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); display: flex; align-items: center; justify-content: center; color: #ef4444; font-size: 26px;">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 4px;">Prefer Watching Video Guides?</h3>
+                        <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">Step-by-step masterclasses available on our official YouTube channel <strong>@AiBotFlow</strong>.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                    <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="btn btn-primary" style="background: #ef4444; border-color: #ef4444; padding: 10px 22px; font-size: 0.88rem; box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);">
+                        <i class="fa-brands fa-youtube" style="margin-right: 6px;"></i> Subscribe @AiBotFlow
+                    </a>
+                    <a href="tutorials.html" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.88rem;">
+                        View Interactive Tutorials
+                    </a>
+                </div>
+            </div>
+
+            <div class="kb-layout">
+                <!-- Sticky Left Sidebar -->
+                <aside class="kb-sidebar">
+                    <div class="kb-sidebar-group">
+                        <div class="kb-sidebar-title">Getting Started &amp; Auth</div>
+                        <a href="#module-01" class="kb-sidebar-link"><span class="kb-module-num">01</span> Overview &amp; Architecture</a>
+                        <a href="#module-02" class="kb-sidebar-link"><span class="kb-module-num">02</span> Registration &amp; Signup</a>
+                        <a href="#module-03" class="kb-sidebar-link"><span class="kb-module-num">03</span> Login (Password &amp; OTP)</a>
+                        <a href="#module-04" class="kb-sidebar-link"><span class="kb-module-num">04</span> Forgot Password Recovery</a>
+                        <a href="#module-05" class="kb-sidebar-link"><span class="kb-module-num">05</span> Profile Settings</a>
+                        <a href="#module-06" class="kb-sidebar-link"><span class="kb-module-num">06</span> Security &amp; Sessions</a>
+                    </div>
+
+                    <div class="kb-sidebar-group">
+                        <div class="kb-sidebar-title">Channels &amp; Meta API</div>
+                        <a href="#module-07" class="kb-sidebar-link"><span class="kb-module-num">07</span> WhatsApp Official Cloud API</a>
+                        <a href="#module-08" class="kb-sidebar-link"><span class="kb-module-num">08</span> Instagram &amp; Messenger</a>
+                    </div>
+
+                    <div class="kb-sidebar-group">
+                        <div class="kb-sidebar-title">Templates &amp; Contacts</div>
+                        <a href="#module-09" class="kb-sidebar-link"><span class="kb-module-num">09</span> Meta Templates &amp; Variables</a>
+                        <a href="#module-10" class="kb-sidebar-link"><span class="kb-module-num">10</span> Contacts &amp; CSV Import</a>
+                        <a href="#module-11" class="kb-sidebar-link"><span class="kb-module-num">11</span> Custom Attributes &amp; Fields</a>
+                    </div>
+
+                    <div class="kb-sidebar-group">
+                        <div class="kb-sidebar-title">Live Chat &amp; Broadcasts</div>
+                        <a href="#module-12" class="kb-sidebar-link"><span class="kb-module-num">12</span> Omnichannel Team Inbox</a>
+                        <a href="#module-13" class="kb-sidebar-link"><span class="kb-module-num">13</span> Broadcast Campaigns</a>
+                        <a href="#module-14" class="kb-sidebar-link"><span class="kb-module-num">14</span> Broadcast Analytics</a>
+                    </div>
+
+                    <div class="kb-sidebar-group">
+                        <div class="kb-sidebar-title">Automation &amp; AI</div>
+                        <a href="#module-15" class="kb-sidebar-link"><span class="kb-module-num">15</span> Visual Chatbot Flows</a>
+                        <a href="#module-16" class="kb-sidebar-link"><span class="kb-module-num">16</span> AI Agents Knowledge Base</a>
+                        <a href="#module-17" class="kb-sidebar-link"><span class="kb-module-num">17</span> AI Agent Configuration</a>
+                        <a href="#module-18" class="kb-sidebar-link"><span class="kb-module-num">18</span> AI Playground Simulation</a>
+                    </div>
+
+                    <div class="kb-sidebar-group">
+                        <div class="kb-sidebar-title">Integrations &amp; CRM</div>
+                        <a href="#module-19" class="kb-sidebar-link"><span class="kb-module-num">19</span> Webhook Bots &amp; Shopify</a>
+                        <a href="#module-20" class="kb-sidebar-link"><span class="kb-module-num">20</span> Sales Pipelines &amp; Kanban</a>
+                        <a href="#module-21" class="kb-sidebar-link"><span class="kb-module-num">21</span> Team Roles &amp; Permissions</a>
+                        <a href="#module-22" class="kb-sidebar-link"><span class="kb-module-num">22</span> Developer REST API</a>
+                        <a href="#module-23" class="kb-sidebar-link"><span class="kb-module-num">23</span> Billing, Plans &amp; GST</a>
+                        <a href="#module-24" class="kb-sidebar-link"><span class="kb-module-num">24</span> FAQ &amp; Troubleshooting</a>
+                    </div>
+                </aside>
+
+                <!-- Main Content Articles Area -->
+                <div class="kb-articles" id="kbArticlesContainer">
+
+                    <!-- =========================================================
+                         MODULE 01: OVERVIEW & ARCHITECTURE
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-01" data-cat="overview meta">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 01</span>
+                            <span class="kb-route-badge">Route: / (Dashboard)</span>
+                        </div>
+                        <h2 class="kb-article-title">Platform Overview &amp; Architecture</h2>
+                        <div class="kb-article-body">
+                            <p><strong>Ai Botflow WhatsApp CRM</strong> is an enterprise-grade customer communication and revenue automation platform built directly on Meta's Official Cloud API infrastructure.</p>
+                            
+                            <h3>Key System Capabilities:</h3>
+                            <ul>
+                                <li><strong>Zero Number Ban Risk:</strong> 100% official Meta WhatsApp Business Cloud API. Unlike unauthorized Chrome extensions or QR web session scrapers, your official business number is immune to bans.</li>
+                                <li><strong>Unified Team Inbox:</strong> Multi-agent live chat collaborative inbox with active collision detection, in-chat customer tag chips, slash (<code>/</code>) quick canned replies, and yellow private staff notes.</li>
+                                <li><strong>Bulk WhatsApp Broadcast Engine:</strong> Send 10,000+ personalized marketing, utility, and transactional templates per hour with direct drag-and-drop Image, Video, and PDF file attachments (up to 16MB) without needing external CDNs.</li>
+                                <li><strong>Smart Variable Mapping:</strong> Seamlessly map contact data (Full Name, First Name, Today's Date, Order IDs, and Custom Attributes) into Meta templates with fallback values.</li>
+                                <li><strong>Visual Drag &amp; Drop Flow Builder:</strong> Design interactive 24/7 button &amp; list menu automated conversation funnels without writing code.</li>
+                                <li><strong>Generative AI Agents:</strong> Index PDF catalogs, website URLs, and custom Q&amp;As into high-speed vector embeddings for intelligent human-like auto-replies with dynamic lead scoring.</li>
+                                <li><strong>Webhook Integrations:</strong> Ingest real-time triggers from Shopify, WooCommerce, Webflow, Razorpay, and Zapier to automate abandoned cart recoveries and instant order dispatch updates.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 02: REGISTRATION & SIGNUP
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-02" data-cat="overview">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 02</span>
+                            <span class="kb-route-badge">Route: /signup</span>
+                        </div>
+                        <h2 class="kb-article-title">Registration &amp; Account Activation</h2>
+                        <div class="kb-article-body">
+                            <p>Creating your Ai Botflow CRM account takes under 2 minutes. Follow this step-by-step walkthrough:</p>
+                            <ol>
+                                <li>Visit the official signup portal at <a href="https://dash.aibotflow.in/signup" target="_blank" rel="noopener" style="color:#60a5fa;">dash.aibotflow.in/signup</a>.</li>
+                                <li>Enter your <strong>Full Name</strong>, <strong>Business Email Address</strong>, and create a strong <strong>Password</strong>.</li>
+                                <li><strong>Password Strength Meter:</strong> The interactive indicator requires at least 8 characters, with a blend of uppercase letters, numbers, and special symbols recommended.</li>
+                                <li>Click <strong>"Create Account"</strong>.</li>
+                                <li><strong>On-Screen OTP Verification:</strong> A secure 6-digit verification code is generated and dispatched immediately to your email address via our high-speed custom Gmail SMTP service.</li>
+                                <li>Enter the 6-digit OTP into the verification screen and click <strong>"Verify &amp; Continue"</strong>. Your workspace is activated with instant access.</li>
+                            </ol>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 03: LOGIN OPTIONS
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-03" data-cat="overview">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 03</span>
+                            <span class="kb-route-badge">Route: /login</span>
+                        </div>
+                        <h2 class="kb-article-title">Login Authentication Methods</h2>
+                        <div class="kb-article-body">
+                            <p>Ai Botflow supports two flexible sign-in mechanisms for team convenience and enterprise security:</p>
+                            <ul>
+                                <li><strong>🔑 Password Login (Default):</strong> Enter your registered business email and account password to log in directly to your active workspace session.</li>
+                                <li><strong>✉️ Email OTP Login (Passwordless Magic Code):</strong> Click the <em>"Email OTP"</em> tab on the login screen. Enter your email to receive a 6-digit one-time passcode in your inbox, granting secure access without typing passwords.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 04: FORGOT PASSWORD
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-04" data-cat="overview">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 04</span>
+                            <span class="kb-route-badge">Route: /forgot-password</span>
+                        </div>
+                        <h2 class="kb-article-title">Password Recovery &amp; Reset</h2>
+                        <div class="kb-article-body">
+                            <p>If you lose access to your password, visit <code>/forgot-password</code>. Enter your registered email address to receive an instant 6-digit recovery OTP. Upon entering the OTP, you can establish a new secure password and immediately re-authenticate.</p>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 05: PROFILE SETTINGS
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-05" data-cat="overview">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 05</span>
+                            <span class="kb-route-badge">Route: /settings?tab=profile</span>
+                        </div>
+                        <h2 class="kb-article-title">Profile &amp; Workspace Settings</h2>
+                        <div class="kb-article-body">
+                            <p>Manage your account identity under the Profile tab:</p>
+                            <ul>
+                                <li><strong>Display Name:</strong> Your name as it appears to teammates in internal notes and agent assignment queues.</li>
+                                <li><strong>Avatar Upload:</strong> Custom profile image for the team dashboard.</li>
+                                <li><strong>Business Contact Info:</strong> Primary phone number, business address, and administrative notification email.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 06: SECURITY & SESSIONS
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-06" data-cat="overview">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 06</span>
+                            <span class="kb-route-badge">Route: /settings?tab=security</span>
+                        </div>
+                        <h2 class="kb-article-title">Security &amp; Session Management</h2>
+                        <div class="kb-article-body">
+                            <p>Protect your CRM workspace with enterprise controls:</p>
+                            <ul>
+                                <li><strong>Password Updates:</strong> Change your password securely with current password confirmation.</li>
+                                <li><strong>Active Browser Sessions:</strong> Inspect IP addresses, operating systems, and browser devices currently logged into your account. Terminate suspicious sessions with 1 click.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 07: WHATSAPP OFFICIAL CLOUD API SETUP
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-07" data-cat="meta">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-green">Module 07</span>
+                            <span class="kb-route-badge">Route: /settings?tab=whatsapp</span>
+                        </div>
+                        <h2 class="kb-article-title">WhatsApp Official Cloud API Configuration</h2>
+                        <div class="kb-article-body">
+                            <p>To send and receive WhatsApp messages via certified Meta servers, connect your Meta Developer account by following these exact steps:</p>
+                            
+                            <h3>Step 1: Create a Meta Developer Business App</h3>
+                            <ol>
+                                <li>Go to <a href="https://developers.facebook.com" target="_blank" rel="noopener" style="color:#60a5fa;">developers.facebook.com</a> and click <strong>"My Apps" &gt; "Create App"</strong>.</li>
+                                <li>Select <strong>"Business"</strong> as your app type and assign your App Name.</li>
+                                <li>In the App Dashboard product list, locate <strong>WhatsApp</strong> and click <strong>"Set Up"</strong>.</li>
+                            </ol>
+
+                            <h3>Step 2: Retrieve API Credentials</h3>
+                            <ol>
+                                <li>In the left sidebar, navigate to <strong>WhatsApp &gt; API Setup</strong>.</li>
+                                <li><strong>Phone Number ID:</strong> Copy the 15-digit number under Phone Number ID.</li>
+                                <li><strong>WhatsApp Business Account (WABA) ID:</strong> Copy the 15-digit WABA ID.</li>
+                                <li><strong>Permanent Access Token:</strong> Do not use temporary 24-hour tokens. In Meta Business Manager, create a <strong>System User</strong> with permissions:
+                                    <div class="kb-code-box">whatsapp_business_messaging, whatsapp_business_management</div>
+                                </li>
+                            </ol>
+
+                            <h3>Step 3: Save Credentials in Ai Botflow</h3>
+                            <p>Paste the <strong>Phone Number ID</strong>, <strong>WABA ID</strong>, and <strong>Permanent Token</strong> into their respective fields inside Ai Botflow Settings and click <strong>"Save WhatsApp Credentials"</strong>.</p>
+
+                            <h3>Step 4: Configure Meta Webhook for Real-Time Incoming Messages</h3>
+                            <ol>
+                                <li>Copy the Webhook URL provided in your CRM:
+                                    <div class="kb-code-box">https://dash.aibotflow.in/api/whatsapp/webhook</div>
+                                </li>
+                                <li>Copy the unique <strong>Webhook Verify Token</strong> displayed on screen.</li>
+                                <li>In Meta Developer Portal, go to <strong>WhatsApp &gt; Configuration &gt; Edit Webhook</strong>.</li>
+                                <li>Paste the Callback URL and Verify Token, then click <strong>"Verify and Save"</strong>.</li>
+                                <li>Under Webhook fields, click <strong>"Manage"</strong> and check the box for <strong><code>messages</code></strong>.</li>
+                            </ol>
+
+                            <h3>Step 5: Verify Live Connection</h3>
+                            <p>Click <strong>"Test Connection"</strong> in Ai Botflow. You will receive a green <strong>`✓ Connected`</strong> badge confirming real-time bidirectional syncing.</p>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 08: INSTAGRAM & MESSENGER
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-08" data-cat="meta">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-green">Module 08</span>
+                            <span class="kb-route-badge">Route: /settings?tab=social</span>
+                        </div>
+                        <h2 class="kb-article-title">Instagram &amp; Facebook Messenger Channels</h2>
+                        <div class="kb-article-body">
+                            <p>Connect your brand's social channels to triage Instagram Direct Messages and Facebook Messenger inquiries in the exact same multi-agent inbox alongside WhatsApp:</p>
+                            <ol>
+                                <li>Navigate to <code>/settings?tab=social</code> and click <strong>"Connect Facebook / Instagram"</strong>.</li>
+                                <li>Authenticate with the Facebook administrative account that manages your business pages.</li>
+                                <li>Select the Facebook Page and linked Instagram Professional Account.</li>
+                                <li>Grant messaging permissions and confirm.</li>
+                                <li>Incoming DMs will immediately route to your <strong>Live Inbox (<code>/inbox</code>)</strong> branded with distinctive Instagram or Messenger channel badges.</li>
+                            </ol>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 09: TEMPLATES & VARIABLES
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-09" data-cat="templates">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-purple">Module 09</span>
+                            <span class="kb-route-badge">Route: /settings?tab=templates</span>
+                        </div>
+                        <h2 class="kb-article-title">Meta WhatsApp Templates &amp; Variable Mapping</h2>
+                        <div class="kb-article-body">
+                            <p>Meta enforces strict pre-approved message templates whenever initiating outbound broadcasts or contacting customers outside the active 24-hour service window.</p>
+
+                            <h3>Syncing Existing Templates From Meta</h3>
+                            <p>Click <strong>"Sync with Meta"</strong>. Ai Botflow immediately imports all approved templates, languages, categories (Marketing, Utility, Authentication), and interactive button setups from your WABA account, displaying live status chips (<code>APPROVED</code>, <code>REJECTED</code>, or <code>PENDING</code>).</p>
+
+                            <h3>Creating a New Template Inside CRM</h3>
+                            <ol>
+                                <li>Click <strong>"+ Create New Template"</strong>.</li>
+                                <li>Select <strong>Category</strong>: <em>Marketing</em> (promotions, offers), <em>Utility</em> (order updates, receipts), or <em>Authentication</em> (OTPs).</li>
+                                <li>Enter <strong>Template Name</strong> using lowercase letters and underscores only (e.g. <code>festive_discount_offer</code>).</li>
+                                <li>Choose <strong>Language</strong> (e.g. English US, Hindi, etc.).</li>
+                                <li><strong>Header (Optional):</strong> Select Text Header or Media Header (Image, PDF Document, or Video).</li>
+                                <li><strong>Body Text with Contiguous Variables:</strong> Use the quick insertion buttons:
+                                    <div class="kb-code-box">{{1}} Customer Name, {{2}} Today's Date, {{3}} Custom Attribute</div>
+                                    <em>Note: Meta policy strictly mandates that variables must be numbered sequentially without skips (e.g. {{1}}, {{2}}, {{3}}).</em>
+                                </li>
+                                <li><strong>Interactive Buttons:</strong> Add Quick Reply buttons (e.g. "Interested", "Stop") or Call-to-Action buttons (Website link or Phone number).</li>
+                                <li>Click <strong>"Submit to Meta for Approval"</strong>. Approvals typically clear in 2 minutes to 24 hours.</li>
+                            </ol>
+
+                            <h3>Custom Variable Data Mapping &amp; Fallbacks</h3>
+                            <p>Before launching a broadcast, templates containing variables must be linked to CRM contact fields:</p>
+                            <ul>
+                                <li>Find templates marked with the amber <strong>`⚠ Needs Mapping`</strong> badge and click <strong>"Map Variables"</strong>.</li>
+                                <li>For each placeholder (e.g. <code>{{1}}</code>), select the source field (Full Name, First Name, Phone, Email, Company, or Custom Field).</li>
+                                <li>Provide a <strong>Fallback Value</strong> (e.g. "Valued Customer") in case a contact profile is missing that specific field.</li>
+                                <li>Inspect the <strong>Live WhatsApp Bubble Preview</strong> on the right to verify formatting.</li>
+                                <li>Save mapping. The badge turns into a green <strong>`✓ Data Mapped`</strong> chip ready for broadcasting.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 10: CONTACTS & AUDIENCE
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-10" data-cat="templates">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-purple">Module 10</span>
+                            <span class="kb-route-badge">Route: /contacts</span>
+                        </div>
+                        <h2 class="kb-article-title">Contacts &amp; Audience Management</h2>
+                        <div class="kb-article-body">
+                            <p>Manage your business contact database and segmentation:</p>
+                            <h3>Adding &amp; Importing Contacts:</h3>
+                            <ul>
+                                <li><strong>Single Contact:</strong> Click <strong>"+ Add Contact"</strong>. Input Name, WhatsApp Phone Number with international country code (e.g. <code>919876543210</code>), Email address, and initial Tags.</li>
+                                <li><strong>Bulk CSV Import:</strong>
+                                    <ol>
+                                        <li>Click <strong>"Import CSV"</strong> and download our sample CSV template.</li>
+                                        <li>Populate columns: <code>name</code>, <code>phone</code>, <code>email</code>, <code>tags</code>, and custom fields.</li>
+                                        <li>Upload file, map columns on screen, and click <strong>"Start Import"</strong>.</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                            <h3>Tags &amp; Segmentation:</h3>
+                            <p>Assign tags like <code>VIP</code>, <code>Lead</code>, <code>Payment Pending</code>, or <code>Diwali Offer</code> to categorize users. Filter audiences by tags to send laser-targeted broadcasts.</p>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 11: CUSTOM FIELDS
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-11" data-cat="templates">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-purple">Module 11</span>
+                            <span class="kb-route-badge">Route: /settings?tab=fields</span>
+                        </div>
+                        <h2 class="kb-article-title">Custom Fields &amp; Attributes</h2>
+                        <div class="kb-article-body">
+                            <p>Extend contact records beyond standard attributes. Create custom data properties suited to your specific industry (e.g. <code>City</code>, <code>Order ID</code>, <code>Renewal Date</code>, <code>Plan Type</code>, <code>Vehicle Number</code>). These custom fields can be dynamically inserted into broadcast templates and evaluated inside Chatbot Flow condition nodes.</p>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 12: OMNICHANNEL TEAM INBOX
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-12" data-cat="inbox">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 12</span>
+                            <span class="kb-route-badge">Route: /inbox</span>
+                        </div>
+                        <h2 class="kb-article-title">Omnichannel Team Inbox &amp; Live Chat</h2>
+                        <div class="kb-article-body">
+                            <p>A collaborative multi-agent live chat command center designed for high-velocity customer support and sales conversions:</p>
+
+                            <h3>Navigation &amp; Filter Queues</h3>
+                            <ul>
+                                <li><strong>All:</strong> Complete feed of every active customer conversation across the organization.</li>
+                                <li><strong>Mine:</strong> Conversations specifically assigned to your user account.</li>
+                                <li><strong>Unassigned:</strong> New inbound inquiries awaiting an agent.</li>
+                                <li><strong>Unread:</strong> Conversations with unread customer replies.</li>
+                                <li><strong>Universal Search:</strong> Find chats instantly by customer name, phone number, or chat keyword.</li>
+                            </ul>
+
+                            <h3>In-Chat Customer Tag Management Bar</h3>
+                            <p>Directly above the message thread, view active tags attached to the open contact. Click <strong>"+ Tag"</strong> to assign an existing tag or type a new one and press Enter. Click <code>✕</code> on any chip to remove it immediately without leaving the conversation.</p>
+
+                            <h3>Composing &amp; Sending Features</h3>
+                            <ul>
+                                <li><strong>24-Hour WhatsApp Service Window Monitor:</strong> Live indicator shows time remaining in the Meta service window. If expired, an alert notifies the agent to dispatch an Approved Template Message to re-open the chat.</li>
+                                <li><strong>Slash (<code>/</code>) Quick Replies:</strong> Type <code>/</code> in the message composer to summon saved canned responses (e.g. <code>/pricing</code>, <code>/bank-details</code>, <code>/demo-link</code>).</li>
+                                <li><strong>Direct Media Attachments:</strong> Click the paperclip icon to upload and send Images (JPEG/PNG), Documents (PDF/DOCX), and Audio voice notes.</li>
+                                <li><strong>Private Internal Staff Notes:</strong> Toggle to internal note mode to leave yellow comments visible only to team members for smooth escalations and handover briefs.</li>
+                                <li><strong>Real-Time Collision Guard:</strong> Visual banner prevents duplicate replies by displaying an alert whenever a teammate is currently viewing or replying to the same lead.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 13: BROADCAST CAMPAIGNS
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-13" data-cat="broadcasts">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-amber">Module 13</span>
+                            <span class="kb-route-badge">Route: /broadcasts, /broadcasts/new</span>
+                        </div>
+                        <h2 class="kb-article-title">Broadcast Campaigns &amp; Direct Media Uploads</h2>
+                        <div class="kb-article-body">
+                            <p>Send bulk WhatsApp messages to opted-in audiences with high delivery rates using the 4-Step Broadcast Wizard:</p>
+
+                            <h3>Step 1: Select Approved Template</h3>
+                            <p>Search templates by name, filter by category (Marketing, Utility, Authentication), and verify variable mapping status (<code>Ready</code> vs <code>Needs Mapping</code>).</p>
+
+                            <h3>Step 2: Choose Target Audience</h3>
+                            <p>Select your recipients: All Contacts, filter by Tags (e.g. <code>VIP</code> + <code>Active Lead</code>), filter by Custom Fields, or upload a fresh standalone CSV. System shows live estimated recipient count.</p>
+
+                            <h3>Step 3: Direct Media Upload &amp; Variable Personalization</h3>
+                            <p><strong>Direct File Drag &amp; Drop (No external public CDN required!):</strong></p>
+                            <ul>
+                                <li><strong>Images:</strong> Upload JPEG or PNG directly (up to 5MB) with instant thumbnail preview.</li>
+                                <li><strong>Documents:</strong> Upload PDF or Word files (up to 16MB).</li>
+                                <li><strong>Videos:</strong> Upload MP4 videos (up to 16MB).</li>
+                            </ul>
+                            <p>Verify dynamic variables (<code>{{1}}</code>, <code>{{2}}</code>) and inspect the Live WhatsApp Bubble Preview to confirm visual fidelity before dispatch.</p>
+
+                            <h3>Step 4: Schedule &amp; Launch</h3>
+                            <ul>
+                                <li><strong>Send Immediately:</strong> Begins queuing and sending right away.</li>
+                                <li><strong>Schedule for Later:</strong> Designate a future date and time for automated dispatch.</li>
+                                <li><strong>Delivery Pacing (Smart Throttling):</strong> Automatically staggers messages across safe intervals to preserve phone quality ratings and prevent rate-limit penalties.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 14: BROADCAST ANALYTICS
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-14" data-cat="broadcasts">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-amber">Module 14</span>
+                            <span class="kb-route-badge">Route: /broadcasts/[id]</span>
+                        </div>
+                        <h2 class="kb-article-title">Campaign Delivery &amp; Read Analytics</h2>
+                        <div class="kb-article-body">
+                            <p>Inspect real-time metrics for every launched broadcast campaign:</p>
+                            <ul>
+                                <li><strong>Full Delivery Funnel:</strong> Real-time counts for Total Sent, Delivered, Read (Blue Ticks), Failed, and Unsubscribed.</li>
+                                <li><strong>Meta Error Diagnostics:</strong> If any message fails, inspect exact Meta error codes (e.g. <code>131026: Message undeliverable</code> or invalid recipient number) for instant list cleaning.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 15: VISUAL FLOW BUILDER
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-15" data-cat="flows">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-green">Module 15</span>
+                            <span class="kb-route-badge">Route: /flows</span>
+                        </div>
+                        <h2 class="kb-article-title">Visual Chatbot Flow Builder</h2>
+                        <div class="kb-article-body">
+                            <p>Build 24/7 automated interactive conversation funnels on a drag-and-drop canvas without code.</p>
+
+                            <h3>Available Canvas Nodes:</h3>
+                            <ol>
+                                <li><strong>Trigger Node:</strong> Initiates flow execution based on incoming keywords (e.g. <code>START</code>, <code>PRICE</code>), first-time customer messages (Welcome Bot), or inbound webhooks.</li>
+                                <li><strong>Send Message Node:</strong> Dispatch rich text messages with contact variables (<code>{{contact.name}}</code>), interactive quick reply buttons (up to 3 clickable options), or list menus (up to 10 categorized rows).</li>
+                                <li><strong>Send Media Node:</strong> Automatically dispatch image flyers, PDF brochures, or video walkthroughs.</li>
+                                <li><strong>Condition / Branching Node:</strong> Evaluate customer tags (e.g. if tag contains <code>VIP</code>, route to Priority Queue), selected button IDs, or specific keyword regex.</li>
+                                <li><strong>Update Contact Node:</strong> Automatically apply tags, update custom fields, or create new pipeline sales deals based on customer selections.</li>
+                                <li><strong>Assign Agent / Human Handoff:</strong> Transfer conversation to human agent queue and mute chatbot replies.</li>
+                                <li><strong>Delay Node:</strong> Wait a designated duration (minutes or hours) before dispatching the next follow-up message.</li>
+                            </ol>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 16: AI AGENTS KNOWLEDGE BASE
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-16" data-cat="agents">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-purple">Module 16</span>
+                            <span class="kb-route-badge">Route: /agents (Knowledge Base tab)</span>
+                        </div>
+                        <h2 class="kb-article-title">AI Agents — Knowledge Base Setup</h2>
+                        <div class="kb-article-body">
+                            <p>Ground autonomous AI bots in your proprietary business data:</p>
+                            <ol>
+                                <li>Click <strong>"+ Add Knowledge Source"</strong>.</li>
+                                <li>Select data source:
+                                    <ul>
+                                        <li><strong>Upload Documents:</strong> Upload PDF catalogs, brochures, manuals, or pricing sheets.</li>
+                                        <li><strong>Website / URL Crawl:</strong> Provide your company website or FAQ URL for automatic crawling and indexing.</li>
+                                        <li><strong>Q&amp;A Pairs:</strong> Enter custom question and answer pairs directly.</li>
+                                    </ul>
+                                </li>
+                                <li>The AI engine automatically parses, chunks, and creates vector embeddings for high-speed semantic retrieval.</li>
+                            </ol>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 17: AI AGENT CONFIGURATION
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-17" data-cat="agents">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-purple">Module 17</span>
+                            <span class="kb-route-badge">Route: /agents (Config tab)</span>
+                        </div>
+                        <h2 class="kb-article-title">AI Agent Persona &amp; Configuration</h2>
+                        <div class="kb-article-body">
+                            <p>Fine-tune how your AI interacts with customers:</p>
+                            <ul>
+                                <li><strong>System Prompt / Persona:</strong> Define identity and rules (e.g. <em>"You are the sales concierge for Ai Botflow. Answer customer queries accurately using only the knowledge base and encourage them to book a free demo."</em>).</li>
+                                <li><strong>Fallback Rules:</strong> Specify explicit action when information is missing from documents (e.g. <em>"Offer to connect with a human agent"</em>).</li>
+                                <li><strong>Temperature:</strong> Regulate creative freedom (0.2 for strict compliance support; 0.7 for persuasive sales conversations).</li>
+                                <li><strong>Auto-Reply Toggle:</strong> Activate AI auto-reply for all inbound chats or restrict exclusively to unassigned leads.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 18: AI PLAYGROUND
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-18" data-cat="agents">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-purple">Module 18</span>
+                            <span class="kb-route-badge">Route: /agents (Playground tab)</span>
+                        </div>
+                        <h2 class="kb-article-title">AI Playground &amp; Citation Inspector</h2>
+                        <div class="kb-article-body">
+                            <p>Test your trained AI bot in a simulated WhatsApp chat window before deploying it to live customers. In the Playground, every AI response displays the exact retrieved knowledge base document snippets used to generate the answer, ensuring complete transparency and zero hallucinations.</p>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 19: WEBHOOK BOTS & ECOMMERCE
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-19" data-cat="integrations">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 19</span>
+                            <span class="kb-route-badge">Route: /automations</span>
+                        </div>
+                        <h2 class="kb-article-title">Webhook Bots &amp; E-Commerce Integrations</h2>
+                        <div class="kb-article-body">
+                            <p>Trigger automated personalized WhatsApp messages directly from Shopify, WooCommerce, Razorpay, or custom backends:</p>
+
+                            <h3>Setup Walkthrough (Shopify New Order / Cart Recovery):</h3>
+                            <ol>
+                                <li>Click <strong>"+ Create Webhook Trigger"</strong> and provide a name (e.g. <code>Shopify New Order Alert</code>).</li>
+                                <li>Copy your unique Ingestion URL:
+                                    <div class="kb-code-box">https://dash.aibotflow.in/api/webhooks/incoming/[trigger_id]</div>
+                                </li>
+                                <li>Paste this URL into your external application's webhook settings (e.g. Shopify &gt; Notifications &gt; Webhooks &gt; Order Creation).</li>
+                                <li>Fire a test webhook event from the external application.</li>
+                                <li><strong>Map Payload Data:</strong>
+                                    <ul>
+                                        <li>Select target phone number field (e.g. <code>payload.customer.phone</code>).</li>
+                                        <li>Select template to dispatch (e.g. <code>order_confirmation</code>).</li>
+                                        <li>Map template variables: <code>{{1}}</code> &rarr; <code>payload.customer.first_name</code>, <code>{{2}}</code> &rarr; <code>payload.order.order_number</code>, <code>{{3}}</code> &rarr; <code>payload.order.total_price</code>.</li>
+                                    </ul>
+                                </li>
+                                <li>Click <strong>"Activate Webhook Bot"</strong>. All future transactions automatically trigger instant WhatsApp confirmations.</li>
+                            </ol>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 20: PIPELINES & KANBAN
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-20" data-cat="integrations">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 20</span>
+                            <span class="kb-route-badge">Route: /pipelines</span>
+                        </div>
+                        <h2 class="kb-article-title">Sales Pipelines &amp; Kanban Deals</h2>
+                        <div class="kb-article-body">
+                            <p>Track leads visually as they progress toward deals:</p>
+                            <ul>
+                                <li><strong>Custom Kanban Stages:</strong> Configure stages (e.g. <code>New Lead</code>, <code>Discovery Call</code>, <code>Proposal Sent</code>, <code>Negotiation</code>, <code>Won</code>, <code>Lost</code>).</li>
+                                <li><strong>Deal Creation:</strong> Specify Deal Title, Monetary Value, Currency, and linked Contact.</li>
+                                <li><strong>Drag &amp; Drop Movement:</strong> Seamlessly move cards across columns as customer discussions advance.</li>
+                                <li><strong>Revenue Velocity Analytics:</strong> Monitor total pipeline value and conversion ratios by sales rep.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 21: TEAM ROLES & MEMBERS
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-21" data-cat="integrations">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 21</span>
+                            <span class="kb-route-badge">Route: /settings?tab=members</span>
+                        </div>
+                        <h2 class="kb-article-title">Team Members, Roles &amp; Permissions</h2>
+                        <div class="kb-article-body">
+                            <p>Scale your sales and support departments with role-based access control:</p>
+
+                            <h3>Available Roles:</h3>
+                            <ul>
+                                <li><strong>Owner:</strong> Full workspace ownership, billing management, subscription upgrades, and organization transfer.</li>
+                                <li><strong>Admin:</strong> Can configure templates, launch broadcasts, build chatbot flows, manage integrations, and view all chats.</li>
+                                <li><strong>Manager:</strong> Can inspect conversations, assign chats to agents, export reports, and edit contacts.</li>
+                                <li><strong>Agent:</strong> Restricted access. Can only view assigned chats in the Team Inbox, send messages, and view contact details.</li>
+                            </ul>
+
+                            <h3>Inviting Team Members:</h3>
+                            <ol>
+                                <li>Click <strong>"Invite Member"</strong> in Settings.</li>
+                                <li>Enter the colleague's email address and assign their role.</li>
+                                <li>The colleague receives a secure invitation link (<code>/join/[token]</code>) to create their password and join your workspace instantly.</li>
+                            </ol>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 22: DEVELOPER REST API
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-22" data-cat="integrations">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-blue">Module 22</span>
+                            <span class="kb-route-badge">Route: /settings?tab=api</span>
+                        </div>
+                        <h2 class="kb-article-title">Developer REST API &amp; Webhooks</h2>
+                        <div class="kb-article-body">
+                            <p>Integrate Ai Botflow into your proprietary ERP, mobile apps, or custom software:</p>
+                            <ul>
+                                <li><strong>Base URL:</strong> <code>https://dash.aibotflow.in/api/v1</code></li>
+                                <li><strong>Authentication:</strong> Pass HTTP Header:
+                                    <div class="kb-code-box">Authorization: Bearer &lt;YOUR_API_KEY&gt;</div>
+                                </li>
+                                <li><strong>Core Endpoints:</strong>
+                                    <ul>
+                                        <li><code>POST /api/v1/messages</code>: Send text, media, or template messages.</li>
+                                        <li><code>GET /api/v1/contacts</code>: Query contact profiles and tags.</li>
+                                        <li><code>POST /api/v1/broadcasts</code>: Programmatically launch bulk campaigns.</li>
+                                        <li><code>GET /api/v1/conversations</code>: Retrieve chat history and message logs.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>For complete JSON schemas and cURL examples, visit our dedicated <a href="api-docs.html" style="color:#60a5fa; font-weight:600;">API Documentation Page</a>.</p>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 23: BILLING & PLANS
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-23" data-cat="faq">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-green">Module 23</span>
+                            <span class="kb-route-badge">Route: /settings?tab=billing, /pricing</span>
+                        </div>
+                        <h2 class="kb-article-title">Billing, Subscription Plans &amp; GST Invoices</h2>
+                        <div class="kb-article-body">
+                            <p>Manage subscription plans, user seat add-ons, and payment methods:</p>
+                            <ul>
+                                <li><strong>Subscription Plans:</strong>
+                                    <ul>
+                                        <li><strong>Starter (₹599/mo):</strong> 1 WhatsApp Number, 1 Agent Seat, 1,000 Contacts, Unlimited Free Incoming Chats, Official Cloud API.</li>
+                                        <li><strong>Growth (₹1,499/mo):</strong> 1 WhatsApp Number, 3 Agent Seats, Unlimited Contacts, Full AI Agents Engine, Bulk Broadcasts.</li>
+                                        <li><strong>Enterprise (₹2,499/mo):</strong> 2 WhatsApp Numbers, 5 Agent Seats, Priority 24/7 Concierge Support, Dedicated IP, Green Tick Filing Assistance.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Payment Checkout:</strong> Secure payment processing via Razorpay (UPI, Credit/Debit Cards, NetBanking).</li>
+                                <li><strong>Tax Invoices:</strong> Download GST-compliant tax invoices directly from the Billing tab.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         MODULE 24: FAQ & HELP CENTER
+                         ========================================================= -->
+                    <article class="kb-article-card" id="module-24" data-cat="faq">
+                        <div class="kb-article-meta">
+                            <span class="kb-article-badge kb-badge-green">Module 24</span>
+                            <span class="kb-route-badge">Route: /contact (Help Center)</span>
+                        </div>
+                        <h2 class="kb-article-title">Frequently Asked Questions &amp; Troubleshooting</h2>
+                        <div class="kb-article-body">
+                            
+                            <h4>Q1: Will our business phone number get blocked or banned?</h4>
+                            <p><strong>No.</strong> Ai Botflow connects strictly through the <strong>Official Meta WhatsApp Cloud API</strong>. Unlike unauthorized Chrome extensions or QR code web session scrapers that result in immediate number bans, the official API is fully certified, legally compliant, and endorsed by Meta.</p>
+
+                            <h4>Q2: What is the 24-hour customer service window?</h4>
+                            <p>When a customer messages your WhatsApp number, a 24-hour service window opens. During this 24-hour window, you can exchange free-form text, photos, PDFs, and voice notes without paying Meta conversation fees. Once 24 hours expire without a customer reply, Meta policy requires sending an <strong>Approved Template Message</strong> to re-open the conversation.</p>
+
+                            <h4>Q3: Why does my template display the amber "Needs Mapping" badge?</h4>
+                            <p>If your approved Meta template contains dynamic variables (like <code>{{1}}</code> or <code>{{2}}</code>), the CRM needs to know which customer field to insert into those blanks. Click <strong>"Map Variables"</strong> on the template, select the source field (e.g. Full Name), provide a fallback value (e.g. "Valued Customer"), and save. The badge will turn green <code>✓ Data Mapped</code>.</p>
+
+                            <h4>Q4: What file formats are supported for Broadcast media headers?</h4>
+                            <ul>
+                                <li><strong>Images:</strong> JPEG, PNG (Up to 5MB)</li>
+                                <li><strong>Documents:</strong> PDF, Word DOCX (Up to 16MB)</li>
+                                <li><strong>Videos:</strong> MP4, 3GP (Up to 16MB)</li>
+                            </ul>
+                            <p>All media files can be uploaded directly via drag-and-drop inside our Broadcast wizard without needing any external CDN URL.</p>
+
+                            <h4>Q5: Who can I contact for official VIP technical assistance?</h4>
+                            <ul>
+                                <li><strong>Email Support:</strong> <code>support@aibotflow.in</code></li>
+                                <li><strong>Official WhatsApp VIP Concierge:</strong> <code>+91 9939800780</code></li>
+                                <li><strong>Video Masterclasses:</strong> <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" style="color:#60a5fa;">youtube.com/@AiBotFlow</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- =========================================================================
+       ENTERPRISE FOOTER
+       ========================================================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Contact -->
+                <div class="footer-col brand-col">
+                    <div class="footer-brand">
+                        <img src="assets/logo.png" alt="Ai Botflow CRM Logo" width="26" height="26">
+                        <span class="brand-name">Ai Botflow <span class="brand-sub">CRM</span></span>
+                    </div>
+                    <p class="footer-desc">
+                        Official Meta Cloud API Business Solution Provider. Enterprise multi-agent shared inbox, automated WhatsApp broadcast engine, and no-code AI sales bots for growth brands.
+                    </p>
+                    <div class="footer-contact-info">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone" style="color: #60a5fa;"></i>
+                            <span>Support: +91 9939800780</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope" style="color: #60a5fa;"></i>
+                            <span>Email: support@aibotflow.in</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-youtube" style="color: #ef4444;"></i>
+                            <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">YouTube: @AiBotFlow</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Platforms -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Connected Channels</h4>
+                    <ul class="footer-links">
+                        <li><a href="whatsapp-crm.html"><i class="fa-brands fa-whatsapp" style="color: #22c55e; margin-right: 6px;"></i> WhatsApp CRM</a></li>
+                        <li><a href="shared-inbox.html"><i class="fa-solid fa-inbox" style="color: #818cf8; margin-right: 6px;"></i> Shared Team Inbox</a></li>
+                        <li><a href="instagram-automation.html"><i class="fa-brands fa-instagram" style="color: #ec4899; margin-right: 6px;"></i> Instagram Automation</a></li>
+                        <li><a href="facebook-messenger.html"><i class="fa-brands fa-facebook-messenger" style="color: #3b82f6; margin-right: 6px;"></i> Facebook Messenger</a></li>
+                        <li><a href="pricing.html">Plans &amp; Transparent Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: AI Solutions -->
+                <div class="footer-col">
+                    <h4 class="footer-title">AI Agents</h4>
+                    <ul class="footer-links">
+                        <li><a href="ai-agents.html#ecommerce">E-commerce Sales Bot</a></li>
+                        <li><a href="ai-agents.html#realestate">Real Estate Lead Qualifier</a></li>
+                        <li><a href="ai-agents.html#healthcare">Clinic Appointment Agent</a></li>
+                        <li><a href="ai-agents.html#education">Education Admission Agent</a></li>
+                        <li><a href="ai-agents.html#scoring">Dynamic Lead Scoring (1-100)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Resources & Partner -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Resources &amp; Trust</h4>
+                    <ul class="footer-links">
+                        <li><a href="knowledgebase.html" style="color: #60a5fa; font-weight: 600;">Documentation Knowledge Base</a></li>
+                        <li><a href=\"blog/index.html">WhatsApp Growth Playbook</a></li>
+                        <li><a href="api-docs.html">Developer REST API Reference</a></li>
+                        <li><a href="tutorials.html">Setup &amp; Video Tutorials</a></li>
+                        <li><a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener">YouTube Channel @AiBotFlow</a></li>
+                        <li><a href="partner.html">Agency &amp; Affiliate Program</a></li>
+                        <li><a href="about.html">About Ai Botflow CRM</a></li>
+                        <li><a href="contact.html">Contact Enterprise Sales</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Subfooter -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ai Botflow CRM. All rights reserved. Registered Meta Cloud API Tech Partner.</p>
+                <div class="footer-badges">
+                    <span class="badge"><i class="fa-solid fa-lock"></i> 256-Bit SSL Encrypted</span>
+                    <span class="badge"><i class="fa-solid fa-shield-halved"></i> GDPR &amp; DPDP Compliant</span>
+                    <span class="badge"><i class="fa-brands fa-meta"></i> Meta Cloud API Verified</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Knowledge Base Search Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('kbLiveSearch');
+            const articles = document.querySelectorAll('.kb-article-card');
+            const pillBtns = document.querySelectorAll('.kb-pill-btn');
+            const sidebarLinks = document.querySelectorAll('.kb-sidebar-link');
+
+            // Live Search
+            if (searchInput) {
+                searchInput.addEventListener('input', function () {
+                    const query = this.value.toLowerCase().trim();
+                    articles.forEach(article => {
+                        const text = article.innerText.toLowerCase();
+                        if (!query || text.includes(query)) {
+                            article.style.display = 'block';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                });
+
+                // URL query parameter prefill (?q=...)
+                const urlParams = new URLSearchParams(window.location.search);
+                const qParam = urlParams.get('q');
+                if (qParam) {
+                    searchInput.value = qParam;
+                    searchInput.dispatchEvent(new Event('input'));
+                }
+            }
+
+            // Category Filter Pills
+            pillBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    pillBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+
+                    articles.forEach(article => {
+                        const cats = article.getAttribute('data-cat') || '';
+                        if (filter === 'all' || cats.includes(filter)) {
+                            article.style.display = 'block';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Highlight Sidebar on scroll
+            window.addEventListener('scroll', function () {
+                let current = '';
+                articles.forEach(article => {
+                    const top = article.offsetTop - 120;
+                    if (window.pageYOffset >= top) {
+                        current = article.getAttribute('id');
+                    }
+                });
+
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

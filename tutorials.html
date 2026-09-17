@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tutorials & Setup Walkthroughs - AI Botflow CRM</title>
+    <meta name="description"
+        content="Watch step-by-step video tutorials and interactive onboarding guides for AI Botflow WhatsApp CRM. Learn how to connect Meta Cloud API, build flows, and train AI agents.">
+    <meta name="keywords"
+        content="WhatsApp CRM video tutorials, Meta Cloud API video guide, WhatsApp flow builder tutorial, AI chatbot setup videos">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aibotflow.in/tutorials.html">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aibotflow.in/tutorials.html">
+    <meta property="og:title" content="Video Tutorials & Setup Walkthroughs - AI Botflow CRM">
+    <meta property="og:description"
+        content="Master WhatsApp automation in minutes with step-by-step video guides and interactive walkthroughs.">
+    <meta property="og:image" content="https://aibotflow.in/assets/social-card.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 40px;
+        }
+
+        .tutorial-card {
+            background: rgba(14, 19, 32, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s ease;
+        }
+
+        .tutorial-card:hover {
+            border-color: rgba(59, 130, 246, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+        }
+
+        .tutorial-thumb {
+            position: relative;
+            background: #070a10;
+            padding-top: 56.25%; /* 16:9 aspect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .tutorial-thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: opacity 0.25s ease, transform 0.3s ease;
+        }
+
+        .tutorial-card:hover .tutorial-thumb img {
+            opacity: 0.92;
+            transform: scale(1.04);
+        }
+
+        .tutorial-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.9);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.5);
+            transition: transform 0.2s;
+        }
+
+        .tutorial-card:hover .tutorial-play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .tutorial-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .tutorial-duration {
+            font-size: 0.75rem;
+            color: #60a5fa;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .tutorial-title {
+            font-size: 1.15rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .tutorial-desc {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-ambient" aria-hidden="true">
+        <div class="ambient-glow-1"></div>
+        <div class="ambient-glow-2"></div>
+        <div class="ambient-grid"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="om-header-wrap" id="siteHeader">
+        <!-- Top Announcement Ribbon (New Launch) -->
+                <div class="top-announcement-bar">
+            <div class="announcement-inner">
+                <span class="announcement-badge">
+                    <span class="badge-dot"></span> NEW LAUNCH
+                </span>
+                <span class="announcement-text">
+                    <span class="text-desktop">Build AI Agents on WhatsApp that qualify &amp; convert 24/7</span>
+                    <span class="text-mobile">Build 24/7 AI WhatsApp Agents</span>
+                </span>
+                <a href="ai-agents.html" class="announcement-link">
+                    <span class="link-text-desktop">Explore More</span>
+                    <span class="link-text-mobile">Explore</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="om-header-inner">
+            <a href="index.html" class="om-brand" aria-label="Ai Botflow Home">
+                <img src="assets/logo.png" alt="Ai Botflow CRM" width="28" height="28">
+                <span class="om-brand-title">Ai Botflow <span class="om-brand-badge">CRM</span></span>
+            </a>
+
+            <nav class="om-nav" aria-label="Main Navigation">
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Platforms</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-wide">
+                        <div class="om-panel-header">Connected Channels</div>
+                        <a href="whatsapp-crm.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(34,197,94,0.15); color:#22c55e;"><i class="fa-brands fa-whatsapp"></i></div><div><p class="om-panel-title">WhatsApp CRM</p><p class="om-panel-desc">Official Meta Cloud API, chatbots, inbox &amp; broadcasts.</p></div></a>
+                        <a href="shared-inbox.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(99,102,241,0.15); color:#818cf8;"><i class="fa-solid fa-inbox"></i></div><div><p class="om-panel-title">Shared Team Inbox</p><p class="om-panel-desc">Multi-agent live chat, collision alerts &amp; notes.</p></div></a>
+                        <a href="instagram-automation.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(236,72,153,0.15); color:#ec4899;"><i class="fa-brands fa-instagram"></i></div><div><p class="om-panel-title">Instagram Automation</p><p class="om-panel-desc">Story mentions, Reels triggers &amp; comment-to-DM.</p></div></a>
+                        <a href="facebook-messenger.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(59,130,246,0.15); color:#3b82f6;"><i class="fa-brands fa-facebook-messenger"></i></div><div><p class="om-panel-title">Facebook Messenger</p><p class="om-panel-desc">Click-to-WhatsApp ads integration &amp; routing.</p></div></a>
+                    </div>
+                </div>
+
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>AI Agents</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-agents">
+                        <div class="om-panel-header">Industries</div>
+                        <a href="ai-agents.html#ecommerce" class="om-sub-link"><i class="fa-solid fa-cart-shopping"></i><span>E-commerce</span></a>
+                        <a href="ai-agents.html#realestate" class="om-sub-link"><i class="fa-solid fa-building"></i><span>Real Estate</span></a>
+                        <a href="ai-agents.html#healthcare" class="om-sub-link"><i class="fa-solid fa-heart-pulse"></i><span>Healthcare</span></a>
+                        <a href="ai-agents.html#education" class="om-sub-link"><i class="fa-solid fa-graduation-cap"></i><span>Education</span></a>
+                    </div>
+                </div>
+
+                <!-- 3. Resources (Active) -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false" style="color: #ffffff; font-weight: 700;">
+                        <span>Resources</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-resource">
+                        <a href="knowledgebase.html" class="om-sub-link"><i class="fa-solid fa-book-open"></i><span>Knowledgebase</span></a>
+                        <a href=\"blog/index.html" class="om-sub-link"><i class="fa-solid fa-newspaper"></i><span>Blog</span></a>
+                        <a href="api-docs.html" class="om-sub-link"><i class="fa-solid fa-code"></i><span>API Documentation</span></a>
+                        <a href="tutorials.html" class="om-sub-link" style="color: #60a5fa; font-weight: 700;"><i class="fa-solid fa-circle-play"></i><span>Video Tutorials</span></a>
+                        <a href="about.html" class="om-sub-link"><i class="fa-solid fa-building"></i><span>About Us</span></a>
+                    </div>
+                </div>
+
+                <a href="pricing.html" class="om-nav-link">Pricing</a>
+
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Partner</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-partner">
+                        <a href="partner.html#reseller" class="om-sub-link"><i class="fa-solid fa-handshake"></i><span>Reseller Program</span></a>
+                        <a href="partner.html#affiliate" class="om-sub-link"><i class="fa-solid fa-users"></i><span>Affiliate Program</span></a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="om-nav-link">Contact</a>
+            </nav>
+
+            <div class="om-header-actions">
+                <a href="https://dash.aibotflow.in/login" target="_blank" rel="noopener noreferrer" class="om-btn-login om-header-login">
+                    <i class="fa-solid fa-arrow-right-to-bracket" style="font-size:12px; color:#94a3b8;"></i>
+                    <span>Log in</span>
+                </a>
+                <a href="https://dash.aibotflow.in/signup?plan=growth" target="_blank" rel="noopener noreferrer" class="om-btn-primary om-btn-desktop-only">
+                    <span>Get Started Free</span>
+                    <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+                </a>
+                <button type="button" class="om-burger" id="omBurgerBtn" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars" id="omBurgerIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="omMobileDrawer" aria-hidden="true">
+            <div class="mob-links-list">
+                <a href="index.html" class="om-mob-link"><span><i class="fa-solid fa-house" style="margin-right:10px;"></i>Home</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="tutorials.html" class="om-mob-link" style="color:#ffffff; font-weight:700;"><span><i class="fa-solid fa-circle-play" style="margin-right:10px; color:#60a5fa;"></i>Video Tutorials</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="pricing.html" class="om-mob-link"><span><i class="fa-solid fa-tags" style="margin-right:10px;"></i>Pricing &amp; Plans</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="contact.html" class="om-mob-link"><span><i class="fa-solid fa-headset" style="margin-right:10px;"></i>Contact Support</span><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="section" style="padding-top: 50px; padding-bottom: 40px; text-align: center;">
+            <div class="container">
+                <span class="pill-badge pill-blue" style="margin-bottom: 16px;">
+                    <i class="fa-solid fa-play"></i>
+                    <span>Guided Video Walkthroughs</span>
+                </span>
+                <h1 class="section-title" style="font-size: clamp(2.2rem, 4.5vw, 3.4rem); margin-bottom: 16px;">
+                    Master AI Botflow in <span class="text-gradient-brand">Step-by-Step Videos</span>
+                </h1>
+                <p class="section-subtitle" style="max-width: 650px; margin: 0 auto;">
+                    Watch our product specialists walk you through every module—from setting up your official Meta number to launching autonomous AI workflows.
+                </p>
+                <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+                    <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="btn-cta" style="background: #ef4444; border-color: #ef4444; padding: 12px 28px; font-size: 0.95rem;">
+                        <i class="fa-brands fa-youtube" style="margin-right: 8px;"></i> Official Channel: youtube.com/@AiBotFlow
+                    </a>
+                    <a href="knowledgebase.html" class="btn-ghost" style="padding: 12px 24px; font-size: 0.95rem;">
+                        <i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> 24-Module Knowledge Base
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorials Grid -->
+        <section class="section" style="padding-top: 10px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="tutorial-grid">
+
+                    <!-- Video 1 -->
+                    <div class="tutorial-card">
+                        <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="tutorial-thumb" aria-label="Watch Meta Cloud API tutorial on YouTube">
+                            <img src="assets/login_preview.png" alt="Meta Embedded Signup and Authentication">
+                            <div class="tutorial-play-btn"><i class="fa-solid fa-play" style="margin-left: 3px;"></i></div>
+                        </a>
+                        <div class="tutorial-content">
+                            <div class="tutorial-duration"><i class="fa-regular fa-clock"></i> 4:20 MINS · GETTING STARTED</div>
+                            <h3 class="tutorial-title">Connecting Official Meta Cloud API in 5 Minutes</h3>
+                            <p class="tutorial-desc">Learn how to create a Meta Developer App, retrieve your Phone Number ID and WABA ID, and link your business number without any downtime.</p>
+                            <div style="display: flex; gap: 8px; margin-top: auto;">
+                                <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="btn btn-primary" style="background: #ef4444; border-color: #ef4444; padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    <i class="fa-brands fa-youtube" style="margin-right: 6px;"></i> Watch Video
+                                </a>
+                                <a href="knowledgebase.html#module-07" class="btn btn-secondary" style="padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    Read Guide
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="tutorial-card">
+                        <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="tutorial-thumb" aria-label="Watch Bulk Broadcast tutorial on YouTube">
+                            <img src="assets/followup_optout_preview.png" alt="WhatsApp Broadcasts and Follow-up Sequences">
+                            <div class="tutorial-play-btn"><i class="fa-solid fa-play" style="margin-left: 3px;"></i></div>
+                        </a>
+                        <div class="tutorial-content">
+                            <div class="tutorial-duration"><i class="fa-regular fa-clock"></i> 6:45 MINS · BROADCASTS</div>
+                            <h3 class="tutorial-title">Launching a 10,000 Contact Bulk Broadcast Campaign</h3>
+                            <p class="tutorial-desc">Upload CSV contact lists, map dynamic variables like {{1}} Name and {{2}} Invoice URL, attach high-res video, and track real-time deliverability.</p>
+                            <div style="display: flex; gap: 8px; margin-top: auto;">
+                                <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="btn btn-primary" style="background: #ef4444; border-color: #ef4444; padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    <i class="fa-brands fa-youtube" style="margin-right: 6px;"></i> Watch Video
+                                </a>
+                                <a href="knowledgebase.html#module-13" class="btn btn-secondary" style="padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    Read Guide
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="tutorial-card">
+                        <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="tutorial-thumb" aria-label="Watch Flow Builder tutorial on YouTube">
+                            <img src="assets/flow_builder_preview.png" alt="Visual Chatbot Flow Builder Canvas">
+                            <div class="tutorial-play-btn"><i class="fa-solid fa-play" style="margin-left: 3px;"></i></div>
+                        </a>
+                        <div class="tutorial-content">
+                            <div class="tutorial-duration"><i class="fa-regular fa-clock"></i> 8:15 MINS · FLOW BUILDER</div>
+                            <h3 class="tutorial-title">Building Multi-Branch Chatbot Flows with Buttons</h3>
+                            <p class="tutorial-desc">Drag and drop trigger nodes, interactive quick reply buttons, list menus, and external API requests on the visual canvas.</p>
+                            <div style="display: flex; gap: 8px; margin-top: auto;">
+                                <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="btn btn-primary" style="background: #ef4444; border-color: #ef4444; padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    <i class="fa-brands fa-youtube" style="margin-right: 6px;"></i> Watch Video
+                                </a>
+                                <a href="knowledgebase.html#module-15" class="btn btn-secondary" style="padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    Read Guide
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 4 -->
+                    <div class="tutorial-card">
+                        <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="tutorial-thumb" aria-label="Watch AI Agents tutorial on YouTube">
+                            <img src="assets/ai_memory_scoring_preview.png" alt="AI Agent Vector Memory and Lead Scoring">
+                            <div class="tutorial-play-btn"><i class="fa-solid fa-play" style="margin-left: 3px;"></i></div>
+                        </a>
+                        <div class="tutorial-content">
+                            <div class="tutorial-duration"><i class="fa-regular fa-clock"></i> 5:50 MINS · AI AGENTS</div>
+                            <h3 class="tutorial-title">Training Autonomous AI on PDFs and Product Catalogs</h3>
+                            <p class="tutorial-desc">Upload your business documents into the vector store, set intent scoring thresholds, and test in the real-time AI Playground.</p>
+                            <div style="display: flex; gap: 8px; margin-top: auto;">
+                                <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="btn btn-primary" style="background: #ef4444; border-color: #ef4444; padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    <i class="fa-brands fa-youtube" style="margin-right: 6px;"></i> Watch Video
+                                </a>
+                                <a href="knowledgebase.html#module-16" class="btn btn-secondary" style="padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    Read Guide
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div class="tutorial-card">
+                        <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="tutorial-thumb" aria-label="Watch Shared Inbox tutorial on YouTube">
+                            <img src="assets/inbox_preview.png" alt="Multi-Agent Shared Team Inbox">
+                            <div class="tutorial-play-btn"><i class="fa-solid fa-play" style="margin-left: 3px;"></i></div>
+                        </a>
+                        <div class="tutorial-content">
+                            <div class="tutorial-duration"><i class="fa-regular fa-clock"></i> 4:10 MINS · TEAM INBOX</div>
+                            <h3 class="tutorial-title">Managing Multi-Agent Support with Shared Inbox</h3>
+                            <p class="tutorial-desc">Assign incoming chats via round-robin, use canned slash shortcuts, and collaborate with private internal team notes.</p>
+                            <div style="display: flex; gap: 8px; margin-top: auto;">
+                                <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="btn btn-primary" style="background: #ef4444; border-color: #ef4444; padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    <i class="fa-brands fa-youtube" style="margin-right: 6px;"></i> Watch Video
+                                </a>
+                                <a href="shared-inbox.html" class="btn btn-secondary" style="padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    Shared Inbox
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 6 -->
+                    <div class="tutorial-card">
+                        <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="tutorial-thumb" aria-label="Watch E-commerce Integrations tutorial on YouTube">
+                            <img src="assets/dashboard_preview.png" alt="CRM Analytics and Webhook Integrations">
+                            <div class="tutorial-play-btn"><i class="fa-solid fa-play" style="margin-left: 3px;"></i></div>
+                        </a>
+                        <div class="tutorial-content">
+                            <div class="tutorial-duration"><i class="fa-regular fa-clock"></i> 7:30 MINS · INTEGRATIONS</div>
+                            <h3 class="tutorial-title">Connecting Shopify &amp; WooCommerce for COD &amp; Carts</h3>
+                            <p class="tutorial-desc">Connect webhooks to automatically trigger abandoned cart recovery messages and order tracking updates directly into WhatsApp.</p>
+                            <div style="display: flex; gap: 8px; margin-top: auto;">
+                                <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" class="btn btn-primary" style="background: #ef4444; border-color: #ef4444; padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    <i class="fa-brands fa-youtube" style="margin-right: 6px;"></i> Watch Video
+                                </a>
+                                <a href="knowledgebase.html#module-19" class="btn btn-secondary" style="padding: 9px 14px; font-size: 0.82rem; flex: 1; justify-content: center;">
+                                    Read Guide
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand"><img src="assets/logo.png" alt="Ai Botflow" width="26" height="26"><span class="brand-name">Ai Botflow CRM</span></div>
+                    <p class="footer-desc">Interactive video tutorials and masterclasses for AI Botflow WhatsApp CRM.</p>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Platforms</h4>
+                    <ul class="footer-links">
+                        <li><a href="whatsapp-crm.html">WhatsApp CRM</a></li>
+                        <li><a href="shared-inbox.html">Shared Team Inbox</a></li>
+                        <li><a href="instagram-automation.html">Instagram Automation</a></li>
+                        <li><a href="facebook-messenger.html">Facebook Messenger</a></li>
+                        <li><a href="ai-agents.html">AI Agents Hub</a></li>
+                        <li><a href="pricing.html">Pricing Plans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="knowledgebase.html">Knowledgebase &amp; Docs</a></li>
+                        <li><a href=\"blog/index.html">Growth Blog</a></li>
+                        <li><a href="api-docs.html">Developer API Docs</a></li>
+                        <li><a href="tutorials.html">Video Tutorials</a></li>
+                        <li><a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" style="color: #ef4444; margin-right: 6px;"></i>YouTube: @AiBotFlow</a></li>
+                        <li><a href="partner.html">Partner Program</a></li>
+                        <li><a href="about.html">About AI Botflow</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Need Live Help?</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+                        Schedule a 1-on-1 guided onboarding session with our technical team on WhatsApp.
+                    </p>
+                    <a href="https://wa.me/919939800780?text=Hi%20AI%20Botflow%2C%20I%20would%20like%20a%20guided%20onboarding%20session" target="_blank" rel="noopener noreferrer" style="color: #4ade80; font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                        <i class="fa-brands fa-whatsapp"></i> Book 1-on-1 Session →
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom"><div>&copy; 2026 AI Botflow. All rights reserved.</div></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

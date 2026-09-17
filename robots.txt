@@ -1,0 +1,6 @@
+# robots.txt for https://aibotflow.in/
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://aibotflow.in/sitemap.xml

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnichannel Shared Team Inbox | Multi-Agent WhatsApp &amp; Social CRM | Ai Botflow</title>
+    <meta name="description" content="Collaborate on WhatsApp, Instagram &amp; Facebook Messenger with Ai Botflow's Shared Team Inbox. Auto-assignment, collision detection, private team notes, canned quick replies, and 24-hour Meta window tracking.">
+    <meta name="keywords" content="WhatsApp Shared Inbox, Team Inbox WhatsApp, Multi Agent WhatsApp CRM, WhatsApp Business Collaboration, Meta Cloud API Team Inbox, Ai Botflow Inbox">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aibotflow.in/shared-inbox.html">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aibotflow.in/shared-inbox.html">
+    <meta property="og:title" content="Omnichannel Shared Team Inbox | Ai Botflow CRM">
+    <meta property="og:description" content="Multi-agent WhatsApp &amp; social inbox. Zero chat collisions, instant slash quick replies, private internal notes, and official Meta Cloud API integration.">
+    <meta property="og:image" content="https://aibotflow.in/assets/inbox_preview.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .inbox-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 999px;
+            color: #818cf8;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .hero-screenshot-card {
+            background: #0d131f;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 40px rgba(99, 102, 241, 0.15);
+            position: relative;
+        }
+        .mac-browser-bar {
+            background: #090d15;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .mac-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .mac-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+        .browser-url-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 4px 16px;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .inbox-hotspots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 36px;
+        }
+        .inbox-hotspot {
+            background: rgba(18, 26, 43, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.25s ease;
+        }
+        .inbox-hotspot:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-3px);
+            background: rgba(24, 34, 56, 0.85);
+        }
+        .hotspot-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .hotspot-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .hotspot-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+        .hotspot-desc {
+            font-size: 0.86rem;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(14, 19, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 18px 22px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .comparison-table th {
+            background: rgba(18, 26, 43, 0.9);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #cbd5e1;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .workflow-step-card {
+            background: rgba(18, 26, 43, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+        }
+        .step-number {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(99, 102, 241, 0.4);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-ambient" aria-hidden="true">
+        <div class="ambient-glow-1"></div>
+        <div class="ambient-glow-2"></div>
+        <div class="ambient-grid"></div>
+    </div>
+
+    <!-- =========================================================================
+       ENTERPRISE NAVIGATION HEADER
+       ========================================================================= -->
+    <header class="om-header-wrap" id="siteHeader">
+        <!-- Top Announcement Ribbon (New Launch) -->
+                <div class="top-announcement-bar">
+            <div class="announcement-inner">
+                <span class="announcement-badge">
+                    <span class="badge-dot"></span> NEW LAUNCH
+                </span>
+                <span class="announcement-text">
+                    <span class="text-desktop">Build AI Agents on WhatsApp that qualify &amp; convert 24/7</span>
+                    <span class="text-mobile">Build 24/7 AI WhatsApp Agents</span>
+                </span>
+                <a href="ai-agents.html" class="announcement-link">
+                    <span class="link-text-desktop">Explore More</span>
+                    <span class="link-text-mobile">Explore</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="om-header-inner">
+            <!-- Brand Logo -->
+            <a href="index.html" class="om-brand" aria-label="Ai Botflow Home">
+                <img src="assets/logo.png" alt="Ai Botflow CRM" width="28" height="28">
+                <span class="om-brand-title">Ai Botflow <span class="om-brand-badge">CRM</span></span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="om-nav" aria-label="Main Navigation">
+                <!-- 1. Platforms Dropdown (Active) -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false" style="color: #ffffff; font-weight: 700;">
+                        <span>Platforms</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-wide">
+                        <div class="om-panel-header">Connected Channels</div>
+                        <a href="whatsapp-crm.html" class="om-panel-item">
+                            <div class="om-panel-icon" style="background:rgba(34,197,94,0.15); color:#22c55e;">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="om-panel-title">WhatsApp CRM</p>
+                                <p class="om-panel-desc">Official Meta Cloud API, chatbots, team inbox &amp; bulk broadcasts.</p>
+                            </div>
+                        </a>
+                        <a href="shared-inbox.html" class="om-panel-item" style="background: rgba(99, 102, 241, 0.1); border-radius: 8px;">
+                            <div class="om-panel-icon" style="background:rgba(99,102,241,0.2); color:#818cf8;">
+                                <i class="fa-solid fa-inbox"></i>
+                            </div>
+                            <div>
+                                <p class="om-panel-title">Shared Team Inbox <span style="font-size:0.68rem; padding: 2px 6px; border-radius:4px; background: rgba(99,102,241,0.25); color:#818cf8; margin-left: 4px;">Active</span></p>
+                                <p class="om-panel-desc">Multi-agent live chat, assignment rules, canned replies &amp; collision alert.</p>
+                            </div>
+                        </a>
+                        <a href="instagram-automation.html" class="om-panel-item">
+                            <div class="om-panel-icon" style="background:rgba(236,72,153,0.15); color:#ec4899;">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <p class="om-panel-title">Instagram Automation</p>
+                                <p class="om-panel-desc">Story mentions, Reels DM triggers &amp; comment-to-DM conversions.</p>
+                            </div>
+                        </a>
+                        <a href="facebook-messenger.html" class="om-panel-item">
+                            <div class="om-panel-icon" style="background:rgba(59,130,246,0.15); color:#3b82f6;">
+                                <i class="fa-brands fa-facebook-messenger"></i>
+                            </div>
+                            <div>
+                                <p class="om-panel-title">Facebook Messenger</p>
+                                <p class="om-panel-desc">Click-to-WhatsApp ads integration &amp; multi-agent routing.</p>
+                            </div>
+                        </a>
+                        <a href="whatsapp-crm.html" class="om-panel-footer">
+                            <span>View all multichannel features</span>
+                            <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. AI Agents Dropdown -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>AI Agents</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-agents">
+                        <div class="om-panel-header">Industries</div>
+                        <a href="ai-agents.html#ecommerce" class="om-sub-link">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>E-commerce</span>
+                        </a>
+                        <a href="ai-agents.html#realestate" class="om-sub-link">
+                            <i class="fa-solid fa-building"></i>
+                            <span>Real Estate</span>
+                        </a>
+                        <a href="ai-agents.html#healthcare" class="om-sub-link">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <span>Healthcare</span>
+                        </a>
+                        <a href="ai-agents.html#education" class="om-sub-link">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Education</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Resources Dropdown -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Resources</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-resource">
+                        <a href="knowledgebase.html" class="om-sub-link">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Knowledgebase</span>
+                        </a>
+                        <a href=\"blog/index.html" class="om-sub-link">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <span>Blog</span>
+                        </a>
+                        <a href="api-docs.html" class="om-sub-link">
+                            <i class="fa-solid fa-code"></i>
+                            <span>API Docs</span>
+                        </a>
+                        <a href="tutorials.html" class="om-sub-link">
+                            <i class="fa-solid fa-circle-play"></i>
+                            <span>Tutorials</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Pricing Link -->
+                <a href="pricing.html" class="om-nav-link">Pricing</a>
+
+                <!-- 5. Partner Dropdown -->
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Partner</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-partner">
+                        <a href="partner.html#agency" class="om-sub-link">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span>Agency Program (40% Margin)</span>
+                        </a>
+                        <a href="partner.html#affiliate" class="om-sub-link">
+                            <i class="fa-solid fa-handshake"></i>
+                            <span>Affiliate Program (30% Lifetime)</span>
+                        </a>
+                        <a href="about.html" class="om-sub-link">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>About Company</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Contact Link -->
+                <a href="contact.html" class="om-nav-link">Contact</a>
+            </nav>
+
+            <!-- Standard Header Actions -->
+            <div class="om-header-actions">
+                <a href="https://dash.aibotflow.in/login" target="_blank" rel="noopener noreferrer" class="om-btn-login om-header-login">
+                    <i class="fa-solid fa-arrow-right-to-bracket" style="font-size:12px; color:#94a3b8;"></i>
+                    <span>Log in</span>
+                </a>
+                <a href="https://dash.aibotflow.in/signup?plan=growth" target="_blank" rel="noopener noreferrer" class="om-btn-primary om-btn-desktop-only">
+                    <span>Get Started Free</span>
+                    <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+                </a>
+                <button type="button" class="om-burger" id="omBurgerBtn" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars" id="omBurgerIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="omMobileDrawer" aria-hidden="true">
+            <div class="mob-links-list">
+                <a href="index.html" class="om-mob-link"><span><i class="fa-solid fa-house" style="margin-right:10px;"></i>Home</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="shared-inbox.html" class="om-mob-link" style="color:#ffffff; font-weight:700;"><span><i class="fa-solid fa-inbox" style="margin-right:10px; color:#818cf8;"></i>Shared Team Inbox</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="whatsapp-crm.html" class="om-mob-link"><span><i class="fa-brands fa-whatsapp" style="margin-right:10px; color:#22c55e;"></i>WhatsApp CRM</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="pricing.html" class="om-mob-link"><span><i class="fa-solid fa-tags" style="margin-right:10px;"></i>Pricing &amp; Plans</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="knowledgebase.html" class="om-mob-link"><span><i class="fa-solid fa-book-open" style="margin-right:10px; color:#60a5fa;"></i>Knowledgebase Docs</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="contact.html" class="om-mob-link"><span><i class="fa-solid fa-headset" style="margin-right:10px;"></i>Contact Support</span><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- =========================================================================
+           HERO SECTION WITH INBOX SCREENSHOT
+           ========================================================================= -->
+        <section class="section" style="padding-top: 50px; padding-bottom: 60px; position: relative; overflow: hidden;">
+            <div class="glow-sphere" style="top: 8%; left: 50%; transform: translateX(-50%); background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%); width: 700px; height: 500px;" aria-hidden="true"></div>
+            
+            <div class="container" style="position: relative; z-index: 2;">
+                <div style="text-align: center; max-width: 860px; margin: 0 auto 50px;">
+                    <div class="inbox-hero-badge">
+                        <i class="fa-solid fa-users-viewfinder"></i> Omnichannel Multi-Agent Shared Team Inbox
+                    </div>
+                    <h1 class="section-title" style="font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.15; margin-bottom: 22px;">
+                        One Collaborative Inbox For Your Whole Sales &amp; Support Team
+                    </h1>
+                    <p class="section-subtitle" style="font-size: 1.15rem; max-width: 740px; margin: 0 auto 32px; color: #cbd5e1;">
+                        Eliminate messy WhatsApp Web QR disconnects and multiple phone chaos. Triage WhatsApp, Instagram DMs &amp; Facebook Messenger in one unified dashboard with auto-routing, private team notes, zero collision, and instant slash quick replies.
+                    </p>
+
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px;">
+                        <a href="pricing.html" class="btn-cta" style="padding: 14px 32px; font-size: 1rem;">
+                            Start 7-Day Free Trial <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                        <a href="contact.html" class="btn-ghost" style="padding: 14px 28px; font-size: 1rem;">
+                            <i class="fa-solid fa-calendar-check" style="margin-right: 8px; color: #818cf8;"></i> Schedule Live Demo
+                        </a>
+                    </div>
+
+                    <!-- Trust Bar -->
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 24px; font-size: 0.86rem; color: #94a3b8; flex-wrap: wrap;">
+                        <span style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check" style="color: #22c55e;"></i> Official Meta Cloud API</span>
+                        <span style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check" style="color: #22c55e;"></i> Zero Chat Collision</span>
+                        <span style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check" style="color: #22c55e;"></i> Multi-Agent Round Robin</span>
+                        <span style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check" style="color: #22c55e;"></i> 24h Meta Window Tracking</span>
+                    </div>
+                </div>
+
+                <!-- Real Platform Screenshot Frame -->
+                <div class="hero-screenshot-card">
+                    <div class="mac-browser-bar">
+                        <div class="mac-dots">
+                            <span class="mac-dot dot-red"></span>
+                            <span class="mac-dot dot-yellow"></span>
+                            <span class="mac-dot dot-green"></span>
+                        </div>
+                        <div class="browser-url-pill">
+                            <i class="fa-solid fa-lock" style="font-size: 10px; color: #22c55e;"></i>
+                            https://dash.aibotflow.in/inbox &bull; Team Live Chat &bull; 100% Real-Time
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; font-size: 0.78rem;">
+                            <span style="display: flex; align-items: center; gap: 6px; color: #22c55e; font-weight: 600;">
+                                <span class="status-dot"></span> 8 Agents Online
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Real High-Res Asset Image -->
+                    <img src="assets/inbox_preview.png" alt="Ai Botflow WhatsApp CRM Multi-Agent Shared Team Inbox Dashboard Preview" width="1024" height="657" style="width: 100%; height: auto; display: block; filter: brightness(1.02);">
+                </div>
+
+                <!-- Inbox Feature Hotspots -->
+                <div class="inbox-hotspots-grid">
+                    <div class="inbox-hotspot">
+                        <div class="hotspot-header">
+                            <div class="hotspot-icon" style="background: rgba(59,130,246,0.15); color: #60a5fa;">
+                                <i class="fa-solid fa-filter"></i>
+                            </div>
+                            <h3 class="hotspot-title">Smart Filter Tabs</h3>
+                        </div>
+                        <p class="hotspot-desc">Instantly filter queues across <strong>All</strong>, <strong>Mine</strong> (assigned to you), <strong>Unassigned</strong> (new inbound leads), and <strong>Unread</strong> conversations.</p>
+                    </div>
+
+                    <div class="inbox-hotspot">
+                        <div class="hotspot-header">
+                            <div class="hotspot-icon" style="background: rgba(234,179,8,0.15); color: #facc15;">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="hotspot-title">Collision Prevention</h3>
+                        </div>
+                        <p class="hotspot-desc">Visual banner alerts your team when another agent is actively viewing or typing a reply, preventing awkward duplicate responses.</p>
+                    </div>
+
+                    <div class="inbox-hotspot">
+                        <div class="hotspot-header">
+                            <div class="hotspot-icon" style="background: rgba(168,85,247,0.15); color: #c084fc;">
+                                <i class="fa-solid fa-tags"></i>
+                            </div>
+                            <h3 class="hotspot-title">In-Chat "+ Tag" Bar</h3>
+                        </div>
+                        <p class="hotspot-desc">Add or remove custom customer tags (<span style="color:#60a5fa;">VIP</span>, <span style="color:#22c55e;">Payment Pending</span>, <span style="color:#f59e0b;">Follow-up</span>) with one click without leaving the conversation.</p>
+                    </div>
+
+                    <div class="inbox-hotspot">
+                        <div class="hotspot-header">
+                            <div class="hotspot-icon" style="background: rgba(34,197,94,0.15); color: #4ade80;">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="hotspot-title">Slash (/) Quick Replies</h3>
+                        </div>
+                        <p class="hotspot-desc">Press <code>/</code> to trigger canned responses, PDFs, brochures, payment links, and approved Meta templates in less than two seconds.</p>
+                    </div>
+
+                    <div class="inbox-hotspot">
+                        <div class="hotspot-header">
+                            <div class="hotspot-icon" style="background: rgba(249,115,22,0.15); color: #fb923c;">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <h3 class="hotspot-title">24h Meta Window Timer</h3>
+                        </div>
+                        <p class="hotspot-desc">Live countdown monitor displays customer messaging window. If closed, one-click template launcher lets you re-open conversations legally.</p>
+                    </div>
+
+                    <div class="inbox-hotspot">
+                        <div class="hotspot-header">
+                            <div class="hotspot-icon" style="background: rgba(236,72,153,0.15); color: #f472b6;">
+                                <i class="fa-solid fa-note-sticky"></i>
+                            </div>
+                            <h3 class="hotspot-title">Private Internal Notes</h3>
+                        </div>
+                        <p class="hotspot-desc">Switch from customer reply to yellow internal note mode to tag teammates (@Rahul) and coordinate handoffs invisibly to the customer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+           COMPARISON: AI BOTFLOW SHARED INBOX VS WHATSAPP WEB
+           ========================================================================= -->
+        <section class="section" style="background: rgba(14, 19, 32, 0.4); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
+                    <span class="pill-badge pill-blue" style="margin-bottom: 12px;">The Modern Standard</span>
+                    <h2 class="section-title">Why Businesses Switch From WhatsApp Web &amp; Physical Phones</h2>
+                    <p class="section-subtitle">Managing customer chats on handheld devices or fragile QR web sessions costs deals and leaks customer contacts. Here is the difference.</p>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">Feature Capability</th>
+                                <th style="width: 37.5%; color: #ef4444;"><i class="fa-solid fa-circle-xmark"></i> Traditional WhatsApp Web</th>
+                                <th style="width: 37.5%; color: #22c55e;"><i class="fa-solid fa-circle-check"></i> Ai Botflow Shared Team Inbox</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Team Capacity</strong></td>
+                                <td style="color: #94a3b8;">Max 4 linked devices, frequently gets disconnected or logged out randomly.</td>
+                                <td style="color: #cbd5e1;"><strong style="color: #22c55e;">Unlimited Agents</strong> on 1 official WhatsApp number with cloud uptime.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chat Collisions</strong></td>
+                                <td style="color: #94a3b8;">Multiple agents message the same customer simultaneously with conflicting prices.</td>
+                                <td style="color: #cbd5e1;"><strong style="color: #22c55e;">Active Collision Guard:</strong> Real-time alerts show who is viewing or replying.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lead Assignment</strong></td>
+                                <td style="color: #94a3b8;">Manual chaos. Chats get missed or neglected in personal mobile app threads.</td>
+                                <td style="color: #cbd5e1;"><strong style="color: #22c55e;">Automated Round-Robin:</strong> Route chats by agent skills, shifts, or workload.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Security</strong></td>
+                                <td style="color: #94a3b8;">High risk. Staff can export customer contacts or delete chat records from phone.</td>
+                                <td style="color: #cbd5e1;"><strong style="color: #22c55e;">Role-Based RBAC:</strong> Mask phone numbers, restrict export, permanent audit trail.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Internal Collaboration</strong></td>
+                                <td style="color: #94a3b8;">Requires switching to external Slack or WhatsApp groups: "Who took this?".</td>
+                                <td style="color: #cbd5e1;"><strong style="color: #22c55e;">Private Team Notes:</strong> Write internal notes directly inside the chat timeline.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Response Time Tracking</strong></td>
+                                <td style="color: #94a3b8;">Zero visibility into agent performance, first response speed, or resolutions.</td>
+                                <td style="color: #cbd5e1;"><strong style="color: #22c55e;">Real-Time KPI Analytics:</strong> Track FRT, Resolution times, and CSAT ratings.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Omnichannel Support</strong></td>
+                                <td style="color: #94a3b8;">WhatsApp only. Instagram DMs and Facebook messages live in separate apps.</td>
+                                <td style="color: #cbd5e1;"><strong style="color: #22c55e;">All-in-One:</strong> WhatsApp, Instagram, and Messenger in one single screen.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+           DETAILED CAPABILITIES
+           ========================================================================= -->
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; max-width: 760px; margin: 0 auto 60px;">
+                    <span class="pill-badge pill-green" style="margin-bottom: 12px;">Built For High-Volume Conversion</span>
+                    <h2 class="section-title">Designed For Velocity, Clarity, and Team Alignment</h2>
+                    <p class="section-subtitle">Equip your sales closers and support specialists with tools engineered for sub-minute resolutions.</p>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: rgba(99,102,241,0.15); color: #818cf8;">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h3 class="feature-title">Smart Round-Robin Auto Routing</h3>
+                        <p class="feature-desc">Automatically assign incoming inquiries to active sales reps based on shift schedules, language preference, product category, or round-robin queue.</p>
+                        <ul class="feature-list" style="margin-top: 16px;">
+                            <li><i class="fa-solid fa-check"></i> Automatic unassigned queue distribution</li>
+                            <li><i class="fa-solid fa-check"></i> Dynamic workload balancing across agents</li>
+                            <li><i class="fa-solid fa-check"></i> 1-click warm reassignments with notes</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: rgba(34,197,94,0.15); color: #22c55e;">
+                            <i class="fa-solid fa-comment-slash"></i>
+                        </div>
+                        <h3 class="feature-title">Slash Canned Responses (/)</h3>
+                        <p class="feature-desc">Save hours of repetitive typing. Press <code>/</code> in the composer to access pre-approved answers, pricing tables, bank accounts, and media brochures instantly.</p>
+                        <ul class="feature-list" style="margin-top: 16px;">
+                            <li><i class="fa-solid fa-check"></i> Shared company shortcuts + personal snippets</li>
+                            <li><i class="fa-solid fa-check"></i> Dynamic variables like <code>{{customer_name}}</code></li>
+                            <li><i class="fa-solid fa-check"></i> Attach brochures &amp; payment QR codes with 1 click</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: rgba(245,158,11,0.15); color: #f59e0b;">
+                            <i class="fa-solid fa-user-lock"></i>
+                        </div>
+                        <h3 class="feature-title">Granular Permissions &amp; Data Masking</h3>
+                        <p class="feature-desc">Protect your customer database from theft. Enforce role-based controls (Owner, Admin, Manager, Agent) so representatives only see what they need to see.</p>
+                        <ul class="feature-list" style="margin-top: 16px;">
+                            <li><i class="fa-solid fa-check"></i> Mask phone numbers for external contractors</li>
+                            <li><i class="fa-solid fa-check"></i> Disable contact export permissions for agents</li>
+                            <li><i class="fa-solid fa-check"></i> Complete audit logs of every message sent</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: rgba(236,72,153,0.15); color: #ec4899;">
+                            <i class="fa-solid fa-photo-film"></i>
+                        </div>
+                        <h3 class="feature-title">Full Media &amp; Voice Notes Support</h3>
+                        <p class="feature-desc">Send and receive high-resolution photos, PDF quotes, brochures, and audio voice notes directly inside the conversation with fast CDN delivery.</p>
+                        <ul class="feature-list" style="margin-top: 16px;">
+                            <li><i class="fa-solid fa-check"></i> In-browser audio player for customer voice notes</li>
+                            <li><i class="fa-solid fa-check"></i> Instant PDF viewer for invoices and proposals</li>
+                            <li><i class="fa-solid fa-check"></i> Drag-and-drop file upload with preview</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: rgba(59,130,246,0.15); color: #3b82f6;">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">Agent KPI &amp; SLA Metrics</h3>
+                        <p class="feature-desc">Gain total visibility into team output. Track First Response Time (FRT), Average Handle Time (AHT), conversations closed, and customer satisfaction scores.</p>
+                        <ul class="feature-list" style="margin-top: 16px;">
+                            <li><i class="fa-solid fa-check"></i> Live leaderboard of agent activity and volume</li>
+                            <li><i class="fa-solid fa-check"></i> Automated SLA breach alerts for VIP leads</li>
+                            <li><i class="fa-solid fa-check"></i> Post-chat 1-click CSAT survey rating</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: rgba(14,165,233,0.15); color: #38bdf8;">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="feature-title">Seamless AI &amp; Human Co-Pilot</h3>
+                        <p class="feature-desc">Let AI agents handle Tier-1 FAQs, qualify leads, and collect requirements 24/7. When human judgment is required, hand over cleanly without losing conversation history.</p>
+                        <ul class="feature-list" style="margin-top: 16px;">
+                            <li><i class="fa-solid fa-check"></i> Instant AI to Human escalation trigger</li>
+                            <li><i class="fa-solid fa-check"></i> AI summarizes long chat history for the human rep</li>
+                            <li><i class="fa-solid fa-check"></i> Human agent can re-activate AI bot anytime</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+           STEP BY STEP WORKFLOW
+           ========================================================================= -->
+        <section class="section" style="background: rgba(14, 19, 32, 0.4); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div style="text-align: center; max-width: 720px; margin: 0 auto 50px;">
+                    <span class="pill-badge pill-blue" style="margin-bottom: 12px;">Simple 4-Step Lifecycle</span>
+                    <h2 class="section-title">How Conversations Flow Through The Shared Inbox</h2>
+                    <p class="section-subtitle">From inbound message to happy customer resolution in under 3 minutes.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+                    <div class="workflow-step-card">
+                        <div class="step-number">01</div>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Inbound Arrival</h3>
+                        <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">Customer messages your verified WhatsApp number, Instagram profile, or Facebook page. Message instantly hits the Shared Inbox in &lt;100ms.</p>
+                    </div>
+
+                    <div class="workflow-step-card">
+                        <div class="step-number">02</div>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Smart Auto-Assign</h3>
+                        <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">AI bot pre-qualifies the lead and automatically routes the conversation to the best available human agent according to skills or shift rules.</p>
+                    </div>
+
+                    <div class="workflow-step-card">
+                        <div class="step-number">03</div>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Team Collaboration</h3>
+                        <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">Agent uses <code>/</code> quick replies, adds customer tags (<span style="color:#60a5fa;">Hot Lead</span>), and tags senior teammates in private yellow internal notes.</p>
+                    </div>
+
+                    <div class="workflow-step-card">
+                        <div class="step-number">04</div>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Resolution &amp; CSAT</h3>
+                        <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">Agent marks the ticket resolved. An automated WhatsApp rating prompt fires to collect customer feedback, and metrics update in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+           FAQ SECTION
+           ========================================================================= -->
+        <section class="section">
+            <div class="container" style="max-width: 860px;">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <span class="pill-badge pill-blue" style="margin-bottom: 12px;">Frequently Asked Questions</span>
+                    <h2 class="section-title">Everything You Need To Know About Shared Inbox</h2>
+                    <p class="section-subtitle">Common queries from sales teams, agencies, and customer support managers.</p>
+                </div>
+
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>How many agents can use the Shared Inbox at the same time?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>There is no technical limit! Depending on your plan (Starter comes with 1 agent, Growth with 3 agents, Enterprise with 5 agents, and add-on seats at ₹299/agent/month), dozens or hundreds of representatives can be logged into the same official WhatsApp Business number simultaneously without disconnecting.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>What prevents two agents from replying to the same customer at once?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Ai Botflow includes active <strong>Real-Time Collision Detection</strong>. As soon as an agent opens a conversation or starts typing in the message box, an alert banner shows up on all other team members' screens indicating that agent's name. This eliminates duplicate or conflicting replies.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>What happens when the 24-hour WhatsApp messaging window expires?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Meta enforces a strict 24-hour service window for free-form customer replies. Inside Ai Botflow's Shared Inbox, a live timer indicates remaining window time. If the window has expired, the free-form text box automatically shows an alert and opens our 1-click <strong>Approved Template Message Picker</strong>, allowing agents to re-engage the customer in full compliance with WhatsApp policy.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Can agents see private notes or do customers see them?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Private internal notes are highlighted with a distinct amber/yellow background and are 100% hidden from the customer. They are only visible to logged-in team members inside your CRM, making them ideal for manager consultations, escalation briefs, or handover notes.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Can I use the Shared Inbox on my smartphone?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! The Ai Botflow Shared Inbox is fully responsive and optimized for mobile browsers, tablets, and desktop workstations, allowing field reps and managers to respond to critical inquiries on the go.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+           CALL TO ACTION BANNER
+           ========================================================================= -->
+        <section class="section" style="padding: 80px 0;">
+            <div class="container">
+                <div style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 20px; padding: 50px 30px; text-align: center; position: relative; overflow: hidden;">
+                    <div style="position: relative; z-index: 2; max-width: 680px; margin: 0 auto;">
+                        <span class="pill-badge pill-blue" style="margin-bottom: 16px;">Fast 5-Minute Setup</span>
+                        <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; color: #fff; margin-bottom: 16px;">
+                            Supercharge Your Team's WhatsApp Response Speed
+                        </h2>
+                        <p style="font-size: 1.05rem; color: #cbd5e1; margin-bottom: 30px; line-height: 1.6;">
+                            Connect your WhatsApp Business API number in minutes. No credit card required to test the Shared Inbox with full features.
+                        </p>
+                        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                            <a href="pricing.html" class="btn-cta" style="padding: 15px 34px; font-size: 1rem;">
+                                Start Free Trial Now <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                            </a>
+                            <a href="https://wa.me/919939800780?text=Hello%20Ai%20Botflow,%20I%20want%20to%20see%20a%20live%20demo%20of%20the%20Shared%20Team%20Inbox." class="btn-ghost" style="padding: 15px 28px; font-size: 1rem;" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-whatsapp" style="color: #22c55e; margin-right: 8px;"></i> Chat With Specialist
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================================================
+       ENTERPRISE FOOTER
+       ========================================================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Contact -->
+                <div class="footer-col brand-col">
+                    <div class="footer-brand">
+                        <img src="assets/logo.png" alt="Ai Botflow CRM Logo" width="26" height="26">
+                        <span class="brand-name">Ai Botflow <span class="brand-sub">CRM</span></span>
+                    </div>
+                    <p class="footer-desc">
+                        Official Meta Cloud API Business Solution Provider. Enterprise multi-agent shared inbox, automated WhatsApp broadcast engine, and no-code AI sales bots for growth brands.
+                    </p>
+                    <div class="footer-contact-info">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone" style="color: #60a5fa;"></i>
+                            <span>Support: +91 9939800780</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope" style="color: #60a5fa;"></i>
+                            <span>Email: support@aibotflow.in</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-shield-check" style="color: #22c55e;"></i>
+                            <span>Meta Cloud API Verified Partner &bull; 0% Markup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Platforms -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Connected Channels</h4>
+                    <ul class="footer-links">
+                        <li><a href="whatsapp-crm.html"><i class="fa-brands fa-whatsapp" style="color: #22c55e; margin-right: 6px;"></i> WhatsApp CRM</a></li>
+                        <li><a href="shared-inbox.html" style="color: #818cf8; font-weight: 600;"><i class="fa-solid fa-inbox" style="color: #818cf8; margin-right: 6px;"></i> Shared Team Inbox</a></li>
+                        <li><a href="instagram-automation.html"><i class="fa-brands fa-instagram" style="color: #ec4899; margin-right: 6px;"></i> Instagram Automation</a></li>
+                        <li><a href="facebook-messenger.html"><i class="fa-brands fa-facebook-messenger" style="color: #3b82f6; margin-right: 6px;"></i> Facebook Messenger</a></li>
+                        <li><a href="pricing.html">Plans &amp; Transparent Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: AI Solutions -->
+                <div class="footer-col">
+                    <h4 class="footer-title">AI Agents</h4>
+                    <ul class="footer-links">
+                        <li><a href="ai-agents.html#ecommerce">E-commerce Sales Bot</a></li>
+                        <li><a href="ai-agents.html#realestate">Real Estate Lead Qualifier</a></li>
+                        <li><a href="ai-agents.html#healthcare">Clinic Appointment Agent</a></li>
+                        <li><a href="ai-agents.html#education">Education Admission Agent</a></li>
+                        <li><a href="ai-agents.html#scoring">Dynamic Lead Scoring (1-100)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Resources & Partner -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Resources &amp; Trust</h4>
+                    <ul class="footer-links">
+                        <li><a href="knowledgebase.html">Documentation Knowledge Base</a></li>
+                        <li><a href=\"blog/index.html">WhatsApp Growth Playbook</a></li>
+                        <li><a href="api-docs.html">Developer REST API Reference</a></li>
+                        <li><a href="tutorials.html">Setup &amp; Video Tutorials</a></li>
+                        <li><a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" style="color: #ef4444; margin-right: 6px;"></i>YouTube: @AiBotFlow</a></li>
+                        <li><a href="partner.html">Agency &amp; Affiliate Program</a></li>
+                        <li><a href="about.html">About Ai Botflow CRM</a></li>
+                        <li><a href="contact.html">Contact Enterprise Sales</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Subfooter -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ai Botflow CRM. All rights reserved. Registered Meta Cloud API Tech Partner.</p>
+                <div class="footer-badges">
+                    <span class="badge"><i class="fa-solid fa-lock"></i> 256-Bit SSL Encrypted</span>
+                    <span class="badge"><i class="fa-solid fa-shield-halved"></i> GDPR &amp; DPDP Compliant</span>
+                    <span class="badge"><i class="fa-brands fa-meta"></i> Meta Cloud API Verified</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

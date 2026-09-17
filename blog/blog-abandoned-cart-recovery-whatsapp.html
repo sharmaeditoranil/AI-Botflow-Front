@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovering 42% Abandoned Carts on Shopify Using Automated WhatsApp Sequences | Ai Botflow</title>
+    <meta name="description" content="Step-by-step tutorial on recovering abandoned checkouts on Shopify and WooCommerce using automated Meta WhatsApp API sequences. Includes webhook triggers, 3-step timing blueprint, and dynamic checkout links.">
+    <meta name="keywords" content="Shopify abandoned cart WhatsApp, WhatsApp cart recovery sequence, WooCommerce WhatsApp abandoned checkout, D2C WhatsApp recovery ROI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aibotflow.in/blog/blog-abandoned-cart-recovery-whatsapp.html">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aibotflow.in/blog/blog-abandoned-cart-recovery-whatsapp.html">
+    <meta property="og:title" content="Recovering 42% Abandoned Carts on Shopify Using WhatsApp | Ai Botflow">
+    <meta property="og:description" content="Learn how Indian D2C brands recover lakhs in lost revenue using automated 3-step WhatsApp cart recovery flows.">
+    <meta property="og:image" content="https://aibotflow.in/assets/dashboard_preview.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="bg-ambient" aria-hidden="true">
+        <div class="ambient-glow-1"></div>
+        <div class="ambient-glow-2"></div>
+        <div class="ambient-grid"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="om-header-wrap" id="siteHeader">
+        <!-- Top Announcement Ribbon (New Launch) -->
+                <div class="top-announcement-bar">
+            <div class="announcement-inner">
+                <span class="announcement-badge">
+                    <span class="badge-dot"></span> NEW LAUNCH
+                </span>
+                <span class="announcement-text">
+                    <span class="text-desktop">Build AI Agents on WhatsApp that qualify &amp; convert 24/7</span>
+                    <span class="text-mobile">Build 24/7 AI WhatsApp Agents</span>
+                </span>
+                <a href="../ai-agents.html" class="announcement-link">
+                    <span class="link-text-desktop">Explore More</span>
+                    <span class="link-text-mobile">Explore</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="om-header-inner">
+            <a href="../index.html" class="om-brand" aria-label="Ai Botflow Home">
+                <img src="../assets/logo.png" alt="Ai Botflow CRM" width="28" height="28">
+                <span class="om-brand-title">Ai Botflow <span class="om-brand-badge">CRM</span></span>
+            </a>
+
+            <nav class="om-nav" aria-label="Main Navigation">
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Platforms</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-wide">
+                        <div class="om-panel-header">Connected Channels</div>
+                        <a href="../whatsapp-crm.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(34,197,94,0.15); color:#22c55e;"><i class="fa-brands fa-whatsapp"></i></div><div><p class="om-panel-title">WhatsApp CRM</p><p class="om-panel-desc">Official Meta Cloud API, chatbots, inbox &amp; broadcasts.</p></div></a>
+                        <a href="../shared-inbox.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(99,102,241,0.15); color:#818cf8;"><i class="fa-solid fa-inbox"></i></div><div><p class="om-panel-title">Shared Team Inbox</p><p class="om-panel-desc">Multi-agent live chat, collision alerts &amp; notes.</p></div></a>
+                        <a href="../instagram-automation.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(236,72,153,0.15); color:#ec4899;"><i class="fa-brands fa-instagram"></i></div><div><p class="om-panel-title">Instagram Automation</p><p class="om-panel-desc">Story mentions, Reels triggers &amp; comment-to-DM.</p></div></a>
+                        <a href="../facebook-messenger.html" class="om-panel-item"><div class="om-panel-icon" style="background:rgba(59,130,246,0.15); color:#3b82f6;"><i class="fa-brands fa-facebook-messenger"></i></div><div><p class="om-panel-title">Facebook Messenger</p><p class="om-panel-desc">Click-to-WhatsApp ads integration &amp; routing.</p></div></a>
+                    </div>
+                </div>
+
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>AI Agents</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-agents">
+                        <div class="om-panel-header">Industries</div>
+                        <a href="../ai-agents.html#ecommerce" class="om-sub-link"><i class="fa-solid fa-cart-shopping"></i><span>E-commerce</span></a>
+                        <a href="../ai-agents.html#realestate" class="om-sub-link"><i class="fa-solid fa-building"></i><span>Real Estate</span></a>
+                        <a href="../ai-agents.html#healthcare" class="om-sub-link"><i class="fa-solid fa-heart-pulse"></i><span>Healthcare</span></a>
+                        <a href="../ai-agents.html#education" class="om-sub-link"><i class="fa-solid fa-graduation-cap"></i><span>Education</span></a>
+                    </div>
+                </div>
+
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false" style="color: #ffffff; font-weight: 700;">
+                        <span>Resources</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-resource">
+                        <a href="../knowledgebase.html" class="om-sub-link"><i class="fa-solid fa-book-open"></i><span>Knowledgebase</span></a>
+                        <a href="index.html" class="om-sub-link" style="color: #60a5fa; font-weight: 700;"><i class="fa-solid fa-newspaper"></i><span>Blog</span></a>
+                        <a href="../api-docs.html" class="om-sub-link"><i class="fa-solid fa-code"></i><span>API Documentation</span></a>
+                        <a href="../tutorials.html" class="om-sub-link"><i class="fa-solid fa-circle-play"></i><span>Video Tutorials</span></a>
+                        <a href="../about.html" class="om-sub-link"><i class="fa-solid fa-building"></i><span>About Us</span></a>
+                    </div>
+                </div>
+
+                <a href="../pricing.html" class="om-nav-link">Pricing</a>
+
+                <div class="om-drop">
+                    <button type="button" class="om-drop-trigger" aria-expanded="false">
+                        <span>Partner</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="om-panel om-panel-partner">
+                        <a href="../partner.html#reseller" class="om-sub-link"><i class="fa-solid fa-handshake"></i><span>Reseller Program</span></a>
+                        <a href="../partner.html#affiliate" class="om-sub-link"><i class="fa-solid fa-users"></i><span>Affiliate Program</span></a>
+                    </div>
+                </div>
+
+                <a href="../contact.html" class="om-nav-link">Contact</a>
+            </nav>
+
+            <div class="om-header-actions">
+                <a href="https://dash.aibotflow.in/login" target="_blank" rel="noopener noreferrer" class="om-btn-login om-header-login">
+                    <i class="fa-solid fa-arrow-right-to-bracket" style="font-size:12px; color:#94a3b8;"></i>
+                    <span>Log in</span>
+                </a>
+                <a href="https://dash.aibotflow.in/signup?plan=growth" target="_blank" rel="noopener noreferrer" class="om-btn-primary om-btn-desktop-only">
+                    <span>Get Started Free</span>
+                    <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+                </a>
+                <button type="button" class="om-burger" id="omBurgerBtn" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars" id="omBurgerIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="omMobileDrawer" aria-hidden="true">
+            <div class="mob-links-list">
+                <a href="../index.html" class="om-mob-link"><span><i class="fa-solid fa-house" style="margin-right:10px;"></i>Home</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="index.html" class="om-mob-link" style="color:#ffffff; font-weight:700;"><span><i class="fa-solid fa-newspaper" style="margin-right:10px; color:#60a5fa;"></i>Blog &amp; Playbooks</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="../whatsapp-crm.html" class="om-mob-link"><span><i class="fa-brands fa-whatsapp" style="margin-right:10px; color:#22c55e;"></i>WhatsApp CRM</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="../pricing.html" class="om-mob-link"><span><i class="fa-solid fa-tags" style="margin-right:10px;"></i>Pricing &amp; Plans</span><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="../contact.html" class="om-mob-link"><span><i class="fa-solid fa-headset" style="margin-right:10px;"></i>Contact Support</span><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Header Hero -->
+        <section class="section" style="padding-top: 48px; padding-bottom: 20px;">
+            <div class="container">
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #94a3b8; margin-bottom: 20px;">
+                    <a href="../index.html" style="color: #94a3b8; text-decoration: none;"><i class="fa-solid fa-house" style="margin-right: 4px;"></i>Home</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.68rem; color: #475569;"></i>
+                    <a href="index.html" style="color: #94a3b8; text-decoration: none;">Blog</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.68rem; color: #475569;"></i>
+                    <span style="color: #60a5fa; font-weight: 600;">Shopify WhatsApp Cart Recovery</span>
+                </div>
+
+                <div style="max-width: 880px;">
+                    <span class="pill-badge pill-blue" style="margin-bottom: 16px;">
+                        <i class="fa-solid fa-cart-shopping" style="color: #22c55e;"></i>
+                        <span>E-commerce Revenue Optimization</span>
+                    </span>
+                    <h1 class="section-title" style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); margin-bottom: 20px; line-height: 1.2;">
+                        Recovering <span class="text-gradient-brand">42% of Abandoned Carts</span> on Shopify Using Automated WhatsApp Sequences
+                    </h1>
+                    <p class="section-subtitle" style="font-size: 1.1rem; color: #cbd5e1; margin: 0; line-height: 1.6;">
+                        Why traditional email and SMS reminders end up in spam folders, and how an automated 3-step WhatsApp sequence recovers lakhs in abandoned checkout revenue with 1-click discount links.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Article Content Layout -->
+        <div class="container">
+            <div class="article-layout">
+                <!-- Sticky Left Sidebar Navigation -->
+                <aside class="article-sidebar">
+                    <div class="article-sidebar-title">Table of Contents</div>
+                    <a href="#why-sms-fails" class="article-toc-link">1. Why Email &amp; SMS Are Dead</a>
+                    <a href="#three-step-timing" class="article-toc-link">2. The 3-Step WhatsApp Blueprint</a>
+                    <a href="#shopify-webhooks" class="article-toc-link">3. Webhook Integration Setup</a>
+                    <a href="#templates-copy" class="article-toc-link">4. High-Converting Message Copy</a>
+                    <a href="#prevent-over-messaging" class="article-toc-link">5. Auto-Cancellation on Purchase</a>
+                    <a href="#roi-breakdown" class="article-toc-link">6. Real-World Revenue Case Study</a>
+                    <a href="#faq" class="article-toc-link">7. Frequently Asked Questions</a>
+
+                    <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div style="font-size: 0.76rem; color: #64748b; text-transform: uppercase; font-weight: 700; margin-bottom: 12px;">E-commerce AI Solutions</div>
+                        <a href="../ai-agents.html#ecommerce" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; font-size: 0.8rem;">
+                            <i class="fa-solid fa-cart-shopping"></i> E-commerce Demo
+                        </a>
+                    </div>
+                </aside>
+
+                <!-- Article Body -->
+                <article class="article-content">
+                    <div class="article-meta-header">
+                        <div class="article-author-badge">
+                            <div class="article-author-avatar" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);">D</div>
+                            <div>
+                                <div style="color: #ffffff; font-size: 0.92rem;">D2C Growth Specialists</div>
+                                <div style="font-size: 0.78rem; color: #94a3b8; font-weight: 400;">Ai Botflow E-commerce Practice</div>
+                            </div>
+                        </div>
+                        <span style="color: #475569;">•</span>
+                        <div style="font-size: 0.85rem; color: #94a3b8;"><i class="fa-regular fa-clock" style="margin-right: 6px;"></i>7 min read</div>
+                        <span style="color: #475569;">•</span>
+                        <div style="font-size: 0.85rem; color: #94a3b8;"><i class="fa-regular fa-calendar" style="margin-right: 6px;"></i>Updated Sep 2026</div>
+                    </div>
+
+                    <div class="article-highlight-box">
+                        <strong style="color: #ffffff;"><i class="fa-solid fa-chart-pie" style="color: #60a5fa; margin-right: 8px;"></i>The Indian E-Commerce Reality:</strong>
+                        According to 2026 Indian e-commerce benchmarks, nearly <strong>68% of shoppers</strong> add items to their cart but abandon before completing payment. Standard email reminders achieve a meager 11% open rate, while WhatsApp reminders achieve a staggering <strong>98% open rate and 45% click-through rate</strong>.
+                    </div>
+
+                    <h2 id="why-sms-fails">1. Why Email and SMS Abandoned Cart Sequences Are Failing</h2>
+                    <p>
+                        In India and high-growth consumer markets, mobile shoppers treat SMS as spam. Truecaller and Google Messages automatically shunt promotional SMS into the "Spam / Blocked" tab. Meanwhile, promotional emails land in Gmail's "Promotions" graveyard, rarely opened within the critical 2-hour window when buying intent is peak.
+                    </p>
+                    <p>
+                        WhatsApp delivers:
+                    </p>
+                    <ul>
+                        <li><strong>Zero Spam Folder Sorting:</strong> Notification rings on the phone's primary lock screen.</li>
+                        <li><strong>Rich Product Previews:</strong> Real images of the exact items left behind in the cart.</li>
+                        <li><strong>1-Click Checkout Buttons:</strong> Direct links with pre-applied coupon codes so customers don't have to re-enter their shipping address.</li>
+                    </ul>
+
+                    <h2 id="three-step-timing">2. The Proven 3-Step WhatsApp Recovery Sequence</h2>
+                    <p>
+                        Blasting an immediate aggressive discount 2 minutes after a customer leaves looks desperate and hurts your profit margins. Top brands follow this timed cadence:
+                    </p>
+
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 24px; margin: 20px 0;">
+                        <h4 style="color: #60a5fa; margin: 0 0 8px;"><i class="fa-solid fa-stopwatch" style="margin-right: 8px;"></i>Step 1: The Helpful Nudge (Trigger: 15 Minutes Post-Abandonment)</h4>
+                        <p style="font-size: 0.92rem; color: #cbd5e1; margin-bottom: 0;">
+                            <strong>Intent:</strong> Assumes technical difficulty or distracted buyer. No discount is offered yet.
+                            <br>
+                            <em>"Hi Rahul! We noticed you left your sneakers in your bag. Did you face any issues during UPI payment? Tap below to complete your order or talk to support."</em>
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 24px; margin: 20px 0;">
+                        <h4 style="color: #4ade80; margin: 0 0 8px;"><i class="fa-solid fa-tags" style="margin-right: 8px;"></i>Step 2: The Value Incentive (Trigger: 2 Hours Post-Abandonment)</h4>
+                        <p style="font-size: 0.92rem; color: #cbd5e1; margin-bottom: 0;">
+                            <strong>Intent:</strong> Incentivize price-sensitive shoppers with a limited-time perk.
+                            <br>
+                            <em>"Rahul, your cart items are reserved for the next 2 hours! Enjoy an extra 10% off with coupon SAVE10 + Free Shipping. Tap to auto-apply discount."</em>
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 24px; margin: 20px 0;">
+                        <h4 style="color: #fbbf24; margin: 0 0 8px;"><i class="fa-solid fa-hourglass-end" style="margin-right: 8px;"></i>Step 3: The Final Urgency Call (Trigger: 24 Hours Post-Abandonment)</h4>
+                        <p style="font-size: 0.92rem; color: #cbd5e1; margin-bottom: 0;">
+                            <strong>Intent:</strong> Urgency and stock reservation expiry.
+                            <br>
+                            <em>"Last chance: Stock for [Product Title] is running low. Your reserved cart will be released at 6 PM. Complete order now."</em>
+                        </p>
+                    </div>
+
+                    <h2 id="shopify-webhooks">3. Technical Shopify Webhook Integration in Ai Botflow</h2>
+                    <p>
+                        Setting up the integration takes less than 5 minutes without writing custom backend code:
+                    </p>
+                    <ol>
+                        <li>In your Shopify Admin, go to <strong>Settings > Notifications > Webhooks</strong> (or use our 1-click Shopify App).</li>
+                        <li>Create a webhook for event <code>checkouts/create</code> and <code>checkouts/update</code> pointing to your Ai Botflow endpoint: <code>https://dash.aibotflow.in/api/v1/webhooks/shopify</code>.</li>
+                        <li>Ai Botflow maps payload variables:
+                            <ul>
+                                <li><code>first_name</code> &rarr; <code>{{1}}</code></li>
+                                <li><code>line_items[0].title</code> &rarr; <code>{{2}}</code></li>
+                                <li><code>abandoned_checkout_url</code> &rarr; <code>{{3}}</code></li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h2 id="templates-copy">4. Pre-Approved WhatsApp Message Templates</h2>
+                    <div class="code-block">
+Category: MARKETING / UTILITY
+Header: [Image / 1:1 Product Picture]
+Body:
+Hey {{1}}! 👋
+
+We saved the {{2}} in your bag so you do not miss out. 
+
+Ready to make it yours? We have pre-applied code SAVE10 for an instant 10% discount on checkout!
+
+Buttons:
+[URL Button] Complete Checkout 👉 {{3}}
+[Quick Reply] Ask a Question
+                    </div>
+
+                    <h2 id="prevent-over-messaging">5. Auto-Cancellation on Order Completion</h2>
+                    <div class="article-highlight-box article-highlight-warning">
+                        <strong style="color: #ffffff;"><i class="fa-solid fa-ban" style="color: #fbbf24; margin-right: 8px;"></i>Critical Requirement:</strong>
+                        Never message a customer who has already paid! Nothing irritates buyers more than receiving an "abandoned cart" reminder 2 hours after they completed the transaction.
+                    </div>
+                    <p>
+                        Ai Botflow listens for Shopify's <code>orders/create</code> and <code>orders/paid</code> events. When an order matches the customer's phone number or email, any scheduled step-2 or step-3 reminders are <strong>automatically purged from the queue</strong> in real time.
+                    </p>
+
+                    <h2 id="roi-breakdown">6. Real-World Revenue Case Study: ₹3.8 Lakh Monthly Recovery</h2>
+                    <p>
+                        An organic skincare D2C brand based in Mumbai implemented Ai Botflow's 3-step sequence on Shopify:
+                    </p>
+                    <ul>
+                        <li><strong>Monthly Abandoned Checkouts:</strong> 1,420 carts (~₹14.2 Lakh potential revenue).</li>
+                        <li><strong>Old Email Recovery Rate:</strong> 4.8% (68 orders recovered, ₹68,000 revenue).</li>
+                        <li><strong>New WhatsApp Recovery Rate:</strong> <strong>26.7% (379 orders recovered, ₹3,79,000 revenue)</strong>.</li>
+                        <li><strong>WhatsApp Cost:</strong> ~₹1,800 total Meta conversation fees.</li>
+                        <li><strong>Net ROI:</strong> Over <strong>210x return</strong> on WhatsApp messaging spend.</li>
+                    </ul>
+
+                    <h2 id="faq">7. Frequently Asked Questions</h2>
+                    <div style="margin-top: 18px;">
+                        <h4 style="color: #ffffff; margin-bottom: 6px;">Does this work with Cash on Delivery (COD) confirmation?</h4>
+                        <p>Yes. Ai Botflow can also automatically send a WhatsApp message to verify and confirm COD orders, reducing Return to Origin (RTO) rates by up to 35%.</p>
+
+                        <h4 style="color: #ffffff; margin-bottom: 6px;">What if the customer did not enter their phone number at checkout?</h4>
+                        <p>Modern headless checkouts (GoKwik, Shopflo, Razorpay Magic Checkout) capture the customer's phone number at the very first step, enabling recovery even if they abandon before entering shipping details.</p>
+                    </div>
+
+                    <div class="article-newsletter-box">
+                        <h3 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 10px;">Automate Abandoned Cart Recovery Today</h3>
+                        <p style="font-size: 0.95rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 24px;">
+                            Connect your Shopify or WooCommerce store in 5 minutes and start recovering lost revenue on WhatsApp automatically.
+                        </p>
+                        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                            <a href="https://dash.aibotflow.in/signup?plan=growth" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 12px 28px;">
+                                Start Recovering Revenue Free <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                            </a>
+                            <a href="../whatsapp-crm.html" class="btn btn-secondary" style="padding: 12px 24px;">
+                                View CRM Features
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand"><img src="../assets/logo.png" alt="Ai Botflow" width="26" height="26"><span class="brand-name">Ai Botflow CRM</span></div>
+                    <p class="footer-desc">Actionable playbooks, API compliance guides, and revenue optimization blueprints for modern WhatsApp teams.</p>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Platforms</h4>
+                    <ul class="footer-links">
+                        <li><a href="../whatsapp-crm.html">WhatsApp CRM</a></li>
+                        <li><a href="../shared-inbox.html">Shared Team Inbox</a></li>
+                        <li><a href="../instagram-automation.html">Instagram Automation</a></li>
+                        <li><a href="../facebook-messenger.html">Facebook Messenger</a></li>
+                        <li><a href="../ai-agents.html">AI Agents Hub</a></li>
+                        <li><a href="../pricing.html">Pricing Plans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="../knowledgebase.html">Knowledgebase &amp; Docs</a></li>
+                        <li><a href="index.html">Growth Blog</a></li>
+                        <li><a href="../api-docs.html">Developer API Docs</a></li>
+                        <li><a href="../tutorials.html">Video Tutorials</a></li>
+                        <li><a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" style="color: #ef4444; margin-right: 6px;"></i>YouTube: @AiBotFlow</a></li>
+                        <li><a href="../partner.html">Partner Program</a></li>
+                        <li><a href="../about.html">About AI Botflow</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Meta Compliance</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5;">
+                        Official Meta Cloud API partner. Direct platform connection with 100% policy compliance.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom"><div>&copy; 2026 AI Botflow. All rights reserved.</div></div>
+        </div>
+    </footer>
+
+    <script src="../app.js"></script>
+</body>
+
+</html>
