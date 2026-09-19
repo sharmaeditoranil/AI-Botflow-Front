@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initWorkbenchTabs();
   initPricingToggle();
+  initContactScaler();
+  initPricingMobileCarousel();
   initFAQAccordion();
   initChatSimulator();
   initSmoothScroll();
@@ -79,8 +81,36 @@ function initNavbar() {
       toggleDrawer();
     });
 
-    // Close mobile drawer when any link clicked
-    drawer.querySelectorAll('a, .om-mob-link, .mobile-link').forEach(link => {
+    // Mobile Accordion Toggle (ManyChat style expandable menus)
+    drawer.querySelectorAll('.mob-acc-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const parent = trigger.closest('.mob-acc-item');
+        if (!parent) return;
+        const isOpen = parent.classList.contains('active');
+
+        // Close other open accordions in the drawer
+        drawer.querySelectorAll('.mob-acc-item.active').forEach(item => {
+          if (item !== parent) {
+            item.classList.remove('active');
+            const btn = item.querySelector('.mob-acc-trigger');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        if (isOpen) {
+          parent.classList.remove('active');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          parent.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Close mobile drawer when any navigation link clicked
+    drawer.querySelectorAll('a, .om-mob-link, .mobile-link, .mob-menu-card, .mob-nav-direct-link').forEach(link => {
       link.addEventListener('click', () => {
         toggleDrawer(false);
       });
@@ -132,9 +162,11 @@ function initPricingToggle() {
   const amounts = document.querySelectorAll('.pricing-card .amount');
   const periods = document.querySelectorAll('.pricing-card .period');
   
+  const subFree = document.getElementById('annual-sub-free');
   const subStarter = document.getElementById('annual-sub-starter');
   const subGrowth = document.getElementById('annual-sub-growth');
   const subEnterprise = document.getElementById('annual-sub-enterprise');
+  const subUnlimited = document.getElementById('annual-sub-unlimited');
 
   if (!toggle) return;
 
@@ -144,17 +176,21 @@ function initPricingToggle() {
       lblMonthly.classList.remove('active');
       
       periods.forEach(p => p.textContent = '/yr');
+      if (subFree) subFree.textContent = '(Forever Free)';
       if (subStarter) subStarter.textContent = 'Billed ₹5,999 annually (Save 17%)';
       if (subGrowth) subGrowth.textContent = 'Billed ₹14,999 annually (Save 17%)';
       if (subEnterprise) subEnterprise.textContent = 'Billed ₹24,999 annually (Save 17%)';
+      if (subUnlimited) subUnlimited.textContent = 'Billed ₹49,999 annually (Save 17%)';
     } else {
       lblMonthly.classList.add('active');
       lblAnnual.classList.remove('active');
       
       periods.forEach(p => p.textContent = '/mo');
+      if (subFree) subFree.textContent = '(Forever Free)';
       if (subStarter) subStarter.textContent = '(₹5999/yr)';
       if (subGrowth) subGrowth.textContent = '(₹14999/yr)';
       if (subEnterprise) subEnterprise.textContent = '(₹24999/yr)';
+      if (subUnlimited) subUnlimited.textContent = '(₹49999/yr)';
     }
 
     amounts.forEach(amountEl => {
@@ -163,6 +199,10 @@ function initPricingToggle() {
         amountEl.textContent = val;
       }
     });
+
+    if (window.syncScalerWithToggle) {
+      window.syncScalerWithToggle();
+    }
   }
 
   toggle.addEventListener('change', (e) => {
@@ -178,6 +218,227 @@ function initPricingToggle() {
     toggle.checked = true;
     updatePrices(true);
   });
+}
+
+/* --------------------------------------------------------------------------
+   3.1 ManyChat Interactive Contact Scaler
+   -------------------------------------------------------------------------- */
+function initContactScaler() {
+  const slider = document.getElementById('contactSlider');
+  if (!slider) return;
+
+  const displayVal = document.getElementById('scalerContactsDisplay');
+  const planRec = document.getElementById('scalerPlanRec');
+  const marks = document.querySelectorAll('.slider-mark');
+  const pills = document.querySelectorAll('.scaler-pill');
+  const toggle = document.getElementById('pricingToggle');
+
+  const tiers = [
+    { contacts: '100', display: '100 Contacts (Free Plan)', recPlan: 'Free Plan', cardId: 'card-free', monthly: '₹0 (Forever Free)', annual: '₹0 (Forever Free)' },
+    { contacts: '2,000', display: '2,000 Contacts (Starter Plan)', recPlan: 'Starter Plan', cardId: 'card-starter', monthly: '₹599/mo', annual: '₹5,999/yr' },
+    { contacts: '10,000', display: '10,000 Contacts (Growth Plan)', recPlan: 'Growth Plan', cardId: 'card-growth', monthly: '₹1,499/mo', annual: '₹14,999/yr' },
+    { contacts: '50,000+', display: '50,000+ Contacts (Enterprise Plan)', recPlan: 'Enterprise Plan', cardId: 'card-enterprise', monthly: '₹2,499/mo', annual: '₹24,999/yr' },
+    { contacts: 'Unlimited', display: 'Unlimited Contacts (Unlimited Plan)', recPlan: 'Unlimited Plan 👑', cardId: 'card-unlimited', monthly: '₹4,999/mo', annual: '₹49,999/yr' },
+    { contacts: 'Custom Infra', display: '500,000+ Bespoke Contacts (Custom)', recPlan: 'Custom Plan ⚡', cardId: 'card-custom', monthly: 'Custom Pricing', annual: 'Custom Billing' }
+  ];
+
+  function applyTier(idx) {
+    const tier = tiers[idx] || tiers[2];
+    const isAnnual = toggle ? toggle.checked : false;
+    const priceText = isAnnual ? tier.annual : tier.monthly;
+
+    if (displayVal) {
+      displayVal.textContent = tier.display;
+    }
+    if (planRec) {
+      planRec.innerHTML = `<i class="fa-solid fa-circle-check"></i> Recommended: ${tier.recPlan} (${priceText})`;
+    }
+
+    // Highlight card
+    document.querySelectorAll('.pricing-card').forEach(card => card.classList.remove('scaler-highlighted'));
+    const targetCard = document.getElementById(tier.cardId);
+    if (targetCard) {
+      targetCard.classList.add('scaler-highlighted');
+    }
+
+    // Active marks & pills
+    marks.forEach(m => {
+      if (parseInt(m.getAttribute('data-index'), 10) === idx) {
+        m.classList.add('active');
+      } else {
+        m.classList.remove('active');
+      }
+    });
+
+    pills.forEach(p => {
+      if (parseInt(p.getAttribute('data-index'), 10) === idx) {
+        p.classList.add('active');
+      } else {
+        p.classList.remove('active');
+      }
+    });
+
+    // Auto-scroll mobile carousel to the recommended plan on small screens
+    if (window.innerWidth <= 768 && typeof window.scrollToPricingCard === 'function') {
+      const cardMap = { 'card-free': 0, 'card-starter': 1, 'card-growth': 2, 'card-enterprise': 3, 'card-unlimited': 4, 'card-custom': 5 };
+      const cardIdx = cardMap[tier.cardId];
+      if (cardIdx !== undefined) {
+        window.scrollToPricingCard(cardIdx, true);
+      }
+    }
+  }
+
+  window.syncScalerWithToggle = () => applyTier(parseInt(slider.value, 10));
+
+  slider.addEventListener('input', (e) => {
+    applyTier(parseInt(e.target.value, 10));
+  });
+
+  marks.forEach(m => {
+    m.addEventListener('click', () => {
+      const idx = parseInt(m.getAttribute('data-index'), 10);
+      slider.value = idx;
+      applyTier(idx);
+    });
+  });
+
+  pills.forEach(p => {
+    p.addEventListener('click', () => {
+      const idx = parseInt(p.getAttribute('data-index'), 10);
+      slider.value = idx;
+      applyTier(idx);
+    });
+  });
+
+  if (toggle) {
+    toggle.addEventListener('change', () => {
+      applyTier(parseInt(slider.value, 10));
+    });
+  }
+
+  // Initialize with default (index 3 = 10k contacts)
+  applyTier(parseInt(slider.value, 10));
+}
+
+/* --------------------------------------------------------------------------
+   3.2 Mobile Swipeable Pricing Carousel
+   -------------------------------------------------------------------------- */
+function initPricingMobileCarousel() {
+  const track = document.getElementById('pricingGridTrack');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.pricing-card');
+  const navBtns = document.querySelectorAll('.carousel-nav-btn');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const prevBtn = document.getElementById('carouselPrevBtn');
+  const nextBtn = document.getElementById('carouselNextBtn');
+
+  if (!cards.length) return;
+
+  let currentIndex = 1; // Default to Growth Plan (Popular)
+
+  function updateActiveUI(index) {
+    currentIndex = Math.max(0, Math.min(index, cards.length - 1));
+
+    // Update nav pills
+    navBtns.forEach((btn, i) => {
+      btn.classList.toggle('active', i === currentIndex);
+    });
+
+    // Update pagination dots
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+
+    // Update arrow button states
+    if (prevBtn) {
+      prevBtn.classList.toggle('disabled', currentIndex === 0);
+    }
+    if (nextBtn) {
+      nextBtn.classList.toggle('disabled', currentIndex === cards.length - 1);
+    }
+  }
+
+  function scrollToCard(index, smooth = true) {
+    const targetCard = cards[index];
+    if (!targetCard) return;
+
+    updateActiveUI(index);
+
+    // Calculate center offset for card within scroll track
+    const trackWidth = track.clientWidth;
+    const cardLeft = targetCard.offsetLeft;
+    const cardWidth = targetCard.offsetWidth;
+    const targetScroll = cardLeft - (trackWidth - cardWidth) / 2;
+
+    track.scrollTo({
+      left: Math.max(0, targetScroll),
+      behavior: smooth ? 'smooth' : 'auto'
+    });
+  }
+
+  // Hook pill buttons
+  navBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      scrollToCard(i, true);
+    });
+  });
+
+  // Hook dot buttons
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      scrollToCard(i, true);
+    });
+  });
+
+  // Hook previous/next buttons
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        scrollToCard(currentIndex - 1, true);
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < cards.length - 1) {
+        scrollToCard(currentIndex + 1, true);
+      }
+    });
+  }
+
+  // Detect which card is centered while swiping
+  let scrollDebounce;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollDebounce);
+    scrollDebounce = setTimeout(() => {
+      const trackCenter = track.scrollLeft + track.clientWidth / 2;
+      let closestIdx = 0;
+      let minDistance = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const dist = Math.abs(trackCenter - cardCenter);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestIdx = idx;
+        }
+      });
+
+      updateActiveUI(closestIdx);
+    }, 50);
+  }, { passive: true });
+
+  // Expose function globally for contact scaler
+  window.scrollToPricingCard = scrollToCard;
+
+  // Initial center on Growth (card index 2) on mobile
+  if (window.innerWidth <= 768) {
+    setTimeout(() => {
+      scrollToCard(2, false);
+    }, 200);
+  }
 }
 
 /* --------------------------------------------------------------------------
