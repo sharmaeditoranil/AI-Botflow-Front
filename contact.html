@@ -43,9 +43,6 @@
     <meta name="twitter:title" content="Contact Sales, Enterprise Consultation & Support | Ai Botflow">
     <meta name="twitter:description" content="Get in touch with Ai Botflow solution architects. Schedule a personalized WhatsApp CRM demo, discuss enterprise API scaling, or get priority live support.">
     <meta name="twitter:image" content="https://aibotflow.in/assets/logo.png">
-<meta property="og:description"
-        content="Connect directly with our WhatsApp solution architects. Rapid response guaranteed via WhatsApp concierge or email.">
-    <meta property="og:image" content="https://aibotflow.in/assets/social-card.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/logo.png">
@@ -129,6 +126,22 @@
             background: rgba(37, 99, 235, 0.08);
             border-color: rgba(37, 99, 235, 0.3);
             transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                padding: 24px 18px;
+                border-radius: var(--radius-lg);
+            }
+            .direct-channel-card {
+                padding: 16px 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-card {
+                padding: 20px 14px;
+            }
         }
     </style>
     <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
@@ -658,7 +671,7 @@
                                 <input type="text" id="cName" class="form-control" placeholder="e.g. Amit Sharma" required>
                             </div>
 
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="form-row-2col">
                                 <div class="form-group">
                                     <label class="form-label" for="cEmail">Business Email *</label>
                                     <input type="email" id="cEmail" class="form-control" placeholder="you@company.com" required>
@@ -752,6 +765,7 @@
                         <li><a href="partner.html">Partner Program</a></li>
                         <li><a href="about.html">About AI Botflow</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="sitemap.html" style="color: #60a5fa; font-weight: 600;"><i class="fa-solid fa-sitemap" style="margin-right: 6px;"></i>HTML Sitemap</a></li>
                     </ul>
                 </div>
                 <div>

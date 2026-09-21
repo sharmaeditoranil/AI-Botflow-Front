@@ -102,6 +102,11 @@
   box-sizing: border-box;
 }
 
+img, svg, video, canvas, audio, iframe {
+  max-width: 100%;
+}
+
+
 html {
   font-family: var(--font-sans);
   background-color: var(--bg-body);
@@ -4940,6 +4945,44 @@ input:checked + .slider:before {
   }
 }
 
+/* --- 5. Micro Devices (<= 380px) --- */
+@media (max-width: 380px) {
+  .om-header-inner {
+    padding: 0 10px !important;
+  }
+  .om-brand-title {
+    font-size: 0.94rem !important;
+  }
+  .om-brand-badge {
+    display: none !important;
+  }
+  .om-header-login {
+    padding: 0 9px !important;
+  }
+  .om-header-login span {
+    display: none !important;
+  }
+  .pricing-grid .pricing-card,
+  .pricing-grid-4 .pricing-card {
+    min-width: 250px !important;
+  }
+}
+
+/* Prevent iOS Safari auto-zoom on form inputs */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+
 /* ==========================================================================
    HOMEPAGE KNOWLEDGE BASE & DOCUMENTATION SHOWCASE SECTION
    ========================================================================== */
@@ -5624,6 +5667,64 @@ input:checked + .slider:before {
     grid-template-columns: 1fr;
   }
 }
+
+/* GMB Suite Responsive Grids */
+.gmb-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1024px) {
+  .gmb-highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .gmb-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gmb-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .gmb-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .gmb-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gmb-mini-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+@media (max-width: 540px) {
+  .gmb-mini-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* Universal 2-Column Responsive Form Row */
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 640px) {
+  .form-row-2col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 
 .gmb-pillar-card {
   background: rgba(13, 18, 30, 0.7);

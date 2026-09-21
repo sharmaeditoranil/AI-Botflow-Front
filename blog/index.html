@@ -58,7 +58,7 @@
     <style>
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
             gap: 30px;
             margin-top: 36px;
         }
@@ -196,6 +196,16 @@
 
         .blog-card:hover .blog-read-more {
             gap: 10px;
+        }
+
+        @media (max-width: 640px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .blog-card-body {
+                padding: 20px 16px;
+            }
         }
     </style>
     <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
