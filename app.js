@@ -177,20 +177,20 @@ function initPricingToggle() {
       
       periods.forEach(p => p.textContent = '/yr');
       if (subFree) subFree.textContent = '(Forever Free)';
-      if (subStarter) subStarter.textContent = 'Billed ₹5,999 annually (Save 17%)';
-      if (subGrowth) subGrowth.textContent = 'Billed ₹14,999 annually (Save 17%)';
-      if (subEnterprise) subEnterprise.textContent = 'Billed ₹24,999 annually (Save 17%)';
-      if (subUnlimited) subUnlimited.textContent = 'Billed ₹49,999 annually (Save 17%)';
+      if (subStarter) subStarter.textContent = 'Billed ₹7,999 annually (~17% OFF)';
+      if (subGrowth) subGrowth.textContent = 'Billed ₹14,999 annually (~17% OFF)';
+      if (subEnterprise) subEnterprise.textContent = 'Billed ₹29,999 annually (~17% OFF)';
+      if (subUnlimited) subUnlimited.textContent = '';
     } else {
       lblMonthly.classList.add('active');
       lblAnnual.classList.remove('active');
       
       periods.forEach(p => p.textContent = '/mo');
       if (subFree) subFree.textContent = '(Forever Free)';
-      if (subStarter) subStarter.textContent = '(₹5999/yr)';
-      if (subGrowth) subGrowth.textContent = '(₹14999/yr)';
-      if (subEnterprise) subEnterprise.textContent = '(₹24999/yr)';
-      if (subUnlimited) subUnlimited.textContent = '(₹49999/yr)';
+      if (subStarter) subStarter.textContent = '(₹7,999/yr)';
+      if (subGrowth) subGrowth.textContent = '(₹14,999/yr)';
+      if (subEnterprise) subEnterprise.textContent = '(₹29,999/yr)';
+      if (subUnlimited) subUnlimited.textContent = '';
     }
 
     amounts.forEach(amountEl => {
@@ -221,7 +221,7 @@ function initPricingToggle() {
 }
 
 /* --------------------------------------------------------------------------
-   3.1 ManyChat Interactive Contact Scaler
+   3.1 Interactive Contact Scaler
    -------------------------------------------------------------------------- */
 function initContactScaler() {
   const slider = document.getElementById('contactSlider');
@@ -234,12 +234,10 @@ function initContactScaler() {
   const toggle = document.getElementById('pricingToggle');
 
   const tiers = [
-    { contacts: '100', display: '100 Contacts (Free Plan)', recPlan: 'Free Plan', cardId: 'card-free', monthly: '₹0 (Forever Free)', annual: '₹0 (Forever Free)' },
-    { contacts: '2,000', display: '2,000 Contacts (Starter Plan)', recPlan: 'Starter Plan', cardId: 'card-starter', monthly: '₹599/mo', annual: '₹5,999/yr' },
+    { contacts: '100', display: '100 Contacts (Free Trial)', recPlan: 'Free Trial', cardId: 'card-free', monthly: '₹0 (Forever Free)', annual: '₹0 (Forever Free)' },
+    { contacts: '2,500', display: '2,500 Contacts (Starter Plan)', recPlan: 'Starter Plan', cardId: 'card-starter', monthly: '₹799/mo', annual: '₹7,999/yr' },
     { contacts: '10,000', display: '10,000 Contacts (Growth Plan)', recPlan: 'Growth Plan', cardId: 'card-growth', monthly: '₹1,499/mo', annual: '₹14,999/yr' },
-    { contacts: '50,000+', display: '50,000+ Contacts (Enterprise Plan)', recPlan: 'Enterprise Plan', cardId: 'card-enterprise', monthly: '₹2,499/mo', annual: '₹24,999/yr' },
-    { contacts: 'Unlimited', display: 'Unlimited Contacts (Unlimited Plan)', recPlan: 'Unlimited Plan 👑', cardId: 'card-unlimited', monthly: '₹4,999/mo', annual: '₹49,999/yr' },
-    { contacts: 'Custom Infra', display: '500,000+ Bespoke Contacts (Custom)', recPlan: 'Custom Plan ⚡', cardId: 'card-custom', monthly: 'Custom Pricing', annual: 'Custom Billing' }
+    { contacts: '75,000', display: '75,000 Contacts (Enterprise Plan)', recPlan: 'Enterprise Plan', cardId: 'card-enterprise', monthly: '₹2,999/mo', annual: '₹29,999/yr' }
   ];
 
   function applyTier(idx) {

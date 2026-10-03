@@ -2,5 +2,15 @@
 User-agent: *
 Allow: /
 
+# Disallow Internal App, API & Webhook Routes from Indexation
+Disallow: /api/
+Disallow: /webhook/
+Disallow: /admin/
+Disallow: /login
+Disallow: /signup
+Disallow: /dashboard/
+Disallow: /crm/
+Disallow: /docs/
+
 # Sitemaps
 Sitemap: https://aibotflow.in/sitemap.xml
