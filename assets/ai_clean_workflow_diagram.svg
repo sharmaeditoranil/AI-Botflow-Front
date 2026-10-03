@@ -1,0 +1,410 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" style="background:#070b14; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="15%" r="75%">
+      <stop offset="0%" stop-color="#121e38" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#080e1a" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#03050a" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Title Glow -->
+    <radialGradient id="titleGlow" cx="50%" cy="10%" r="30%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Card Body Gradient -->
+    <linearGradient id="cardBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e172a" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#080d1a" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Neon Glow Filters -->
+    <filter id="glowGreen" x="-20%" y="-15%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#00e676" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00e676" flood-opacity="0.75"/>
+    </filter>
+
+    <filter id="glowCyan" x="-20%" y="-15%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#00e5ff" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00e5ff" flood-opacity="0.75"/>
+    </filter>
+
+    <filter id="glowPurple" x="-20%" y="-15%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#c084fc" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#c084fc" flood-opacity="0.75"/>
+    </filter>
+
+    <filter id="glowBlue" x="-20%" y="-15%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#00b0ff" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00b0ff" flood-opacity="0.75"/>
+    </filter>
+
+    <filter id="glowViolet" x="-20%" y="-15%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#a855f7" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#a855f7" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Background -->
+  <rect width="1920" height="1080" fill="url(#bgGlow)"/>
+  <rect width="1920" height="1080" fill="url(#titleGlow)"/>
+
+  <!-- Subtle Ambient Glow Orbs -->
+  <circle cx="200" cy="550" r="320" fill="#00e676" opacity="0.04" filter="blur(90px)"/>
+  <circle cx="850" cy="550" r="380" fill="#00e5ff" opacity="0.04" filter="blur(100px)"/>
+  <circle cx="1600" cy="550" r="320" fill="#a855f7" opacity="0.04" filter="blur(90px)"/>
+
+  <!-- ========================================================================= -->
+  <!-- MAIN TITLE: AI WhatsApp CRM                                              -->
+  <!-- ========================================================================= -->
+  <g text-anchor="middle" transform="translate(960, 105)">
+    <text x="0" y="0" fill="#ffffff" font-size="50" font-weight="800" letter-spacing="0.5" filter="drop-shadow(0 2px 18px rgba(0,229,255,0.35))">
+      AI WhatsApp CRM
+    </text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- STEP 1: WhatsApp Customer Message                                        -->
+  <!-- ========================================================================= -->
+  <text x="200" y="175" fill="#00e676" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.5">Step 1</text>
+  
+  <g transform="translate(70, 200)">
+    <rect width="260" height="740" rx="28" fill="url(#cardBg)" stroke="#00e676" stroke-width="2.4" filter="url(#glowGreen)"/>
+
+    <!-- Title Section -->
+    <g text-anchor="middle" transform="translate(130, 50)">
+      <text x="0" y="0" fill="#ffffff" font-size="22" font-weight="700">
+        <tspan x="0" dy="0">WhatsApp</tspan>
+        <tspan x="0" dy="30">Customer</tspan>
+        <tspan x="0" dy="30">Message</tspan>
+      </text>
+    </g>
+
+    <!-- Center WhatsApp Outline Logo -->
+    <g transform="translate(130, 280)">
+      <!-- Speech bubble circle with tail -->
+      <path d="M-34,-16 C-34,-36 -18,-50 8,-50 C34,-50 50,-36 50,-16 C50,4 34,18 8,18 C1,18 -6,16 -12,13 L-32,19 L-26,-1 C-31,-5 -34,-10 -34,-16 Z" 
+            fill="none" stroke="#00e676" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" filter="drop-shadow(0 0 10px #00e676)"/>
+      <!-- Perfectly centered phone handset -->
+      <path d="M-5,-30 C-7,-32 -11,-32 -13,-30 L-18,-25 C-20,-23 -20,-18 -15,-12 C-10,-6 -5,-1 1,1 C7,3 12,3 14,1 L19,-4 C21,-6 21,-10 19,-12 L15,-16 C13,-18 10,-18 8,-16 L6,-14 C5,-13 4,-13 2,-14 C-1,-16 -4,-19 -6,-22 C-7,-24 -7,-25 -6,-26 L-5,-27 C-3,-29 -3,-31 -5,-30 Z" 
+            transform="translate(10, 10) scale(1.05)" fill="#00e676"/>
+    </g>
+
+    <!-- Phone Receiver Icon with waves -->
+    <g transform="translate(130, 450)">
+      <path d="M-16,-16 C-20,-12 -20,-7 -15,-1 C-9,6 -2,12 5,16 C11,20 16,20 20,16 L26,10 C28,8 28,3 24,-1 L19,-6 C17,-8 13,-8 11,-6 L8,-3 C7,-2 5,-3 3,-4 C-1,-7 -4,-11 -6,-15 C-7,-17 -6,-18 -5,-19 L-2,-22 C1,-25 1,-30 -2,-33 L-7,-38 C-11,-42 -15,-42 -18,-38 Z" 
+            fill="none" stroke="#00e676" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14,-26 C22,-18 22,-6 14,2" fill="none" stroke="#00e676" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M21,-34 C32,-22 32,2 21,14" fill="none" stroke="#00e676" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+    </g>
+
+    <!-- Bottom Description -->
+    <g text-anchor="middle" transform="translate(130, 620)">
+      <text x="0" y="0" fill="#cbd5e1" font-size="15" font-weight="500">
+        <tspan x="0" dy="0">Customer</tspan>
+        <tspan x="0" dy="26">reaches out</tspan>
+        <tspan x="0" dy="26">via WA</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <g transform="translate(330, 570)">
+    <line x1="8" y1="0" x2="36" y2="0" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round"/>
+    <polyline points="28,-6 36,0 28,6" fill="none" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- STEP 2: AI Brain & RAG Search                                            -->
+  <!-- ========================================================================= -->
+  <text x="504" y="175" fill="#00e5ff" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.5">Step 2</text>
+
+  <g transform="translate(374, 200)">
+    <rect width="260" height="740" rx="28" fill="url(#cardBg)" stroke="#00e5ff" stroke-width="2.4" filter="url(#glowCyan)"/>
+
+    <!-- Title Section -->
+    <g text-anchor="middle" transform="translate(130, 56)">
+      <text x="0" y="0" fill="#ffffff" font-size="22" font-weight="700">
+        <tspan x="0" dy="0">AI Brain &amp;</tspan>
+        <tspan x="0" dy="30">RAG Search</tspan>
+      </text>
+    </g>
+
+    <!-- Glowing Brain Icon -->
+    <g transform="translate(130, 230)">
+      <!-- Left Hemisphere -->
+      <path d="M-4,-32 C-14,-32 -26,-24 -26,-12 C-26,-5 -22,1 -16,4 C-24,9 -28,18 -28,28 C-28,40 -16,48 -4,48 L-4,-32 Z" 
+            fill="none" stroke="#00e5ff" stroke-width="2.8" stroke-linecap="round" filter="drop-shadow(0 0 8px #00e5ff)"/>
+      <!-- Right Hemisphere -->
+      <path d="M4,-32 C14,-32 26,-24 26,-12 C26,-5 22,1 16,4 C24,9 28,18 28,28 C28,40 16,48 4,48 L4,-32 Z" 
+            fill="none" stroke="#00e5ff" stroke-width="2.8" stroke-linecap="round" filter="drop-shadow(0 0 8px #00e5ff)"/>
+      <!-- Neural circuits inside -->
+      <path d="M-4,-14 C-12,-14 -16,-8 -16,-2 C-16,4 -10,8 -4,8" fill="none" stroke="#00e5ff" stroke-width="2" opacity="0.8"/>
+      <path d="M4,-14 C12,-14 16,-8 16,-2 C16,4 10,8 4,8" fill="none" stroke="#00e5ff" stroke-width="2" opacity="0.8"/>
+      <path d="M-4,20 C-14,20 -18,26 -18,32" fill="none" stroke="#00e5ff" stroke-width="2" opacity="0.8"/>
+      <path d="M4,20 C14,20 18,26 18,32" fill="none" stroke="#00e5ff" stroke-width="2" opacity="0.8"/>
+      <line x1="0" y1="-30" x2="0" y2="46" stroke="#00e5ff" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+
+    <!-- AI PROCESSING text -->
+    <text x="130" y="325" fill="#00e5ff" font-size="13" font-weight="800" letter-spacing="1.8" text-anchor="middle">AI PROCESSING</text>
+
+    <!-- Document <-> Database RAG Icon -->
+    <g transform="translate(130, 405)">
+      <!-- Document (Left) -->
+      <g transform="translate(-36, -20)">
+        <rect x="0" y="0" width="30" height="40" rx="5" fill="none" stroke="#00e5ff" stroke-width="2.2"/>
+        <line x1="6" y1="10" x2="24" y2="10" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"/>
+        <line x1="6" y1="18" x2="24" y2="18" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"/>
+        <line x1="6" y1="26" x2="18" y2="26" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <!-- Two-way arrows in between -->
+      <g transform="translate(0, 0)">
+        <line x1="-14" y1="-5" x2="14" y2="-5" stroke="#00e5ff" stroke-width="2.4" stroke-linecap="round"/>
+        <polyline points="8,-10 14,-5 8,0" fill="none" stroke="#00e5ff" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="14" y1="5" x2="-14" y2="5" stroke="#00e5ff" stroke-width="2.4" stroke-linecap="round"/>
+        <polyline points="-8,0 -14,5 -8,10" fill="none" stroke="#00e5ff" stroke-width="2.4" stroke-linecap="round"/>
+      </g>
+      <!-- Database Cylinders (Right) -->
+      <g transform="translate(14, -20)">
+        <ellipse cx="16" cy="6" rx="16" ry="6" fill="none" stroke="#00e5ff" stroke-width="2.2"/>
+        <path d="M0,6 L0,20 C0,23 7,26 16,26 C25,26 32,23 32,20 L32,6" fill="none" stroke="#00e5ff" stroke-width="2.2"/>
+        <path d="M0,20 L0,34 C0,37 7,40 16,40 C25,40 32,37 32,34 L32,20" fill="none" stroke="#00e5ff" stroke-width="2.2"/>
+      </g>
+    </g>
+
+    <!-- RAG Text -->
+    <text x="130" y="480" fill="#00e5ff" font-size="24" font-weight="800" letter-spacing="1.5" text-anchor="middle" filter="drop-shadow(0 0 8px rgba(0,229,255,0.5))">RAG</text>
+
+    <!-- Bottom Description -->
+    <g text-anchor="middle" transform="translate(130, 620)">
+      <text x="0" y="0" fill="#cbd5e1" font-size="15" font-weight="500">
+        <tspan x="0" dy="0">Contextual</tspan>
+        <tspan x="0" dy="26">Search from</tspan>
+        <tspan x="0" dy="26">Knowledge Base</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <g transform="translate(634, 570)">
+    <line x1="8" y1="0" x2="36" y2="0" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round"/>
+    <polyline points="28,-6 36,0 28,6" fill="none" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- STEP 3: Natural AI Auto-Reply                                            -->
+  <!-- ========================================================================= -->
+  <text x="808" y="175" fill="#c084fc" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.5">Step 3</text>
+
+  <g transform="translate(678, 200)">
+    <rect width="260" height="740" rx="28" fill="url(#cardBg)" stroke="#c084fc" stroke-width="2.4" filter="url(#glowPurple)"/>
+
+    <!-- Title Section -->
+    <g text-anchor="middle" transform="translate(130, 56)">
+      <text x="0" y="0" fill="#ffffff" font-size="22" font-weight="700">
+        <tspan x="0" dy="0">Natural AI</tspan>
+        <tspan x="0" dy="30">Auto-Reply</tspan>
+      </text>
+    </g>
+
+    <!-- Center Dual Speech Bubbles Icon -->
+    <g transform="translate(130, 250)">
+      <path d="M-32,-28 C-32,-40 -20,-48 0,-48 C20,-48 32,-40 32,-28 C32,-16 20,-10 0,-10 C-7,-10 -14,-11 -20,-13 L-30,-9 L-27,-19 C-30,-22 -32,-25 -32,-28 Z" 
+            fill="none" stroke="#c084fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="drop-shadow(0 0 10px #c084fc)"/>
+      <circle cx="-12" cy="-28" r="3.5" fill="#c084fc"/>
+      <circle cx="0" cy="-28" r="3.5" fill="#c084fc"/>
+      <circle cx="12" cy="-28" r="3.5" fill="#c084fc"/>
+
+      <path d="M6,-4 C6,6 18,14 34,14 C40,14 45,13 49,11 L57,14 L55,7 C57,5 60,3 60,-4 C60,-14 48,-22 34,-22 C29,-22 24,-21 19,-19" 
+            fill="none" stroke="#c084fc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+    </g>
+
+    <!-- AI RESPONSE text badge -->
+    <text x="130" y="335" fill="#c084fc" font-size="13" font-weight="800" letter-spacing="1.8" text-anchor="middle">AI RESPONSE</text>
+
+    <!-- Instant Reply Bubble Icon -->
+    <g transform="translate(130, 440)">
+      <circle cx="0" cy="0" r="26" fill="none" stroke="#c084fc" stroke-width="2.8"/>
+      <path d="M-16,16 L-24,28 L-10,22" fill="none" stroke="#c084fc" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="-8" cy="0" r="3" fill="#c084fc"/>
+      <circle cx="0" cy="0" r="3" fill="#c084fc"/>
+      <circle cx="8" cy="0" r="3" fill="#c084fc"/>
+    </g>
+
+    <!-- Bottom Description -->
+    <g text-anchor="middle" transform="translate(130, 620)">
+      <text x="0" y="0" fill="#cbd5e1" font-size="15" font-weight="500">
+        <tspan x="0" dy="0">Generates</tspan>
+        <tspan x="0" dy="26">human-like</tspan>
+        <tspan x="0" dy="26">instant answer</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <g transform="translate(938, 570)">
+    <line x1="8" y1="0" x2="36" y2="0" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round"/>
+    <polyline points="28,-6 36,0 28,6" fill="none" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- STEP 4: Sentiment & Lead Score                                           -->
+  <!-- ========================================================================= -->
+  <text x="1112" y="175" fill="#00e676" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.5">Step 4</text>
+
+  <g transform="translate(982, 200)">
+    <rect width="260" height="740" rx="28" fill="url(#cardBg)" stroke="#00e676" stroke-width="2.4" filter="url(#glowGreen)"/>
+
+    <!-- Title Section -->
+    <g text-anchor="middle" transform="translate(130, 56)">
+      <text x="0" y="0" fill="#ffffff" font-size="22" font-weight="700">
+        <tspan x="0" dy="0">Sentiment &amp;</tspan>
+        <tspan x="0" dy="30">Lead Score</tspan>
+      </text>
+    </g>
+
+    <!-- Gauge / Speedometer Icon -->
+    <g transform="translate(130, 245)">
+      <path d="M-48,12 A50,50 0 1,1 48,12" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="9" stroke-linecap="round"/>
+      <path d="M-48,12 A50,50 0 0,1 34,-34" fill="none" stroke="#00e676" stroke-width="9" stroke-linecap="round" filter="drop-shadow(0 0 8px #00e676)"/>
+      <line x1="0" y1="12" x2="30" y2="-25" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="0" cy="12" r="6" fill="#00e676"/>
+    </g>
+
+    <!-- High Intent & 92/100 score -->
+    <g text-anchor="middle" transform="translate(130, 335)">
+      <text x="0" y="0" fill="#ffffff" font-size="16" font-weight="600" letter-spacing="0.5">High Intent</text>
+      <text x="0" y="32" fill="#00e676" font-size="26" font-weight="800" filter="drop-shadow(0 0 8px rgba(0,230,118,0.6))">92 / 100</text>
+    </g>
+
+    <!-- Ascending Bar Chart Icon (4 green bars) -->
+    <g transform="translate(130, 450)">
+      <rect x="-27" y="-9" width="9" height="22" rx="2.5" fill="#00e676" opacity="0.6"/>
+      <rect x="-12" y="-20" width="9" height="33" rx="2.5" fill="#00e676" opacity="0.75"/>
+      <rect x="3" y="-31" width="9" height="44" rx="2.5" fill="#00e676" opacity="0.9"/>
+      <rect x="18" y="-42" width="9" height="55" rx="2.5" fill="#00e676" filter="drop-shadow(0 0 6px #00e676)"/>
+    </g>
+
+    <!-- Bottom Description -->
+    <g text-anchor="middle" transform="translate(130, 620)">
+      <text x="0" y="0" fill="#cbd5e1" font-size="15" font-weight="500">
+        <tspan x="0" dy="0">Analyzes</tspan>
+        <tspan x="0" dy="26">Emotion &amp;</tspan>
+        <tspan x="0" dy="26">Qualifies Lead</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <g transform="translate(1242, 570)">
+    <line x1="8" y1="0" x2="36" y2="0" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round"/>
+    <polyline points="28,-6 36,0 28,6" fill="none" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- STEP 5: CRM Sales Pipeline                                               -->
+  <!-- ========================================================================= -->
+  <text x="1416" y="175" fill="#38bdf8" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.5">Step 5</text>
+
+  <g transform="translate(1286, 200)">
+    <rect width="260" height="740" rx="28" fill="url(#cardBg)" stroke="#00b0ff" stroke-width="2.4" filter="url(#glowBlue)"/>
+
+    <!-- Title Section -->
+    <g text-anchor="middle" transform="translate(130, 56)">
+      <text x="0" y="0" fill="#ffffff" font-size="22" font-weight="700">
+        <tspan x="0" dy="0">CRM Sales</tspan>
+        <tspan x="0" dy="30">Pipeline</tspan>
+      </text>
+    </g>
+
+    <!-- Single Deal Card Widget -->
+    <g transform="translate(35, 215)">
+      <rect width="190" height="130" rx="12" fill="#141e30" stroke="rgba(255,255,255,0.14)" stroke-width="1.4"/>
+      <text x="15" y="28" fill="#94a3b8" font-size="12" font-weight="600">Single Deal Card</text>
+      <text x="15" y="55" fill="#ffffff" font-size="15" font-weight="700">New Lead: John D.</text>
+      <rect x="15" y="71" width="75" height="9" rx="4.5" fill="#38bdf8" opacity="0.7"/>
+      <rect x="15" y="87" width="120" height="8" rx="4" fill="rgba(255,255,255,0.2)"/>
+      <rect x="15" y="102" width="90" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
+    </g>
+
+    <!-- Funnel / Filter Icon -->
+    <g transform="translate(130, 445)">
+      <path d="M-26,-28 L26,-28 L9,4 L9,24 L-9,32 L-9,4 Z" 
+            fill="none" stroke="#00b0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="drop-shadow(0 0 8px #00b0ff)"/>
+      <ellipse cx="0" cy="-28" rx="26" ry="6" fill="none" stroke="#00b0ff" stroke-width="2.4"/>
+    </g>
+
+    <!-- Bottom Description -->
+    <g text-anchor="middle" transform="translate(130, 620)">
+      <text x="0" y="0" fill="#cbd5e1" font-size="15" font-weight="500">
+        <tspan x="0" dy="0">Updates Deal</tspan>
+        <tspan x="0" dy="26">Status,</tspan>
+        <tspan x="0" dy="26">Auto-Merge Data</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow 5 -> 6 -->
+  <g transform="translate(1546, 570)">
+    <line x1="8" y1="0" x2="36" y2="0" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round"/>
+    <polyline points="28,-6 36,0 28,6" fill="none" stroke="#00e5ff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- STEP 6: Smart AI Follow-up & Agent Handoff                               -->
+  <!-- ========================================================================= -->
+  <text x="1720" y="175" fill="#c084fc" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.5">Step 6</text>
+
+  <g transform="translate(1590, 200)">
+    <rect width="260" height="740" rx="28" fill="url(#cardBg)" stroke="#c084fc" stroke-width="2.4" filter="url(#glowViolet)"/>
+
+    <!-- Title Section -->
+    <g text-anchor="middle" transform="translate(130, 44)">
+      <text x="0" y="0" fill="#ffffff" font-size="20" font-weight="700" line-height="26">
+        <tspan x="0" dy="0">Smart AI</tspan>
+        <tspan x="0" dy="28">Follow-up &amp;</tspan>
+        <tspan x="0" dy="28">Agent</tspan>
+        <tspan x="0" dy="28">Handoff</tspan>
+      </text>
+    </g>
+
+    <!-- Clock Icon -->
+    <g transform="translate(130, 230)">
+      <circle cx="0" cy="0" r="26" fill="none" stroke="#c084fc" stroke-width="2.8"/>
+      <polyline points="0,-14 0,0 10,6" fill="none" stroke="#c084fc" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+
+    <!-- Follow-up Label -->
+    <text x="130" y="285" fill="#c084fc" font-size="14" font-weight="700" text-anchor="middle">Follow-up</text>
+
+    <!-- Downward Arrow -->
+    <g transform="translate(130, 310)">
+      <line x1="0" y1="0" x2="0" y2="28" stroke="#c084fc" stroke-width="2.8" stroke-linecap="round"/>
+      <polyline points="-6,20 0,28 6,20" fill="none" stroke="#c084fc" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Support Agent with Headset Icon -->
+    <g transform="translate(130, 430)">
+      <circle cx="0" cy="-16" r="16" fill="none" stroke="#c084fc" stroke-width="2.8"/>
+      <path d="M-26,22 C-26,7 -14,1 0,1 C14,1 26,7 26,22" fill="none" stroke="#c084fc" stroke-width="2.8"/>
+      <polygon points="0,1 -5,12 0,18 5,12" fill="none" stroke="#c084fc" stroke-width="2"/>
+      <path d="M-18,-18 A18,18 0 0,1 18,-18" fill="none" stroke="#c084fc" stroke-width="3" stroke-linecap="round"/>
+      <path d="M18,-16 L18,-7 L10,-2" fill="none" stroke="#c084fc" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="7" cy="-1" r="3" fill="#c084fc"/>
+      <rect x="-21" y="-20" width="5" height="10" rx="2.5" fill="#c084fc"/>
+      <rect x="16" y="-20" width="5" height="10" rx="2.5" fill="#c084fc"/>
+    </g>
+
+    <!-- Bottom Description -->
+    <g text-anchor="middle" transform="translate(130, 620)">
+      <text x="0" y="0" fill="#cbd5e1" font-size="15" font-weight="500">
+        <tspan x="0" dy="0">Schedules next</tspan>
+        <tspan x="0" dy="26">contact or transfers</tspan>
+        <tspan x="0" dy="26">to Human Agent</tspan>
+      </text>
+    </g>
+  </g>
+
+</svg>

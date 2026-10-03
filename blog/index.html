@@ -80,6 +80,27 @@
             box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
         }
 
+        .blog-card-media {
+            position: relative;
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+            background: #070b14;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .blog-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .blog-card:hover .blog-card-media img {
+            transform: scale(1.05);
+        }
+
         .blog-card-body {
             padding: 28px;
             display: flex;
@@ -735,6 +756,9 @@
 
                     <!-- New Article: AI CRM Architecture & Intelligence -->
                     <article class="blog-card" data-cat="ai">
+                        <div class="blog-card-media">
+                            <img src="../assets/ai_clean_workflow_diagram.jpg" alt="How AI Agents Work in WhatsApp CRM: Complete Architecture, RAG &amp; Sales Deals" loading="lazy">
+                        </div>
                         <div class="blog-card-body">
                             <div class="blog-meta">
                                 <span class="blog-badge badge-purple">AI Architecture</span>
@@ -767,6 +791,9 @@
 
                     <!-- New Article: WhatsApp Workflow Automation Blueprint -->
                     <article class="blog-card" data-cat="automation">
+                        <div class="blog-card-media">
+                            <img src="../assets/automation_clean_workflow_diagram.jpg" alt="The Ultimate WhatsApp Automation Blueprint: 9 Triggers &amp; 12 Actions" loading="lazy">
+                        </div>
                         <div class="blog-card-body">
                             <div class="blog-meta">
                                 <span class="blog-badge badge-green">Workflow Automation</span>
@@ -799,6 +826,9 @@
 
                     <!-- Article 1: Green Tick -->
                     <article class="blog-card" data-cat="verification">
+                        <div class="blog-card-media">
+                            <img src="../assets/green_tick_guide.jpg" alt="How to Get Official WhatsApp Green Tick Verification in 2026" loading="lazy">
+                        </div>
                         <div class="blog-card-body">
                             <div class="blog-meta">
                                 <span class="blog-badge badge-green">Meta Verification</span>
@@ -830,6 +860,9 @@
 
                     <!-- Article 2: Bulk Deliverability -->
                     <article class="blog-card" data-cat="deliverability">
+                        <div class="blog-card-media">
+                            <img src="../assets/broadcast_tiers.jpg" alt="Scaling WhatsApp Bulk Broadcasts to 100k+ Contacts Without Bans" loading="lazy">
+                        </div>
                         <div class="blog-card-body">
                             <div class="blog-meta">
                                 <span class="blog-badge badge-blue">Deliverability</span>
@@ -861,6 +894,9 @@
 
                     <!-- Article 3: AI Agents vs Chatbots -->
                     <article class="blog-card" data-cat="ai">
+                        <div class="blog-card-media">
+                            <img src="../assets/ai_memory_scoring_preview.png" alt="Autonomous AI Agents vs Rule-Based Chatbots: Boosting Conversions by 340%" loading="lazy">
+                        </div>
                         <div class="blog-card-body">
                             <div class="blog-meta">
                                 <span class="blog-badge badge-purple">AI Automation</span>
@@ -892,6 +928,9 @@
 
                     <!-- Article 4: Shopify Abandoned Carts -->
                     <article class="blog-card" data-cat="ecommerce">
+                        <div class="blog-card-media">
+                            <img src="../assets/cart_recovery_flow.jpg" alt="Recovering 42% of Abandoned Carts on Shopify Using Automated WhatsApp Sequences" loading="lazy">
+                        </div>
                         <div class="blog-card-body">
                             <div class="blog-meta">
                                 <span class="blog-badge badge-green">E-commerce</span>
@@ -923,6 +962,9 @@
 
                     <!-- Article 5: Click-to-WhatsApp Ads -->
                     <article class="blog-card" data-cat="ads">
+                        <div class="blog-card-media">
+                            <img src="../assets/ctwa_ad_funnel.jpg" alt="Click-to-WhatsApp (CTWA) Ads: Cutting Customer Acquisition Cost by 52%" loading="lazy">
+                        </div>
                         <div class="blog-card-body">
                             <div class="blog-meta">
                                 <span class="blog-badge badge-blue">Social Ads</span>
@@ -954,6 +996,9 @@
 
                     <!-- Article 6: Zero Markup Pricing -->
                     <article class="blog-card" data-cat="pricing">
+                        <div class="blog-card-media">
+                            <img src="../assets/bsp_vs_direct_pricing.jpg" alt="The Zero-Markup Advantage: Why Official Meta Cloud API Saves 40%+ on Costs" loading="lazy">
+                        </div>
                         <div class="blog-card-body">
                             <div class="blog-meta">
                                 <span class="blog-badge badge-amber">Pricing &amp; Cost</span>
@@ -1011,48 +1056,168 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-brand"><img src="../assets/logo.png" alt="Ai Botflow" width="26" height="26"><span class="brand-name">Ai Botflow CRM</span></div>
-                    <p class="footer-desc">Actionable playbooks, API compliance guides, and revenue optimization blueprints for modern WhatsApp teams.</p>
-                </div>
-                <div>
-                    <h4 class="footer-col-title">Platforms</h4>
-                    <ul class="footer-links">
-                        <li><a href="../whatsapp-crm.html">WhatsApp CRM</a></li>
-                        <li><a href="../shared-inbox.html">Shared Team Inbox</a></li>
-                        <li><a href="../gmb-automation.html" style="color: #60a5fa; font-weight: 600;"><i class="fa-brands fa-google" style="color: #4285F4; margin-right: 4px;"></i> Google My Business <span style="font-size:0.65rem; background:#4285F4; color:#fff; padding:1px 5px; border-radius:4px;">NEW</span></a></li>
-                        <li><a href="../instagram-automation.html">Instagram Automation</a></li>
-                        <li><a href="../facebook-messenger.html">Facebook Messenger</a></li>
-                        <li><a href="../ai-agents.html">AI Agents Hub</a></li>
-                        <li><a href="../pricing.html">Pricing Plans</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-col-title">Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://dash.aibotflow.in/downloads/ai-botflow-crm.apk?v=2" style="color: #4ade80; font-weight: 600;"><i class="fa-brands fa-android" style="color:#22c55e; margin-right: 4px;"></i> Download Android App (APK v2)</a></li>
-                        <li><a href="../knowledgebase.html">Knowledgebase &amp; Docs</a></li>
-                        <li><a href="index.html">Growth Blog</a></li>
-                        <li><a href="../api-docs.html">Developer API Docs</a></li>
-                        <li><a href="../tutorials.html">Video Tutorials</a></li>
-                        <li><a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" style="color: #ef4444; margin-right: 6px;"></i>YouTube: @AiBotFlow</a></li>
-                        <li><a href="../partner.html">Partner Program</a></li>
-                        <li><a href="../about.html">About AI Botflow</a></li>
-                        <li><a href="../contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-col-title">Meta Compliance</h4>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5;">
-                        Official Meta Cloud API partner &amp; Google Business Profile API Partner. Direct platform connection with 100% policy compliance.
+    <!-- =========================================================================
+       FOOTER (Master 5-Column SEO Optimized Structure)
+       ========================================================================= -->
+    <footer class="site-footer" itemscope itemtype="https://schema.org/Organization">
+        <div class="container container-wide">
+            <div class="footer-grid-5">
+                <!-- Column 1: Brand, Mission & Verified Credentials -->
+                <div class="footer-brand-col">
+                    <div class="footer-brand">
+                        <img src="../assets/logo.png" alt="AiBotFlow Official Logo" width="28" height="28" itemprop="logo">
+                        <span class="footer-brand-title" itemprop="name">AiBotFlow <span class="footer-badge">CRM</span></span>
+                    </div>
+                    <div class="footer-partner-pills">
+                        <span class="f-partner-pill f-pill-meta"><i class="fa-brands fa-meta"></i> Meta Tech Partner</span>
+                        <span class="f-partner-pill f-pill-google"><i class="fa-brands fa-google"></i> Google Business Partner</span>
+                    </div>
+                    <p class="footer-desc" itemprop="description">
+                        India's premier official WhatsApp Cloud API CRM &amp; Autonomous AI Agent platform. Scale broadcasts, qualify leads, and manage conversations with 0% platform markup.
                     </p>
+                    <div class="footer-contacts" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <div class="f-contact-item">
+                            <i class="fa-solid fa-location-dot text-emerald"></i>
+                            <span><strong itemprop="addressLocality">Gopalganj</strong>, <span itemprop="addressRegion">Bihar</span>, <span itemprop="addressCountry">India</span></span>
+                        </div>
+                        <a href="tel:+919939800780" class="f-contact-item" itemprop="telephone">
+                            <i class="fa-solid fa-phone text-cyan"></i>
+                            <span>+91 99398 00780 (Sales &amp; Support)</span>
+                        </a>
+                        <a href="mailto:support@aibotflow.in" class="f-contact-item" itemprop="email">
+                            <i class="fa-solid fa-envelope text-purple"></i>
+                            <span>support@aibotflow.in</span>
+                        </a>
+                    </div>
+                    <div class="footer-social-row">
+                        <a href="https://wa.me/919939800780" target="_blank" rel="noopener" aria-label="Official WhatsApp Support" class="f-soc-btn f-soc-wa"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="AiBotFlow LinkedIn" class="f-soc-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="AiBotFlow Instagram" class="f-soc-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61565980363804" target="_blank" rel="noopener" aria-label="AiBotFlow Facebook" class="f-soc-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@AiBotFlow" target="_blank" rel="noopener" aria-label="AiBotFlow YouTube" class="f-soc-btn"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Omnichannel Platforms & Tools -->
+                <div>
+                    <h4 class="footer-col-title">Platforms &amp; Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="../whatsapp-crm.html">WhatsApp Cloud API CRM</a></li>
+                        <li><a href="../ai-agents.html">Autonomous AI Agents <span class="tag-badge-accent">AI 2.0</span></a></li>
+                        <li><a href="../gmb-automation.html">Google Business Profile <span class="tag-badge-cyan">NEW</span></a></li>
+                        <li><a href="../shared-inbox.html">Multi-Agent Shared Inbox</a></li>
+                        <li><a href="../instagram-automation.html">Instagram DM Automation</a></li>
+                        <li><a href="../facebook-messenger.html">Facebook Messenger CRM</a></li>
+                        <li><a href="../pricing.html">Subscription Plans (from ₹799)</a></li>
+                        <li><a href="../pricing.html#messaging-rates">Zero-Markup Usage Rates</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Industry Solutions (SEO High-Intent) -->
+                <div>
+                    <h4 class="footer-col-title">Industry Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="../ai-agents.html#realestate">Real Estate &amp; Builders</a></li>
+                        <li><a href="blog-abandoned-cart-recovery-whatsapp.html">D2C &amp; Shopify Stores</a></li>
+                        <li><a href="../ai-agents.html#education">Coaching &amp; Institutes</a></li>
+                        <li><a href="../ai-agents.html#healthcare">Hospitals &amp; Clinics</a></li>
+                        <li><a href="../ai-agents.html#automotive">Automobile Dealerships</a></li>
+                        <li><a href="../gmb-automation.html#magic-qr">Retail Stores &amp; Magic QR</a></li>
+                        <li><a href="../partner.html#reseller">Agencies &amp; White-Label</a></li>
+                        <li><a href="../partner.html#affiliate">30% Affiliate Program</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Technical & Growth Guides -->
+                <div>
+                    <h4 class="footer-col-title">Guides &amp; Architecture</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog-how-ai-agents-work-crm-whatsapp.html">How AI Agents Work in CRM</a></li>
+                        <li><a href="blog-zero-markup-cloud-api-pricing.html">Meta Cloud API vs BSP Markup</a></li>
+                        <li><a href="blog-green-tick-verification-guide.html">WhatsApp Green Tick Guide</a></li>
+                        <li><a href="blog-whatsapp-broadcast-deliverability.html">100k Bulk Broadcast Scaling</a></li>
+                        <li><a href="blog-ai-agents-vs-chatbots.html">AI Agents vs Static Chatbots</a></li>
+                        <li><a href="blog-click-to-whatsapp-ads-guide.html">Click-to-WhatsApp (CTWA) Ads</a></li>
+                        <li><a href="blog-complete-whatsapp-automation-workflows-guide.html">12 Actions Workflow Engine</a></li>
+                        <li><a href="index.html">All Knowledge Articles &rarr;</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 5: Enterprise Compliance & Legal -->
+                <div>
+                    <h4 class="footer-col-title">Company &amp; Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About AiBotFlow</a></li>
+                        <li><a href="../contact.html">Enterprise Sales &amp; Demo</a></li>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-conditions.html">Terms of Service</a></li>
+                        <li><a href="../refund-policy.html">Refund &amp; Cancellation</a></li>
+                        <li><a href="../api-docs.html">REST API &amp; Webhook Docs</a></li>
+                        <li><a href="../tutorials.html">Video Tutorials &amp; Demos</a></li>
+                        <li><a href="../knowledgebase.html">Help Center &amp; FAQs</a></li>
+                        <li><a href="../sitemap.html">HTML Site Map</a></li>
+                    </ul>
+                    
+                    <!-- Security / Compliance Card -->
+                    <div class="footer-compliance-box">
+                        <div class="fcb-header">
+                            <span class="status-dot"></span>
+                            <span>Enterprise Security</span>
+                        </div>
+                        <p class="fcb-desc">
+                            100% Meta Cloud API &amp; Google API compliant. 256-bit AES encryption with zero conversation data resale.
+                        </p>
+                        <div class="fcb-meta">
+                            <i class="fa-solid fa-file-invoice text-emerald"></i>
+                            <span>Official GST Tax Invoices</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom"><div>&copy; 2026 AI Botflow CRM. All rights reserved. Meta Cloud API &amp; Google Business Profile API Partner.</div></div>
+
+            <!-- SEO Keyword Search Cloud (Internal Linking Breadcrumb) -->
+            <div class="footer-seo-cloud">
+                <span class="fsc-label"><i class="fa-solid fa-magnifying-glass"></i> Popular Solutions:</span>
+                <a href="../whatsapp-crm.html">WhatsApp CRM India</a> &middot; 
+                <a href="blog-green-tick-verification-guide.html">WhatsApp Green Tick Verification</a> &middot; 
+                <a href="../ai-agents.html">AI Chatbot for WhatsApp</a> &middot; 
+                <a href="../gmb-automation.html">Google Business Profile Review Automation</a> &middot; 
+                <a href="../pricing.html#messaging-rates">Official WhatsApp Message Cost</a> &middot; 
+                <a href="blog-abandoned-cart-recovery-whatsapp.html">Shopify WhatsApp Cart Recovery</a> &middot; 
+                <a href="../shared-inbox.html">WhatsApp Multi-Agent Shared Team Inbox</a> &middot; 
+                <a href="../instagram-automation.html">Instagram Auto Reply DM Tool</a> &middot; 
+                <a href="blog-click-to-whatsapp-ads-guide.html">Click to WhatsApp Ads Funnel</a>
+            </div>
+
+            <!-- Bottom Copyright, Legal Quick Links & Trust Badges -->
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    &copy; 2026 <strong>AiBotFlow CRM</strong>. All rights reserved. Powered by Official Meta WhatsApp Cloud API &amp; Google Business Profile API.
+                    <span style="display:inline-block; margin-left: 12px; color: #64748b;">
+                        <a href="../privacy-policy.html" style="color: #94a3b8; text-decoration:none;">Privacy Policy</a> &bull; 
+                        <a href="../terms-conditions.html" style="color: #94a3b8; text-decoration:none;">Terms of Service</a> &bull; 
+                        <a href="../refund-policy.html" style="color: #94a3b8; text-decoration:none;">Refund Policy</a>
+                    </span>
+                </div>
+                <div class="bottom-badges">
+                    <div class="bottom-badge badge-meta">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Meta Cloud API</span>
+                    </div>
+                    <div class="bottom-badge badge-google">
+                        <i class="fa-brands fa-google"></i>
+                        <span>Google Business API</span>
+                    </div>
+                    <div class="bottom-badge badge-razorpay">
+                        <i class="fa-solid fa-shield-check text-emerald"></i>
+                        <span>Razorpay Secured</span>
+                    </div>
+                    <div class="bottom-badge badge-ssl">
+                        <i class="fa-solid fa-lock text-cyan"></i>
+                        <span>256-Bit SSL</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 

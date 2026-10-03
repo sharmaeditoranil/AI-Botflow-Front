@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initChatSimulator();
   initSmoothScroll();
   initKBHubSection();
+  initScrollReveal();
+  initButtonRipples();
 });
 
 /* --------------------------------------------------------------------------
@@ -671,3 +673,95 @@ function initKBHubSection() {
     });
   }
 }
+
+/* --------------------------------------------------------------------------
+   Scroll Reveal Animation (Silky Smooth Fade & Slide on Scroll)
+   -------------------------------------------------------------------------- */
+function initScrollReveal() {
+  const candidateSelectors = [
+    '.reveal-on-scroll',
+    '.section-header',
+    '.glass-card',
+    '.pcard',
+    '.bsp-card',
+    '.stat-card',
+    '.pricing-card-equal',
+    '.faq-item',
+    '.wf-card',
+    '.integration-card',
+    '.blog-card',
+    '.bsp-step-card',
+    '.feature-card',
+    '.abf-plan-card',
+    '.ecosystem-card',
+    '.tool-card',
+    '.roi-card',
+    '.guide-card',
+    '.crm-feat-card'
+  ];
+
+  const elements = document.querySelectorAll(candidateSelectors.join(', '));
+  if (!elements || elements.length === 0) return;
+
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.08
+  });
+
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < vh * 0.92 && rect.bottom > 0) {
+      el.classList.add('is-revealed');
+    } else {
+      if (!el.classList.contains('reveal-on-scroll')) {
+        el.classList.add('reveal-on-scroll');
+      }
+      observer.observe(el);
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   Button Special Effects (Interactive Tactile Ripple Wave)
+   -------------------------------------------------------------------------- */
+function initButtonRipples() {
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn, .om-btn-primary, .btn-cta, .btn-primary, .btn-secondary, .btn-emerald, .price-btn, .blog-cta-btn, .abf-plan-btn');
+    if (!btn) return;
+
+    const rect = btn.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'btn-ripple-effect';
+
+    const size = Math.max(rect.width, rect.height) * 1.5;
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+
+    ripple.style.width = `${size}px`;
+    ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+
+    btn.appendChild(ripple);
+
+    setTimeout(() => {
+      ripple.remove();
+    }, 650);
+  });
+}
+
