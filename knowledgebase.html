@@ -280,6 +280,44 @@
             border-left-color: #f59e0b;
             color: #fde68a;
         }
+        .kb-table-wrap {
+            overflow-x: auto;
+            margin: 16px 0 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(10, 15, 26, 0.7);
+        }
+        .kb-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            text-align: left;
+        }
+        .kb-table th {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 12px 14px;
+            color: #93c5fd;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            white-space: nowrap;
+        }
+        .kb-table td {
+            padding: 12px 14px;
+            color: #cbd5e1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            vertical-align: top;
+        }
+        .kb-table tr:last-child td {
+            border-bottom: none;
+        }
+        .kb-flow-card {
+            background: rgba(14, 20, 36, 0.85);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
         .yt-banner-card {
             background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(37, 99, 235, 0.12) 100%);
             border: 1px solid rgba(239, 68, 68, 0.25);
@@ -928,13 +966,13 @@
                         <div class="kb-sidebar-title">Automation &amp; AI</div>
                         <a href="#module-15" class="kb-sidebar-link"><span class="kb-module-num">15</span> Visual Chatbot Flows</a>
                         <a href="#module-16" class="kb-sidebar-link"><span class="kb-module-num">16</span> AI Agents Knowledge Base</a>
-                        <a href="#module-17" class="kb-sidebar-link"><span class="kb-module-num">17</span> AI Agent Configuration</a>
+                        <a href="#module-17" class="kb-sidebar-link"><span class="kb-module-num">17</span> AI Intelligence &amp; Pipeline Deals</a>
                         <a href="#module-18" class="kb-sidebar-link"><span class="kb-module-num">18</span> AI Playground Simulation</a>
                     </div>
 
                     <div class="kb-sidebar-group">
                         <div class="kb-sidebar-title">Integrations &amp; CRM</div>
-                        <a href="#module-19" class="kb-sidebar-link"><span class="kb-module-num">19</span> Webhook Bots &amp; Shopify</a>
+                        <a href="#module-19" class="kb-sidebar-link"><span class="kb-module-num">19</span> Workflow Automations &amp; Wait Engine</a>
                         <a href="#module-20" class="kb-sidebar-link"><span class="kb-module-num">20</span> Sales Pipelines &amp; Kanban</a>
                         <a href="#module-21" class="kb-sidebar-link"><span class="kb-module-num">21</span> Team Roles &amp; Permissions</a>
                         <a href="#module-22" class="kb-sidebar-link"><span class="kb-module-num">22</span> Developer REST API</a>
@@ -1354,22 +1392,168 @@
                     </article>
 
                     <!-- =========================================================
-                         MODULE 17: AI AGENT CONFIGURATION
+                         MODULE 17: AI AGENT INTELLIGENCE & PIPELINE DEALS
                          ========================================================= -->
                     <article class="kb-article-card" id="module-17" data-cat="agents">
                         <div class="kb-article-meta">
                             <span class="kb-article-badge kb-badge-purple">Module 17</span>
-                            <span class="kb-route-badge">Route: /agents (Config tab)</span>
+                            <span class="kb-route-badge">Route: /agents (Config tab) &bull; /pipelines &bull; /settings?tab=ai</span>
                         </div>
-                        <h2 class="kb-article-title">AI Agent Persona &amp; Configuration</h2>
+                        <h2 class="kb-article-title">AI Agents — Autonomous Architecture, RAG, Sentiment Intelligence &amp; Pipeline Deals</h2>
                         <div class="kb-article-body">
-                            <p>Fine-tune how your AI interacts with customers:</p>
+                            <p>Yeh complete architecture guide samjhata hai ki AI-Botflow CRM me AI kaise customer ke pehle WhatsApp message ya Webhook lead aane se lekar, AI Qualification, Auto-reply, CRM Pipeline Deal Creation, aur Smart Follow-ups tak autonomously kaam karta hai.</p>
+
+                            <h3>1. AI ka Overall Architecture (How Inbound Chats Flow)</h3>
+                            <div style="margin: 20px 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);">
+                                <img src="assets/ai_clean_workflow_diagram.jpg" alt="AI Agent Workflow Architecture Diagram for WhatsApp CRM" style="width: 100%; height: auto; display: block; border-radius: 14px;" loading="lazy">
+                            </div>
+                            <div class="kb-flow-card">
+                                <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+                                    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                                        <span class="kb-route-badge" style="background: rgba(34, 197, 94, 0.15); color: #4ade80;"><i class="fa-brands fa-whatsapp"></i> Inbound Message</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge">Webhook Engine (Meta Cloud API / Lead Form)</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge">Contact &amp; Conversation Resolve</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-left: 20px;">
+                                        <i class="fa-solid fa-turn-down" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa;"><i class="fa-solid fa-brain"></i> RAG Vector Search (Knowledge Base)</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge">LLM Generation (GPT-4o / Claude)</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge" style="background: rgba(34, 197, 94, 0.15); color: #4ade80;">Instant WhatsApp Auto-Reply</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-left: 20px;">
+                                        <i class="fa-solid fa-turn-down" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;"><i class="fa-solid fa-magnifying-glass-chart"></i> AI Intelligence Engine</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge">Sentiment &amp; Intent Analysis</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge">Lead Score (0-100) &amp; AI Memory</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-left: 40px;">
+                                        <i class="fa-solid fa-turn-down" style="color: #64748b;"></i>
+                                        <strong style="color: #f59e0b;">Interested? (Quote, Booking, Inquiry):</strong>
+                                        <span class="kb-route-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;"><i class="fa-solid fa-filter-circle-dollar"></i> Auto Pipeline Deal Create / Auto-Merge</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge">Smart Due-Date Follow-up Engine</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3>2. WhatsApp Inbound Chat &amp; Auto-Reply (RAG Execution)</h3>
+                            <ol>
+                                <li><strong>Customer Pehchan (Identity Resolution):</strong> System check karta hai ki customer pehle se contacts list me exist karta hai ya naya hai. Agar naya hai toh phone number se contact record turant create hota hai.</li>
+                                <li><strong>RAG (Retrieval-Augmented Generation) Vector Search:</strong> AI aapke Knowledge Base (PDF catalogs, service guides, pricing tables, FAQs) me cosine similarity vector search run karta hai aur customer ke query se relevant exact facts retrieve karta hai.</li>
+                                <li><strong>Natural Conversational Reply:</strong> AI robot-like generic canned response nahi deta, balki ek professional sales executive ki tarah polite Hindi, English ya Hinglish me instant WhatsApp reply bhejta hai.</li>
+                                <li><strong>Safety Loop Guard:</strong> <code>auto_reply_max_per_conversation</code> setting ensure karti hai ki AI kisi loop me na phase.</li>
+                            </ol>
+
+                            <h3>3. AI Intelligence, Intent &amp; Sentiment Analysis</h3>
+                            <p>Har inbound customer message aane par background me AI Intelligence Engine execute hota hai aur 4 key dimensions extract karta hai:</p>
+
+                            <div class="kb-table-wrap">
+                                <table class="kb-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Analysis Engine</th>
+                                            <th>Kya Check Karta Hai?</th>
+                                            <th>Extracted Values / Examples</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Sentiment</strong></td>
+                                            <td>Customer ka tone aur buying mood</td>
+                                            <td><code>interested</code>, <code>neutral</code>, <code>not_interested</code>, <code>urgent</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Intent</strong></td>
+                                            <td>Customer ka actual objective</td>
+                                            <td><code>pricing</code>, <code>booking</code>, <code>service_inquiry</code>, <code>complaint</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Lead Score</strong></td>
+                                            <td>Purchase readiness (0 to 100)</td>
+                                            <td>Interested customers automatically receive score &ge; 85</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Entity Extraction</strong></td>
+                                            <td>Service requirement, quantities, location</td>
+                                            <td>e.g., Service: <em>Wedding Album Design</em>, Location: <em>Gopalganj</em></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3>4. AI Lead Qualification &amp; Pipeline Deals (Zero Junk Rule)</h3>
+                            <p>Traditional CRMs me har incoming "Hi" ya "Hello" par fake deal ban jati hai jisse sales pipeline garbage ban jati hai. AI-Botflow me <strong>Smart Qualification</strong> logic active hai:</p>
                             <ul>
-                                <li><strong>System Prompt / Persona:</strong> Define identity and rules (e.g. <em>"You are the sales concierge for Ai Botflow. Answer customer queries accurately using only the knowledge base and encourage them to book a free demo."</em>).</li>
-                                <li><strong>Fallback Rules:</strong> Specify explicit action when information is missing from documents (e.g. <em>"Offer to connect with a human agent"</em>).</li>
-                                <li><strong>Temperature:</strong> Regulate creative freedom (0.2 for strict compliance support; 0.7 for persuasive sales conversations).</li>
-                                <li><strong>Auto-Reply Toggle:</strong> Activate AI auto-reply for all inbound chats or restrict exclusively to unassigned leads.</li>
+                                <li><strong>Single Customer = Single Deal Rule (Auto-Merge):</strong> Agar ek customer 5 alag-alag messages bhejta hai ya multiple website forms bharta hai, to uske 5 alag deals create nahi honge. AI existing active deal detect karke <strong>usi deal ke andar new notes aur updates merge</strong> kar deta hai.</li>
+                                <li><strong>High-Intent Deals Only:</strong> Deal tabhi create hoti hai jab customer rate, pricing, booking, quotation ya custom service details mangta hai (<code>isInterested = true</code>).</li>
+                                <li><strong>No Spam Junk:</strong> Casual messages jaise "Hi", "Ok", "Good Morning" par koi deal create nahi hoti. Sirf chat history log hoti hai.</li>
+                                <li><strong>Pipeline ID-Based Linking:</strong> Deal pipeline ki unique ID se associate hoti hai. Isliye agar aap pipeline ka name change bhi kar dein, tab bhi AI hamesha sahi pipeline ke initial stage me deal route karega.</li>
                             </ul>
+
+                            <h3>5. AI Long-Term Customer Memory (ai_memory)</h3>
+                            <p>Har contact profile me dedicated <code>ai_memory</code> vector store hota hai:</p>
+                            <ul>
+                                <li><strong>Preference Persistence:</strong> Agar customer ne 4 din pehle bataya tha ki <em>"Mujhe 30-sheet wedding album chahiye"</em>, toh AI is requirement ko memory me persist karta hai.</li>
+                                <li><strong>Contextual Continuity:</strong> Agli baar jab customer conversation start karta hai, AI use purane context ke sath personalized treat karta hai.</li>
+                            </ul>
+
+                            <h3>6. Smart Follow-ups &amp; AI Deal Summarizer</h3>
+                            <ul>
+                                <li><strong>AI Summarize Chat Button (Inside Deal Card):</strong> Pipeline me deal open karne par "AI Summarize Chat" par click karein. AI customer ke 50+ WhatsApp messages ko 2 second me padh kar actionable follow-up note generate kar deta hai.</li>
+                                <li><strong>Auto AI Follow-up (Expected Close Date):</strong> Jab deal ki Expected Close Date trigger hoti hai, AI customer ko personalized WhatsApp message automatically dispatch karta hai.</li>
+                                <li><strong>Custom Deal Instructions:</strong> Deal me custom prompt de sakte hain (e.g. <em>"Offer 10% discount if customer asks about price"</em>) aur AI isi instruction ke tahat follow-up drafting karega.</li>
+                            </ul>
+
+                            <h3>7. Human Handoff (Seamless Agent Takeover)</h3>
+                            <div class="kb-callout">
+                                <strong>Agent Intervene Protection:</strong> Jaise hi koi human sales executive Team Inbox se manual message send karta hai, AI turant <strong>MUTE</strong> ho jata hai. Agar customer WhatsApp par likhta hai <em>"Mujhe human agent se baat karni hai"</em>, toh AI chat ko designated human agent ko assign karke instant dashboard alert send karta hai.
+                            </div>
+
+                            <h3>8. Settings &amp; Configuration Quick Reference</h3>
+                            <div class="kb-table-wrap">
+                                <table class="kb-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Setting</th>
+                                            <th>Dashboard Location</th>
+                                            <th>Functionality</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Auto Pipeline Deals</strong></td>
+                                            <td>Pipelines Page (Top Switch)</td>
+                                            <td>Qualified high-intent chats ko automatically CRM deal me convert karta hai.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Auto Tagging</strong></td>
+                                            <td>Pipelines Page (Top Switch)</td>
+                                            <td>Interested customers ko automatic tags (Hot Lead, Qualified, etc.) lagata hai.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>System Prompt Persona</strong></td>
+                                            <td>Settings &gt; AI Configuration</td>
+                                            <td>AI ka behavior, sales tone (Polite, Professional, Hinglish) define karta hai.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Knowledge Base Sources</strong></td>
+                                            <td>Settings &gt; Knowledge Base</td>
+                                            <td>PDFs, URLs, pricing sheets jahan se RAG algorithm answers formulate karta hai.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Human Handoff Agent</strong></td>
+                                            <td>Settings &gt; AI Configuration</td>
+                                            <td>Default team member jisko complex ya human-requested chats route honge.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </article>
 
@@ -1388,34 +1572,260 @@
                     </article>
 
                     <!-- =========================================================
-                         MODULE 19: WEBHOOK BOTS & ECOMMERCE
+                         MODULE 19: ADVANCED WORKFLOW AUTOMATION ENGINE
                          ========================================================= -->
                     <article class="kb-article-card" id="module-19" data-cat="integrations">
                         <div class="kb-article-meta">
                             <span class="kb-article-badge kb-badge-blue">Module 19</span>
-                            <span class="kb-route-badge">Route: /automations</span>
+                            <span class="kb-route-badge">Route: /automations &bull; /automations/[id]/logs</span>
                         </div>
-                        <h2 class="kb-article-title">Webhook Bots &amp; E-Commerce Integrations</h2>
+                        <h2 class="kb-article-title">Workflow Automation Engine — 9 Triggers, 12 Actions &amp; Triple-Layer Wait Resumption</h2>
                         <div class="kb-article-body">
-                            <p>Trigger automated personalized WhatsApp messages directly from Shopify, WooCommerce, Razorpay, or custom backends:</p>
+                            <p>AI-Botflow Automation Engine ek enterprise-grade, event-driven workflow execution platform hai jo Meta WhatsApp Cloud API, CRM Deals, Contacts, aur Webhooks ko high-reliability ke sath connect karta hai.</p>
 
-                            <h3>Setup Walkthrough (Shopify New Order / Cart Recovery):</h3>
+                            <h3>1. Automation System Architecture</h3>
+                            <div style="margin: 20px 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(34, 197, 94, 0.3); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);">
+                                <img src="assets/automation_clean_workflow_diagram.jpg" alt="WhatsApp Workflow Automation Engine with Triple-Layer Resumption Architecture" style="width: 100%; height: auto; display: block; border-radius: 14px;" loading="lazy">
+                            </div>
+                            <div class="kb-flow-card">
+                                <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+                                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                                        <span class="kb-route-badge" style="background: rgba(37, 99, 235, 0.15); color: #60a5fa;"><i class="fa-solid fa-bolt"></i> Inbound Event / Trigger</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge">Engine Filter Evaluation</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Pessimistic Log Entry Created</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: 20px;">
+                                        <i class="fa-solid fa-turn-down" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge">Sequential Step Loop Execution</span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge" style="color: #4ade80;">Execute Actions (Message, Template, Tag, Deal)</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: 20px;">
+                                        <i class="fa-solid fa-turn-down" style="color: #64748b;"></i>
+                                        <strong style="color: #c084fc;">Condition (If / Else):</strong>
+                                        <span class="kb-route-badge">Branch Evaluation (YES / NO path)</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: 20px;">
+                                        <i class="fa-solid fa-turn-down" style="color: #64748b;"></i>
+                                        <strong style="color: #fbbf24;">Wait Step:</strong>
+                                        <span class="kb-route-badge">Suspended to <code>automation_pending_executions</code></span>
+                                        <i class="fa-solid fa-arrow-right" style="color: #64748b;"></i>
+                                        <span class="kb-route-badge" style="background: rgba(34, 197, 94, 0.15); color: #4ade80;">Triple-Layer Resumption Engine</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3>2. All 9 Supported Triggers</h3>
+                            <p>Trigger woh event hota hai jiske trigger hote hi automation execute hoti hai:</p>
+                            <div class="kb-table-wrap">
+                                <table class="kb-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Trigger ID</th>
+                                            <th>Event Name</th>
+                                            <th>Kab Fire Hota Hai?</th>
+                                            <th>Configuration Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>keyword_match</code></td>
+                                            <td><strong>Keyword Match</strong></td>
+                                            <td>Jab customer specific word ya phrase send kare (e.g. "PRICE", "DEMO").</td>
+                                            <td>Keywords list, Match type (<code>contains</code>, <code>exact</code>, <code>word</code>), Case Sensitive toggle.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>first_inbound_message</code></td>
+                                            <td><strong>First Inbound Message</strong></td>
+                                            <td>Jab koi new number pehli baar WhatsApp par message kare (Welcome drips).</td>
+                                            <td>No configuration required.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>new_message_received</code></td>
+                                            <td><strong>New Message Received</strong></td>
+                                            <td>Har aane wale incoming message par execute hota hai.</td>
+                                            <td>No configuration required.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>interactive_reply</code></td>
+                                            <td><strong>Interactive Button / List Reply</strong></td>
+                                            <td>Jab customer Quick Reply button ya List menu row click kare.</td>
+                                            <td>Target Reply IDs list (button/row IDs).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>tag_added</code></td>
+                                            <td><strong>Tag Added to Contact</strong></td>
+                                            <td>Jab contact par manual ya automated specific tag apply ho.</td>
+                                            <td>Target Tag selector.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>new_contact_created</code></td>
+                                            <td><strong>New Contact Created</strong></td>
+                                            <td>Jab naya contact manual create ya bulk CSV import ho.</td>
+                                            <td>No configuration required.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>incoming_webhook</code></td>
+                                            <td><strong>Incoming Webhook</strong></td>
+                                            <td>Shopify, Facebook Lead Ads, JustDial, IndiaMART, Razorpay webhook aane par.</td>
+                                            <td>JSON Phone path mapping (e.g. <code>payload.customer.phone</code>).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>conversation_assigned</code></td>
+                                            <td><strong>Conversation Assigned</strong></td>
+                                            <td>Jab chat kisi specific team member ko assign ho.</td>
+                                            <td>No configuration required.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>time_based</code></td>
+                                            <td><strong>Scheduled Trigger</strong></td>
+                                            <td>Specific date, time ya cron schedule par fire hone ke liye.</td>
+                                            <td>Cron expression / date schedule.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3>3. All 12 Workflow Actions</h3>
+                            <div class="kb-table-wrap">
+                                <table class="kb-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Action Step</th>
+                                            <th>Type</th>
+                                            <th>Capabilities &amp; Features</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>send_message</code></td>
+                                            <td>Messaging</td>
+                                            <td>Plain WhatsApp text message. Dynamic variables support (e.g. <code>Namaste {{name}}</code>).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>send_buttons</code></td>
+                                            <td>Interactive</td>
+                                            <td>Interactive quick reply buttons (up to 3 clickable options per Meta policy).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>send_list</code></td>
+                                            <td>Interactive</td>
+                                            <td>Interactive categorized menu list card (up to 10 selectable items).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>send_template</code></td>
+                                            <td>Meta Template</td>
+                                            <td>Meta-approved templates. <strong>Bypasses 24-hr customer service window</strong>. Dynamic positional variables <code>{{1}}</code>, <code>{{2}}</code> aur media header attachments.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>wait</code></td>
+                                            <td>Timing</td>
+                                            <td>Workflow execution ko pause karta hai (Minutes, Hours, Days). Resumes via Triple-Layer Engine.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>condition</code></td>
+                                            <td>Logic Flow</td>
+                                            <td>If / Else branching (YES / NO path) based on Tags, Contact attributes, or message body content.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>add_tag</code> / <code>remove_tag</code></td>
+                                            <td>Segmentation</td>
+                                            <td>Assign ya remove tags. Protected with 5-level infinite loop recursion guard.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>create_deal</code></td>
+                                            <td>CRM Pipeline</td>
+                                            <td>Lead data ko specific Pipeline Stage me deal card banata hai ya active deal me merge karta hai.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>assign_conversation</code></td>
+                                            <td>Routing</td>
+                                            <td>Specific agent ko assign karta hai ya Round-Robin mode me team members me evenly distribute karta hai.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>update_contact_field</code></td>
+                                            <td>Data Update</td>
+                                            <td>Name, email, company, address, ya Custom Fields update karta hai.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>send_webhook</code></td>
+                                            <td>Integration</td>
+                                            <td>External CRM, Zapier, Make, ya internal server ko HTTP POST payload bhejta hai (SSRF-protected).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>close_conversation</code></td>
+                                            <td>Resolution</td>
+                                            <td>Workflow end hone par chat ko resolved/closed status mark karta hai.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3>4. Triple-Layer Wait Resumption Mechanism</h3>
+                            <p>Jab koi workflow <code>wait</code> step par aata hai, toh execution suspend hokar database table <code>automation_pending_executions</code> me <code>run_at</code> timestamp ke sath save ho jati hai. Iske resumption ke liye 3-tier protection active hai:</p>
+
+                            <ul>
+                                <li><strong>Layer 1 — In-Memory Timer (&le; 15 mins):</strong> Node.js runtime me <code>scheduleWaitWakeup</code> timer lagta hai jo short waits ko exact millisecond precision par wake-up karta hai.</li>
+                                <li><strong>Layer 2 — Background Database Sweeper (Every 30s):</strong> Next.js continuous background worker har 30 seconds me due executions inspect karta hai.</li>
+                                <li><strong>Layer 3 — Host Operating System Crontab (Every 1 min):</strong> VPS / Server crontab entry (<code>* * * * * curl -s http://localhost:3000/api/automations/cron</code>) ensure karti hai ki server restart ya memory purge ke baad bhi koi bhi follow-up message skip na ho.</li>
+                                <li><strong>Atomic Lock Protection:</strong> Duplicate execution prevent karne ke liye row ko pehle atomic transaction se <code>status = 'running'</code> claim kiya jata hai.</li>
+                            </ul>
+
+                            <h3>5. Dynamic Variables &amp; Templating Syntax</h3>
+                            <div class="kb-table-wrap">
+                                <table class="kb-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Syntax Placeholder</th>
+                                            <th>Source</th>
+                                            <th>Rendered Example</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>{{name}}</code></td>
+                                            <td>Contact Display Name</td>
+                                            <td>"Rahul Sharma"</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>{{phone}}</code></td>
+                                            <td>Contact Phone Number</td>
+                                            <td>"+919876543210"</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>{{email}}</code></td>
+                                            <td>Contact Email Address</td>
+                                            <td>"rahul@gmail.com"</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>{{message.text}}</code></td>
+                                            <td>Last Customer Inbound Message</td>
+                                            <td>"Mujhe price list chahiye"</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>{{vars.field_name}}</code></td>
+                                            <td>Webhook Payload / Form Field</td>
+                                            <td><code>{{vars.city}}</code> &rarr; "Mumbai", <code>{{vars.service}}</code> &rarr; "Pro Album"</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3>6. Real-World Automation Recipes</h3>
                             <ol>
-                                <li>Click <strong>"+ Create Webhook Trigger"</strong> and provide a name (e.g. <code>Shopify New Order Alert</code>).</li>
-                                <li>Copy your unique Ingestion URL:
-                                    <div class="kb-code-box">https://dash.aibotflow.in/api/webhooks/incoming/[trigger_id]</div>
-                                </li>
-                                <li>Paste this URL into your external application's webhook settings (e.g. Shopify &gt; Notifications &gt; Webhooks &gt; Order Creation).</li>
-                                <li>Fire a test webhook event from the external application.</li>
-                                <li><strong>Map Payload Data:</strong>
-                                    <ul>
-                                        <li>Select target phone number field (e.g. <code>payload.customer.phone</code>).</li>
-                                        <li>Select template to dispatch (e.g. <code>order_confirmation</code>).</li>
-                                        <li>Map template variables: <code>{{1}}</code> &rarr; <code>payload.customer.first_name</code>, <code>{{2}}</code> &rarr; <code>payload.order.order_number</code>, <code>{{3}}</code> &rarr; <code>payload.order.total_price</code>.</li>
-                                    </ul>
-                                </li>
-                                <li>Click <strong>"Activate Webhook Bot"</strong>. All future transactions automatically trigger instant WhatsApp confirmations.</li>
+                                <li><strong>Welcome Flow + 2-Hour Drip:</strong> Trigger: <code>first_inbound_message</code> &rarr; Action 1: <code>send_message</code> (Welcome) &rarr; Action 2: <code>add_tag</code> ("New Lead") &rarr; Action 3: <code>create_deal</code> ("New Inquiry") &rarr; Action 4: <code>wait</code> (2 hours) &rarr; Action 5: <code>send_message</code> (Follow-up inquiry).</li>
+                                <li><strong>Interactive Keyword Menu:</strong> Trigger: <code>keyword_match</code> (Keywords: "MENU", "PRICE") &rarr; Action: <code>send_buttons</code> (Options: "Pricing Plans", "Book Demo", "Call Support").</li>
+                                <li><strong>Website / Facebook Lead to CRM Pipeline:</strong> Trigger: <code>incoming_webhook</code> &rarr; Action 1: <code>send_template</code> (Approved confirmation) &rarr; Action 2: <code>add_tag</code> ("Web Lead") &rarr; Action 3: <code>create_deal</code> (Title: <code>{{name}} - {{vars.service}}</code>) &rarr; Action 4: <code>assign_conversation</code> (Round-Robin).</li>
                             </ol>
+
+                            <h3>7. Execution Logs &amp; Troubleshooting</h3>
+                            <ul>
+                                <li><strong>Execution Statuses:</strong> Dashboard me <strong>/automations/[id]/logs</strong> par: 🟢 <strong>Success</strong> (Delivered), 🟡 <strong>Partial</strong> (Currently sleeping in wait step), 🔴 <strong>Failed</strong> (Meta policy rejection or invalid number).</li>
+                                <li><strong>24-Hour Policy Compliance:</strong> Customer ke last message ke 24 ghante baad plain text message fail ho jata hai. Hamesha <code>send_template</code> action use karein taaki Meta window bypass ho sake.</li>
+                                <li><strong>Depth Limit:</strong> Tag trigger cascades me system 5-level max execution depth enforce karta hai taaki accidental infinite loops eliminate ho sakein.</li>
+                            </ul>
                         </div>
                     </article>
 

@@ -20,9 +20,9 @@ Yeh saara documentation ab har app page/route ke hisaab se alag files mein split
 | 14 | Broadcast Analytics | `/broadcasts/[id]` | `14-broadcast-analytics.md` |
 | 15 | Chatbot Flows | `/flows` | `15-flows.md` |
 | 16 | AI Agents — Knowledge Base | `/agents` (Knowledge Base tab) | `16-agents-knowledge-base.md` |
-| 17 | AI Agents — Config | `/agents` (Config tab) | `17-agents-config.md` |
+| 17 | AI Agents — Architecture & Intelligence (AI Kaise Kaam Karti Hai) | `/agents` (Config tab), `/pipelines`, `/settings?tab=ai` | `17-agents-config.md` |
 | 18 | AI Agents — Playground | `/agents` (Playground tab) | `18-agents-playground.md` |
-| 19 | Automations / Webhook Bots | `/automations` | `19-automations.md` |
+| 19 | Automations — Workflow Engine (9 Triggers, 12 Actions, Wait Engine) | `/automations` | `19-automations.md` |
 | 20 | Sales Pipelines | `/pipelines` | `20-pipelines.md` |
 | 21 | Team Members Settings | `/settings?tab=members` | `21-settings-members.md` |
 | 22 | API Keys Settings | `/settings?tab=api` | `22-settings-api.md` |
